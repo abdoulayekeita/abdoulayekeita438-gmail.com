@@ -20,8 +20,8 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" >
     <!--end::Fonts -->
 
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" >
     @yield('style')
+
 </head>
 <!-- end::Head -->
 
@@ -48,7 +48,7 @@
             <div class="kt-aside__brand kt-grid__item " id="kt_aside_brand">
                 <div class="kt-aside__brand-logo">
                     <a href="index.html">
-                        <img alt="Logo" src="{{asset('images/dashboard/yankadi.png')}}" height="50px" width="170px" />
+                        <img alt="Logo" src="{{asset('images/dashboard/yankadi_mobil.png')}}" height="50px" width="170px" />
                     </a>
                 </div>
                 <div class="kt-aside__brand-tools">
@@ -88,7 +88,7 @@
             <!-- begin:: Header -->
                   @yield('Header')
             <!-- end:: Header -->
-            <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
+            <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor " id="kt_content">
 
                 <!-- begin:: Content Head -->
                       @yield('ContentHead')
@@ -994,6 +994,7 @@
 </div>
 
 <script src="{{ asset('js/app.js') }}"></script>>
+@yield('script')
 </body>
 
 <!-- end::Body -->

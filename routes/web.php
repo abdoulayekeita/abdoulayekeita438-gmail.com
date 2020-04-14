@@ -14,5 +14,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('dashboard.dashboard');
-});
+    return view('home.index');
+})->name('dashboard');
+
+Route::get('/create', function () {
+    return view('dashboard.product.create');
+})->name('product.create');
+
+Route::post('/store/image', 'TestController@store');
+Route::get('/show', function () {
+    return view('dashboard.product.show');
+})->name('product.show');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
