@@ -1,7 +1,6 @@
 @extends('home.layouts.app')
 @section('style')
     <link href="{{ asset('css/carousel_card.css') }}" rel="stylesheet" type="text/css" >
-<link href="{{ asset('css/jquery.fancybox.min.css') }}" rel="stylesheet" type="text/css" >
 
     <style>
         .kt-svg-icon g [fill] {
@@ -20,7 +19,27 @@
             backface-visibility: hidden;
             transition: transform 0.6s ease-in-out;
         }
-
+        .accordion.accordion-toggle-arrow .card .card-header .card-title:after {
+            content: none;
+        }
+        .accordion.accordion-toggle-arrow .card .card-header .card-title.collapsed:after {
+            content: none;
+        }
+        .accordion.accordion-outline .card .card-header .card-title:after {
+            position: absolute;
+            right: 1.25rem;
+            font-family: "LineAwesome";
+            text-decoration: inherit;
+            text-rendering: optimizeLegibility;
+            text-transform: none;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            font-smoothing: antialiased;
+            content: "\F28E";
+            font-size: 1.7rem;
+            font-weight: bold;
+            color: #5d78ff;
+        }
     </style>
 @endsection
 @section('content')
@@ -311,7 +330,7 @@
                                                                 <path d="M6,7 L6,15 L18,15 L18,7 L6,7 Z M6,5 L18,5 C19.1045695,5 20,5.8954305 20,7 L20,15 C20,16.1045695 19.1045695,17 18,17 L6,17 C4.8954305,17 4,16.1045695 4,15 L4,7 C4,5.8954305 4.8954305,5 6,5 Z" fill="#000000" fill-rule="nonzero"/>
                                                             </g>
                                                         </svg>
-                                                        Multimedia<i class="kt-menu__ver-arrow la la-angle-right"></i>
+                                                        Multimedia
                                                     </div>
                                                 </div>
                                                 <div id="collapseOne1" class="collapse " aria-labelledby="headingOne" data-parent="#accordionExample1">
@@ -911,31 +930,23 @@
                             </div>
                         </div>
                     </div>
-                    <div class="container-fluid mt-3">
-{{--                        <h1 class="text-center mb-3">Bootstrap Multi-Card Carousel</h1>--}}
+                    <div class="container-fluid mt-3 pl-5">
                         <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner row w-100 mx-auto">
-                                <div class="carousel-item col-lg-4 active">
-                                    <div class="card">
-                                        <div class="col-12  ">
-                                            <a href="{{asset('images/dashboard/keita1.jpg')}}" data-fancybox="1" data-caption="My caption" >
-                                                <img src="{{asset('images/dashboard/keita1.jpg')}}" class="img-fluid rounded " style=" height: 250px; width: 100% !important;display: inline-block;"/>
-                                            </a>
-                                        </div>
-                                        <div class="card-body">
+                            <div class="carousel-inner row w-100 ">
+                                <div class="carousel-item col-lg-4 active" >
+                                    <div class="card" >
+                                        <img src="{{asset('images/dashboard/keita1.jpg')}}" class="img-fluid rounded " style=" height: 250px; width: 100% !important;display: inline-block;"/>
+                                        <div class="card-body ">
                                             <h4 class="card-title">Produit 1 2000FCFA</h4>
                                             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                             <p class="card-text"><small class="text-muted">Publier il y a 3 min</small></p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="carousel-item col-lg-4">
-                                    <div class="card">
-                                        <div class="col-12  ">
-                                            <a href="{{asset('images/dashboard/keita1.jpg')}}" data-fancybox="1" data-caption="My caption" >
-                                                <img src="{{asset('images/dashboard/keita1.jpg')}}" class="img-fluid rounded " style=" height: 250px; width: 100% !important;display: inline-block;"/>
-                                            </a>
-                                        </div>                                        <div class="card-body">
+                                <div class="carousel-item col-lg-4" >
+                                    <div class="card " >
+                                        <img src="{{asset('images/dashboard/keita1.jpg')}}" class="img-fluid rounded " style=" height: 250px; width: 100% !important;display: inline-block;"/>
+                                        <div class="card-body">
                                             <h4 class="card-title">Produit 2 1000 FCFA</h4>
                                             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                             <p class="card-text"><small class="text-muted">Publier il ya 3 min</small></p>
@@ -943,12 +954,9 @@
                                     </div>
                                 </div>
                                 <div class="carousel-item col-lg-4">
-                                    <div class="card">
-                                        <div class="col-12  ">
-                                            <a href="{{asset('images/dashboard/keita1.jpg')}}" data-fancybox="1" data-caption="My caption" >
-                                                <img src="{{asset('images/dashboard/keita1.jpg')}}" class="img-fluid rounded " style=" height: 250px; width: 100% !important;display: inline-block;"/>
-                                            </a>
-                                        </div>                                        <div class="card-body">
+                                    <div class="card" style="max-height: 400px">
+                                        <img src="{{asset('images/dashboard/keita1.jpg')}}" class="img-fluid rounded " style=" height: 250px; width: 100% !important;display: inline-block;"/>
+                                        <div class="card-body">
                                             <h4 class="card-title">Produit 3</h4>
                                             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                             <p class="card-text"><small class="text-muted">Publier il y a 6 min</small></p>
@@ -957,11 +965,7 @@
                                 </div>
                                 <div class="carousel-item col-lg-4">
                                     <div class="card">
-                                        <div class="col-12  ">
-                                            <a href="{{asset('images/dashboard/keita1.jpg')}}" data-fancybox="1" data-caption="My caption" >
-                                                <img src="{{asset('images/dashboard/keita1.jpg')}}" class="img-fluid rounded " style=" height: 250px; width: 100% !important;display: inline-block;"/>
-                                            </a>
-                                        </div>
+                                        <img src="{{asset('images/dashboard/keita1.jpg')}}" class="img-fluid rounded " style=" height: 250px; width: 100% !important;display: inline-block;"/>
                                         <div class="card-body">
                                             <h4 class="card-title">Produit 4</h4>
                                             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -971,11 +975,8 @@
                                 </div>
                                 <div class="carousel-item col-lg-4">
                                     <div class="card">
-                                        <div class="col-12  ">
-                                            <a href="{{asset('images/dashboard/keita1.jpg')}}" data-fancybox="1" data-caption="My caption" >
-                                                <img src="{{asset('images/dashboard/keita1.jpg')}}" class="img-fluid rounded " style=" height: 250px; width: 100% !important;display: inline-block;"/>
-                                            </a>
-                                        </div>                                        <div class="card-body">
+                                        <img src="{{asset('images/dashboard/keita1.jpg')}}" class="img-fluid rounded " style=" height: 250px; width: 100% !important;display: inline-block;"/>
+                                        <div class="card-body">
                                             <h4 class="card-title">Produi 5</h4>
                                             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                             <p class="card-text"><small class="text-muted">Publier il y a 5 min</small></p>
@@ -1012,7 +1013,5 @@
 @endsection
 
 @section('script')
-
     <script src="{{ asset('js/carousel_card.js') }}"></script>
-
 @endsection

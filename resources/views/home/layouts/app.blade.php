@@ -6,9 +6,15 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Yankadi-Shop</title>
+
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" >
         <link href="{{ asset('css/footer.css') }}" rel="stylesheet" type="text/css" >
-
+        <style>
+            .kt-svg-icon g [fill] {
+                fill: #478fcd;
+            }
+        </style>
         @yield('style')
     </head>
     <body>
