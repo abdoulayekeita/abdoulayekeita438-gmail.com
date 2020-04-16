@@ -15,7 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home.index');
-})->name('dashboard');
+})->name('home');
+Route::get('/', function () {
+    return view('home.shop');
+})->name('shop');
 
 Route::get('/create', function () {
     return view('dashboard.product.create');

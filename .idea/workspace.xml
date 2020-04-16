@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d91704f-1b08-4daf-9039-655bb2001cc5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/css/fontawesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/home/shop.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/layouts/partials/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/layouts/partials/footer.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home/layouts/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/layouts/partials/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -158,11 +155,11 @@
       <recent name="C:\Users\dell\Documents\laravel\shop\app" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\dell\Documents\laravel\shop\resources\views\home" />
       <recent name="C:\Users\dell\Documents\laravel\shop\public\js" />
       <recent name="C:\Users\dell\Documents\laravel\shop\public\scss" />
       <recent name="C:\Users\dell\Documents\laravel\shop\resources\views\home\layouts" />
       <recent name="C:\Users\dell\Documents\laravel\shop\resources\views\home\layout" />
-      <recent name="C:\Users\dell\Documents\laravel\shop\resources\views\dashboard\layouts" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -206,7 +203,7 @@
       <workItem from="1584914837371" duration="49285000" />
       <workItem from="1585583501617" duration="101070000" />
       <workItem from="1586507482131" duration="37540000" />
-      <workItem from="1586794097680" duration="46241000" />
+      <workItem from="1586794097680" duration="52114000" />
     </task>
     <servers />
   </component>

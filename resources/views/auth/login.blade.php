@@ -35,7 +35,7 @@
                                         </div>
                                     </div>
                                     <div class="kt-login__actions mb-1">
-                                        <button id="kt_login_signin_submit" style="background-color: #478fcd" class="btn btn-pill kt-login__btn-primary">Sign In</button>
+                                        <button id="kt_login_signin_submit" style="background-color: #478fcd" class="btn btn-pill kt-login__btn-primary">Valider</button>
                                     </div>
                                 </form>
                             </div>

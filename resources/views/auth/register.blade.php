@@ -31,10 +31,10 @@
                             </div>
                             <div class="kt-wizard-v4__nav-label">
                                 <div class="kt-wizard-v4__nav-label-title">
-                                    Account
+                                    Compte
                                 </div>
                                 <div class="kt-wizard-v4__nav-label-desc">
-                                    User's Account & Settings
+                                    Type de compte
                                 </div>
                             </div>
                         </div>
@@ -160,11 +160,11 @@
                                                             <div class="col-lg-9 col-xl-6">
                                                                 <div class="kt-checkbox-inline">
                                                                     <label class="kt-checkbox">
-                                                                        <input type="checkbox" checked=""> Particulier
+                                                                        <input type="radio" checked=""> Particulier
                                                                         <span></span>
                                                                     </label>
                                                                     <label class="kt-checkbox">
-                                                                        <input type="checkbox" > Busness
+                                                                        <input type="radio" > Busness
                                                                         <span></span>
                                                                     </label>
 
