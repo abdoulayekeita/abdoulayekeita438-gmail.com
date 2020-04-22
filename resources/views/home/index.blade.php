@@ -934,54 +934,64 @@
                         <div id="myCarousel" class="carousel slide" data-ride="carousel">
                             <div class="carousel-inner row w-100 ">
                                 <div class="carousel-item col-lg-4 active" >
-                                    <div class="card" >
-                                        <img src="{{asset('images/dashboard/keita1.jpg')}}" class="img-fluid rounded " style=" height: 250px; width: 100% !important;display: inline-block;"/>
-                                        <div class="card-body ">
-                                            <h4 class="card-title">Produit 1 2000FCFA</h4>
-                                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                            <p class="card-text"><small class="text-muted">Publier il y a 3 min</small></p>
+                                    <a href="{{route('detail_annonce')}}">
+                                        <div class="card" >
+                                            <img src="{{asset('images/dashboard/keita1.jpg')}}" class="img-fluid rounded " style=" height: 250px; width: 100% !important;display: inline-block;"/>
+                                            <div class="card-body ">
+                                                <h4 class="card-title">Produit 1 2000FCFA</h4>
+                                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                                <p class="card-text"><small class="text-muted">Publier il y a 3 min</small></p>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                                 <div class="carousel-item col-lg-4" >
-                                    <div class="card " >
-                                        <img src="{{asset('images/dashboard/keita1.jpg')}}" class="img-fluid rounded " style=" height: 250px; width: 100% !important;display: inline-block;"/>
-                                        <div class="card-body">
-                                            <h4 class="card-title">Produit 2 1000 FCFA</h4>
-                                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                            <p class="card-text"><small class="text-muted">Publier il ya 3 min</small></p>
+                                    <a href="{{route('detail_annonce')}}">
+                                        <div class="card" >
+                                            <img src="{{asset('images/dashboard/keita1.jpg')}}" class="img-fluid rounded " style=" height: 250px; width: 100% !important;display: inline-block;"/>
+                                            <div class="card-body ">
+                                                <h4 class="card-title">Produit 1 2000FCFA</h4>
+                                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                                <p class="card-text"><small class="text-muted">Publier il y a 3 min</small></p>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                                 <div class="carousel-item col-lg-4">
-                                    <div class="card" style="max-height: 400px">
-                                        <img src="{{asset('images/dashboard/keita1.jpg')}}" class="img-fluid rounded " style=" height: 250px; width: 100% !important;display: inline-block;"/>
-                                        <div class="card-body">
-                                            <h4 class="card-title">Produit 3</h4>
-                                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                            <p class="card-text"><small class="text-muted">Publier il y a 6 min</small></p>
+                                    <a href="{{route('detail_annonce')}}">
+                                        <div class="card" >
+                                            <img src="{{asset('images/dashboard/keita1.jpg')}}" class="img-fluid rounded " style=" height: 250px; width: 100% !important;display: inline-block;"/>
+                                            <div class="card-body ">
+                                                <h4 class="card-title">Produit 1 2000FCFA</h4>
+                                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                                <p class="card-text"><small class="text-muted">Publier il y a 3 min</small></p>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                                 <div class="carousel-item col-lg-4">
-                                    <div class="card">
-                                        <img src="{{asset('images/dashboard/keita1.jpg')}}" class="img-fluid rounded " style=" height: 250px; width: 100% !important;display: inline-block;"/>
-                                        <div class="card-body">
-                                            <h4 class="card-title">Produit 4</h4>
-                                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                            <p class="card-text"><small class="text-muted">Publier il y a 7 min</small></p>
+                                    <a href="{{route('detail_annonce')}}">
+                                        <div class="card" >
+                                            <img src="{{asset('images/dashboard/keita1.jpg')}}" class="img-fluid rounded " style=" height: 250px; width: 100% !important;display: inline-block;"/>
+                                            <div class="card-body ">
+                                                <h4 class="card-title">Produit 1 2000FCFA</h4>
+                                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                                <p class="card-text"><small class="text-muted">Publier il y a 3 min</small></p>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                                 <div class="carousel-item col-lg-4">
-                                    <div class="card">
-                                        <img src="{{asset('images/dashboard/keita1.jpg')}}" class="img-fluid rounded " style=" height: 250px; width: 100% !important;display: inline-block;"/>
-                                        <div class="card-body">
-                                            <h4 class="card-title">Produi 5</h4>
-                                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                            <p class="card-text"><small class="text-muted">Publier il y a 5 min</small></p>
+                                    <a href="{{route('detail_annonce')}}">
+                                        <div class="card" >
+                                            <img src="{{asset('images/dashboard/keita1.jpg')}}" class="img-fluid rounded " style=" height: 250px; width: 100% !important;display: inline-block;"/>
+                                            <div class="card-body ">
+                                                <h4 class="card-title">Produit 1 2000FCFA</h4>
+                                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                                <p class="card-text"><small class="text-muted">Publier il y a 3 min</small></p>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                             </div>
                             <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">

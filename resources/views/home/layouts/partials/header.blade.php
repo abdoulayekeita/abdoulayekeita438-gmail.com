@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-light  bg-white  fixed-top "  >
+<nav class="navbar navbar-expand-lg navbar-light   fixed-top "  >
    <div class="container">
        <a class="navbar-brand" href="{{route('home')}}">
-           <img alt="Logo" src="{{asset('images/dashboard/yankadi.png')}}"  style="height: 50px;width: 140px"/>
+           <img alt="Logo" src="{{asset('images/dashboard/yankadi2.png')}}"   style="height: 50px;width: 250px;background: transparent !important;"/>
        </a>
        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
            <span class="navbar-toggler-icon"></span>

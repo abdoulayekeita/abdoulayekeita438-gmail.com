@@ -14,6 +14,27 @@
             .kt-svg-icon g [fill] {
                 fill: #478fcd;
             }
+            nav {
+                position: -webkit-sticky;
+                position: sticky;
+                /* sticky or fixed are fine */
+                position: fixed;
+                top: 0;
+                height: 69px;
+                width: 100%;
+                background: transparent !important;
+                transition: background .5s; /* control how smooth the background changes */
+            }
+
+            nav.scrolled {
+                background: white !important;
+            }
+
+            /*@media (max-width: 1025px) {*/
+            /*    .test{*/
+            /*        display: none;*/
+            /*    }*/
+            /*}*/
         </style>
         @yield('style')
     </head>
@@ -28,7 +49,21 @@
             src="https://code.jquery.com/jquery-2.2.4.js"
             integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
             crossorigin="anonymous"></script>
+        <script src="{{ asset('js/jquery.fancybox.min.js') }}"></script>
         <script src="{{ asset('js/app.js') }}"></script>
         @yield('script')
+        <script>
+            var navbar = document.querySelector('nav')
+
+            window.onscroll = function() {
+
+                // pageYOffset or scrollY
+                if (window.pageYOffset > 0) {
+                    navbar.classList.add('scrolled')
+                } else {
+                    navbar.classList.remove('scrolled')
+                }
+            }
+        </script>
     </body>
 </html>

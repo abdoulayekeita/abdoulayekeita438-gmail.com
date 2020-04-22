@@ -1,6 +1,6 @@
 @extends('dashboard.layouts.app')
 @section('style')
-{{--    <link href="{{ asset('styles/dashboard.css') }}" rel="stylesheet" type="text/css" >--}}
+    {{--    <link href="{{ asset('styles/dashboard.css') }}" rel="stylesheet" type="text/css" >--}}
 
     card {
     maxWidth: 345,
@@ -22,7 +22,7 @@
                                                 <path d="M11.0563554,18.6706981 L5.33593024,14.122919 C4.94553994,13.8125559 4.37746707,13.8774308 4.06710397,14.2678211 C4.06471678,14.2708238 4.06234874,14.2738418 4.06,14.2768747 L4.06,14.2768747 C3.75257288,14.6738539 3.82516916,15.244888 4.22214834,15.5523151 C4.22358765,15.5534297 4.2250303,15.55454 4.22647627,15.555646 L11.0872776,20.8031356 C11.6250734,21.2144692 12.371757,21.2145375 12.909628,20.8033023 L19.7677785,15.559828 C20.1693192,15.2528257 20.2459576,14.6784381 19.9389553,14.2768974 C19.9376429,14.2751809 19.9363245,14.2734691 19.935,14.2717619 L19.935,14.2717619 C19.6266937,13.8743807 19.0546209,13.8021712 18.6572397,14.1104775 C18.654352,14.112718 18.6514778,14.1149757 18.6486172,14.1172508 L12.9235044,18.6705218 C12.377022,19.1051477 11.6029199,19.1052208 11.0563554,18.6706981 Z" fill="#000000" opacity="0.3" />
                                             </g>
                                         </svg></span>
-                       <span class="kt-menu__link-text"> Tableau de bord</span></a></li>
+                        <span class="kt-menu__link-text"> Tableau de bord</span></a></li>
                 <li class="kt-menu__section ">
                     <h4 class="kt-menu__section-text">Produit</h4>
                     <i class="kt-menu__section-icon flaticon-more-v2"></i>
@@ -237,26 +237,51 @@
                             </div>
                             <div class="kt-portlet__head-toolbar">
                                 <a href="#" class="btn btn-icon" data-toggle="dropdown">
-                                    <i class="flaticon-more-1 kt-font-brand"></i>
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <rect x="0" y="0" width="24" height="24"/>
+                                            <circle fill="#000000" cx="12" cy="5" r="2"/>
+                                            <circle fill="#000000" cx="12" cy="12" r="2"/>
+                                            <circle fill="#000000" cx="12" cy="19" r="2"/>
+                                        </g>
+                                    </svg>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <ul class="kt-nav">
                                         <li class="kt-nav__item">
                                             <a href="#" class="kt-nav__link">
-                                                <i class="kt-nav__link-icon flaticon2-edit"></i>
-                                                <span class="kt-nav__link-text">Modifier</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                        <rect x="0" y="0" width="24" height="24"/>
+                                                        <path d="M8,17.9148182 L8,5.96685884 C8,5.56391781 8.16211443,5.17792052 8.44982609,4.89581508 L10.965708,2.42895648 C11.5426798,1.86322723 12.4640974,1.85620921 13.0496196,2.41308426 L15.5337377,4.77566479 C15.8314604,5.0588212 16,5.45170806 16,5.86258077 L16,17.9148182 C16,18.7432453 15.3284271,19.4148182 14.5,19.4148182 L9.5,19.4148182 C8.67157288,19.4148182 8,18.7432453 8,17.9148182 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000000, 10.707409) rotate(-135.000000) translate(-12.000000, -10.707409) "/>
+                                                        <rect fill="#000000" opacity="0.3" x="5" y="20" width="15" height="2" rx="1"/>
+                                                    </g>
+                                                </svg>
+                                                <span class="kt-nav__link-text ml-2">Modifier</span>
                                             </a>
                                         </li>
                                         <li class="kt-nav__item">
-                                             <a href="#" class="kt-nav__link">
-                                                <i class="kt-nav__link-icon flaticon-delete-1"></i>
-                                                <span class="kt-nav__link-text">Supprimer</span>
+                                            <a href="#" class="kt-nav__link">
+                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                        <rect x="0" y="0" width="24" height="24"/>
+                                                        <path d="M6,8 L18,8 L17.106535,19.6150447 C17.04642,20.3965405 16.3947578,21 15.6109533,21 L8.38904671,21 C7.60524225,21 6.95358004,20.3965405 6.89346498,19.6150447 L6,8 Z M8,10 L8.45438229,14.0894406 L15.5517885,14.0339036 L16,10 L8,10 Z" fill="#000000" fill-rule="nonzero"/>
+                                                        <path d="M14,4.5 L14,3.5 C14,3.22385763 13.7761424,3 13.5,3 L10.5,3 C10.2238576,3 10,3.22385763 10,3.5 L10,4.5 L5.5,4.5 C5.22385763,4.5 5,4.72385763 5,5 L5,5.5 C5,5.77614237 5.22385763,6 5.5,6 L18.5,6 C18.7761424,6 19,5.77614237 19,5.5 L19,5 C19,4.72385763 18.7761424,4.5 18.5,4.5 L14,4.5 Z" fill="#000000" opacity="0.3"/>
+                                                    </g>
+                                                </svg>
+                                                <span class="kt-nav__link-text ml-2 ">Supprimer</span>
                                             </a>
                                         </li>
                                         <li class="kt-nav__item">
                                             <a href="{{route('product.show')}}" class="kt-nav__link">
-                                                <i class="kt-nav__link-icon flaticon-eye"></i>
-                                                <span class="kt-nav__link-text">Voir</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                        <rect x="0" y="0" width="24" height="24"/>
+                                                        <path d="M3,12 C3,12 5.45454545,6 12,6 C16.9090909,6 21,12 21,12 C21,12 16.9090909,18 12,18 C5.45454545,18 3,12 3,12 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"/>
+                                                        <path d="M12,15 C10.3431458,15 9,13.6568542 9,12 C9,10.3431458 10.3431458,9 12,9 C13.6568542,9 15,10.3431458 15,12 C15,13.6568542 13.6568542,15 12,15 Z" fill="#000000" opacity="0.3"/>
+                                                    </g>
+                                                </svg>
+                                                <span class="kt-nav__link-text ml-2">Voir</span>
                                             </a>
                                         </li>
                                     </ul>
@@ -282,7 +307,7 @@
                                 </div>
                                 <div class="kt-widget__body">
                                     <div class="kt-widget__section">
-                                       Description du produit..........
+                                        Description du produit..........
                                     </div>
                                     <div class="kt-widget__item">
                                         <div class="kt-widget__contact">
@@ -321,26 +346,51 @@
                             </div>
                             <div class="kt-portlet__head-toolbar">
                                 <a href="#" class="btn btn-icon" data-toggle="dropdown">
-                                    <i class="flaticon-more-1 kt-font-brand"></i>
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <rect x="0" y="0" width="24" height="24"/>
+                                            <circle fill="#000000" cx="12" cy="5" r="2"/>
+                                            <circle fill="#000000" cx="12" cy="12" r="2"/>
+                                            <circle fill="#000000" cx="12" cy="19" r="2"/>
+                                        </g>
+                                    </svg>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <ul class="kt-nav">
                                         <li class="kt-nav__item">
                                             <a href="#" class="kt-nav__link">
-                                                <i class="kt-nav__link-icon flaticon2-edit"></i>
-                                                <span class="kt-nav__link-text">Modifier</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                        <rect x="0" y="0" width="24" height="24"/>
+                                                        <path d="M8,17.9148182 L8,5.96685884 C8,5.56391781 8.16211443,5.17792052 8.44982609,4.89581508 L10.965708,2.42895648 C11.5426798,1.86322723 12.4640974,1.85620921 13.0496196,2.41308426 L15.5337377,4.77566479 C15.8314604,5.0588212 16,5.45170806 16,5.86258077 L16,17.9148182 C16,18.7432453 15.3284271,19.4148182 14.5,19.4148182 L9.5,19.4148182 C8.67157288,19.4148182 8,18.7432453 8,17.9148182 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000000, 10.707409) rotate(-135.000000) translate(-12.000000, -10.707409) "/>
+                                                        <rect fill="#000000" opacity="0.3" x="5" y="20" width="15" height="2" rx="1"/>
+                                                    </g>
+                                                </svg>
+                                                <span class="kt-nav__link-text ml-2">Modifier</span>
                                             </a>
                                         </li>
                                         <li class="kt-nav__item">
                                             <a href="#" class="kt-nav__link">
-                                                <i class="kt-nav__link-icon flaticon-delete-1"></i>
-                                                <span class="kt-nav__link-text">Supprimer</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                        <rect x="0" y="0" width="24" height="24"/>
+                                                        <path d="M6,8 L18,8 L17.106535,19.6150447 C17.04642,20.3965405 16.3947578,21 15.6109533,21 L8.38904671,21 C7.60524225,21 6.95358004,20.3965405 6.89346498,19.6150447 L6,8 Z M8,10 L8.45438229,14.0894406 L15.5517885,14.0339036 L16,10 L8,10 Z" fill="#000000" fill-rule="nonzero"/>
+                                                        <path d="M14,4.5 L14,3.5 C14,3.22385763 13.7761424,3 13.5,3 L10.5,3 C10.2238576,3 10,3.22385763 10,3.5 L10,4.5 L5.5,4.5 C5.22385763,4.5 5,4.72385763 5,5 L5,5.5 C5,5.77614237 5.22385763,6 5.5,6 L18.5,6 C18.7761424,6 19,5.77614237 19,5.5 L19,5 C19,4.72385763 18.7761424,4.5 18.5,4.5 L14,4.5 Z" fill="#000000" opacity="0.3"/>
+                                                    </g>
+                                                </svg>
+                                                <span class="kt-nav__link-text ml-2 ">Supprimer</span>
                                             </a>
                                         </li>
                                         <li class="kt-nav__item">
                                             <a href="{{route('product.show')}}" class="kt-nav__link">
-                                                <i class="kt-nav__link-icon flaticon-eye"></i>
-                                                <span class="kt-nav__link-text">Voir</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                        <rect x="0" y="0" width="24" height="24"/>
+                                                        <path d="M3,12 C3,12 5.45454545,6 12,6 C16.9090909,6 21,12 21,12 C21,12 16.9090909,18 12,18 C5.45454545,18 3,12 3,12 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"/>
+                                                        <path d="M12,15 C10.3431458,15 9,13.6568542 9,12 C9,10.3431458 10.3431458,9 12,9 C13.6568542,9 15,10.3431458 15,12 C15,13.6568542 13.6568542,15 12,15 Z" fill="#000000" opacity="0.3"/>
+                                                    </g>
+                                                </svg>
+                                                <span class="kt-nav__link-text ml-2">Voir</span>
                                             </a>
                                         </li>
                                     </ul>
@@ -384,7 +434,7 @@
                                     </div>
                                 </div>
                                 <div class="kt-widget__footer">
-                                    <button type="button" class="btn btn-outline-primary btn-lg ">Détail du produit</button>
+                                    <button href="{{route('product.show')}}"  class="btn btn-outline-primary btn-lg ">Détail du produit</button>
                                 </div>
                             </div>
 
@@ -405,26 +455,51 @@
                             </div>
                             <div class="kt-portlet__head-toolbar">
                                 <a href="#" class="btn btn-icon" data-toggle="dropdown">
-                                    <i class="flaticon-more-1 kt-font-brand"></i>
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <rect x="0" y="0" width="24" height="24"/>
+                                            <circle fill="#000000" cx="12" cy="5" r="2"/>
+                                            <circle fill="#000000" cx="12" cy="12" r="2"/>
+                                            <circle fill="#000000" cx="12" cy="19" r="2"/>
+                                        </g>
+                                    </svg>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <ul class="kt-nav">
                                         <li class="kt-nav__item">
                                             <a href="#" class="kt-nav__link">
-                                                <i class="kt-nav__link-icon flaticon2-edit"></i>
-                                                <span class="kt-nav__link-text">Modifier</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                        <rect x="0" y="0" width="24" height="24"/>
+                                                        <path d="M8,17.9148182 L8,5.96685884 C8,5.56391781 8.16211443,5.17792052 8.44982609,4.89581508 L10.965708,2.42895648 C11.5426798,1.86322723 12.4640974,1.85620921 13.0496196,2.41308426 L15.5337377,4.77566479 C15.8314604,5.0588212 16,5.45170806 16,5.86258077 L16,17.9148182 C16,18.7432453 15.3284271,19.4148182 14.5,19.4148182 L9.5,19.4148182 C8.67157288,19.4148182 8,18.7432453 8,17.9148182 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000000, 10.707409) rotate(-135.000000) translate(-12.000000, -10.707409) "/>
+                                                        <rect fill="#000000" opacity="0.3" x="5" y="20" width="15" height="2" rx="1"/>
+                                                    </g>
+                                                </svg>
+                                                <span class="kt-nav__link-text ml-2">Modifier</span>
                                             </a>
                                         </li>
                                         <li class="kt-nav__item">
                                             <a href="#" class="kt-nav__link">
-                                                <i class="kt-nav__link-icon flaticon-delete-1"></i>
-                                                <span class="kt-nav__link-text">Supprimer</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                        <rect x="0" y="0" width="24" height="24"/>
+                                                        <path d="M6,8 L18,8 L17.106535,19.6150447 C17.04642,20.3965405 16.3947578,21 15.6109533,21 L8.38904671,21 C7.60524225,21 6.95358004,20.3965405 6.89346498,19.6150447 L6,8 Z M8,10 L8.45438229,14.0894406 L15.5517885,14.0339036 L16,10 L8,10 Z" fill="#000000" fill-rule="nonzero"/>
+                                                        <path d="M14,4.5 L14,3.5 C14,3.22385763 13.7761424,3 13.5,3 L10.5,3 C10.2238576,3 10,3.22385763 10,3.5 L10,4.5 L5.5,4.5 C5.22385763,4.5 5,4.72385763 5,5 L5,5.5 C5,5.77614237 5.22385763,6 5.5,6 L18.5,6 C18.7761424,6 19,5.77614237 19,5.5 L19,5 C19,4.72385763 18.7761424,4.5 18.5,4.5 L14,4.5 Z" fill="#000000" opacity="0.3"/>
+                                                    </g>
+                                                </svg>
+                                                <span class="kt-nav__link-text ml-2 ">Supprimer</span>
                                             </a>
                                         </li>
                                         <li class="kt-nav__item">
                                             <a href="{{route('product.show')}}" class="kt-nav__link">
-                                                <i class="kt-nav__link-icon flaticon-eye"></i>
-                                                <span class="kt-nav__link-text">Voir</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                        <rect x="0" y="0" width="24" height="24"/>
+                                                        <path d="M3,12 C3,12 5.45454545,6 12,6 C16.9090909,6 21,12 21,12 C21,12 16.9090909,18 12,18 C5.45454545,18 3,12 3,12 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"/>
+                                                        <path d="M12,15 C10.3431458,15 9,13.6568542 9,12 C9,10.3431458 10.3431458,9 12,9 C13.6568542,9 15,10.3431458 15,12 C15,13.6568542 13.6568542,15 12,15 Z" fill="#000000" opacity="0.3"/>
+                                                    </g>
+                                                </svg>
+                                                <span class="kt-nav__link-text ml-2">Voir</span>
                                             </a>
                                         </li>
                                     </ul>
@@ -468,7 +543,7 @@
                                     </div>
                                 </div>
                                 <div class="kt-widget__footer">
-                                    <button type="button" class="btn btn-outline-primary btn-lg ">Détail du produit</button>
+                                    <button href="{{route('product.show')}}"  class="btn btn-outline-primary btn-lg ">Détail du produit</button>
                                 </div>
                             </div>
 
@@ -488,27 +563,52 @@
                                 </h3>
                             </div>
                             <div class="kt-portlet__head-toolbar">
-                                <a href="{{route('product.show')}}" class="btn btn-icon" data-toggle="dropdown">
-                                    <i class="flaticon-more-1 kt-font-brand"></i>
+                                <a href="#" class="btn btn-icon" data-toggle="dropdown">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <rect x="0" y="0" width="24" height="24"/>
+                                            <circle fill="#000000" cx="12" cy="5" r="2"/>
+                                            <circle fill="#000000" cx="12" cy="12" r="2"/>
+                                            <circle fill="#000000" cx="12" cy="19" r="2"/>
+                                        </g>
+                                    </svg>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <ul class="kt-nav">
                                         <li class="kt-nav__item">
                                             <a href="#" class="kt-nav__link">
-                                                <i class="kt-nav__link-icon flaticon2-edit"></i>
-                                                <span class="kt-nav__link-text">Modifier</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                        <rect x="0" y="0" width="24" height="24"/>
+                                                        <path d="M8,17.9148182 L8,5.96685884 C8,5.56391781 8.16211443,5.17792052 8.44982609,4.89581508 L10.965708,2.42895648 C11.5426798,1.86322723 12.4640974,1.85620921 13.0496196,2.41308426 L15.5337377,4.77566479 C15.8314604,5.0588212 16,5.45170806 16,5.86258077 L16,17.9148182 C16,18.7432453 15.3284271,19.4148182 14.5,19.4148182 L9.5,19.4148182 C8.67157288,19.4148182 8,18.7432453 8,17.9148182 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000000, 10.707409) rotate(-135.000000) translate(-12.000000, -10.707409) "/>
+                                                        <rect fill="#000000" opacity="0.3" x="5" y="20" width="15" height="2" rx="1"/>
+                                                    </g>
+                                                </svg>
+                                                <span class="kt-nav__link-text ml-2">Modifier</span>
                                             </a>
                                         </li>
                                         <li class="kt-nav__item">
                                             <a href="#" class="kt-nav__link">
-                                                <i class="kt-nav__link-icon flaticon-delete-1"></i>
-                                                <span class="kt-nav__link-text">Supprimer</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                        <rect x="0" y="0" width="24" height="24"/>
+                                                        <path d="M6,8 L18,8 L17.106535,19.6150447 C17.04642,20.3965405 16.3947578,21 15.6109533,21 L8.38904671,21 C7.60524225,21 6.95358004,20.3965405 6.89346498,19.6150447 L6,8 Z M8,10 L8.45438229,14.0894406 L15.5517885,14.0339036 L16,10 L8,10 Z" fill="#000000" fill-rule="nonzero"/>
+                                                        <path d="M14,4.5 L14,3.5 C14,3.22385763 13.7761424,3 13.5,3 L10.5,3 C10.2238576,3 10,3.22385763 10,3.5 L10,4.5 L5.5,4.5 C5.22385763,4.5 5,4.72385763 5,5 L5,5.5 C5,5.77614237 5.22385763,6 5.5,6 L18.5,6 C18.7761424,6 19,5.77614237 19,5.5 L19,5 C19,4.72385763 18.7761424,4.5 18.5,4.5 L14,4.5 Z" fill="#000000" opacity="0.3"/>
+                                                    </g>
+                                                </svg>
+                                                <span class="kt-nav__link-text ml-2 ">Supprimer</span>
                                             </a>
                                         </li>
                                         <li class="kt-nav__item">
-                                            <a href="#" class="kt-nav__link">
-                                                <i class="kt-nav__link-icon flaticon-eye"></i>
-                                                <span class="kt-nav__link-text">Voir</span>
+                                            <a href="{{route('product.show')}}" class="kt-nav__link">
+                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                        <rect x="0" y="0" width="24" height="24"/>
+                                                        <path d="M3,12 C3,12 5.45454545,6 12,6 C16.9090909,6 21,12 21,12 C21,12 16.9090909,18 12,18 C5.45454545,18 3,12 3,12 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"/>
+                                                        <path d="M12,15 C10.3431458,15 9,13.6568542 9,12 C9,10.3431458 10.3431458,9 12,9 C13.6568542,9 15,10.3431458 15,12 C15,13.6568542 13.6568542,15 12,15 Z" fill="#000000" opacity="0.3"/>
+                                                    </g>
+                                                </svg>
+                                                <span class="kt-nav__link-text ml-2">Voir</span>
                                             </a>
                                         </li>
                                     </ul>
@@ -527,7 +627,7 @@
                                         </div>
                                     </div>
                                     <div class="kt-widget__info">
-                                        <a href="{{route('product.show')}}" class="kt-widget__username">
+                                        <a href="#" class="kt-widget__username">
                                             Nom du produit...
                                         </a>
                                     </div>
@@ -552,7 +652,7 @@
                                     </div>
                                 </div>
                                 <div class="kt-widget__footer">
-                                    <button type="button" class="btn btn-outline-primary btn-lg ">Détail du produit</button>
+                                    <button href="{{route('product.show')}}"  class="btn btn-outline-primary btn-lg ">Détail du produit</button>
                                 </div>
                             </div>
 
@@ -562,7 +662,6 @@
 
                     <!--End::Portlet-->
                 </div>
-
             </div>
 
             <!--End::Section-->

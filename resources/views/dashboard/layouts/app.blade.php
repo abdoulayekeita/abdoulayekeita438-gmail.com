@@ -17,6 +17,7 @@
 
     <!--begin::Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Roboto:300,400,500,600,700">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" >
     <!--end::Fonts -->
 
@@ -47,8 +48,8 @@
             <!-- begin:: Aside -->
             <div class="kt-aside__brand kt-grid__item " id="kt_aside_brand">
                 <div class="kt-aside__brand-logo">
-                    <a href="index.html">
-                        <img alt="Logo" src="{{asset('images/dashboard/yankadi_mobil.png')}}" height="50px" width="170px" />
+                    <a href="{{route('home')}}">
+                        <img alt="Logo" src="{{asset('images/dashboard/yankadi2.png')}}" height="50px" width="170px" />
                     </a>
                 </div>
                 <div class="kt-aside__brand-tools">
@@ -992,8 +993,13 @@
         </div>
     </div>
 </div>
+<script
+    src="https://code.jquery.com/jquery-2.2.4.js"
+    integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+    crossorigin="anonymous"></script>
+<script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ asset('js/jquery.fancybox.min.js') }}"></script>>
 
-<script src="{{ asset('js/app.js') }}"></script>>
 @yield('script')
 </body>
 

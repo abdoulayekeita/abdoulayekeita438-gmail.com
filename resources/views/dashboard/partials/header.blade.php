@@ -1,8 +1,8 @@
 <!-- begin:: Header Mobile -->
 <div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
     <div class="kt-header-mobile__logo">
-        <a href="index.html">
-            <img alt="Logo" src="{{asset('images/dashboard/yankadi_mobil.png')}}" height="50px" width="100px" />
+        <a href="{{route('home')}}">
+            <img alt="Logo" src="{{asset('images/dashboard/yankadi2.png')}}" height="50px" width="100px" />
         </a>
     </div>
     <div class="kt-header-mobile__toolbar">
