@@ -13,8 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/dashboard', function () {
-    return view('dashboard.dashboard_compte_particuler');
+    return view('dashboard.dashboard_compte_busness');
 })->name('dashboard');
+Route::get('/create_shop', function () {
+    return view('dashboard.shop.create');
+})->name('create_shop');
 Route::get('/', function () {
     return view('home.index');
 })->name('home');

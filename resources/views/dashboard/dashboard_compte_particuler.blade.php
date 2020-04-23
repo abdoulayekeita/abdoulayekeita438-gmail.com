@@ -34,7 +34,7 @@
                                 <rect fill="#000000"  transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"/>
                             </g>
                         </svg>
-                        </span><span class="kt-menu__link-text">Ajouter un produit</span></a>
+                        </span><span class="kt-menu__link-text">Déposer une annonce</span></a>
                 </li>
                 <li class="kt-menu__section ">
                     <h4 class="kt-menu__section-text">Aide</h4>
@@ -193,7 +193,7 @@
         <form class="pr-3 pl-3">
             <div class="form-group ">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Rechercher un produit">
+                    <input type="text" class="form-control" placeholder="Rechercher une annonce">
                     <div class="input-group-append">
                         <button class="btn btn-secondary" type="button"><i class="fa fa-search"></i></button>
                     </div>
@@ -208,7 +208,7 @@
                         <rect fill="#000000"  transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"/>
                     </g>
                 </svg>
-                Ajouter un produit</a>
+                Déposer une annonce</a>
         </div>
     </div>
 

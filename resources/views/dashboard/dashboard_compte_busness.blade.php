@@ -24,7 +24,7 @@
                                         </svg></span>
                         <span class="kt-menu__link-text"> Tableau de bord</span></a></li>
                 <li class="kt-menu__section ">
-                    <h4 class="kt-menu__section-text">Produit</h4>
+                    <h4 class="kt-menu__section-text">Annonce</h4>
                     <i class="kt-menu__section-icon flaticon-more-v2"></i>
                 </li>
                 <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
@@ -34,7 +34,28 @@
                                 <rect fill="#000000"  transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"/>
                             </g>
                         </svg>
-                        </span><span class="kt-menu__link-text">Ajouter un produit</span></a>
+                        </span><span class="kt-menu__link-text">Déposer une annonce</span></a>
+                <li class="kt-menu__section ">
+                    <h4 class="kt-menu__section-text">Boutique</h4>
+                    <i class="kt-menu__section-icon flaticon-more-v2"></i>
+                </li>
+                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('create_shop')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/>
+                                <rect fill="#000000"  transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"/>
+                            </g>
+                        </svg>
+                        </span><span class="kt-menu__link-text">Créer une boutique</span></a>
+                </li>
+                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('create_shop')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/>
+                                <rect fill="#000000"  transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"/>
+                            </g>
+                        </svg>
+                        </span><span class="kt-menu__link-text">Mes boutiques</span></a>
                 </li>
                 <li class="kt-menu__section ">
                     <h4 class="kt-menu__section-text">Aide</h4>
@@ -193,7 +214,7 @@
         <form class="pr-3 pl-3">
             <div class="form-group ">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Rechercher un produit">
+                    <input type="text" class="form-control" placeholder="Rechercher une annonce">
                     <div class="input-group-append">
                         <button class="btn btn-secondary" type="button"><i class="fa fa-search"></i></button>
                     </div>
@@ -208,7 +229,7 @@
                         <rect fill="#000000"  transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"/>
                     </g>
                 </svg>
-                Ajouter un produit</a>
+                Déposer une annonce</a>
         </div>
     </div>
 
