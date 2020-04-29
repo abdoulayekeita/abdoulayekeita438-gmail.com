@@ -2,22 +2,19 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-Route::get('/dashboard', function () {
-    return view('dashboard.dashboard_compte_busness');
-})->name('dashboard');
+Auth::routes();
+
+Route::middleware('auth')->namespace('Dashboard')->prefix('dashboard')->name('dashboard')->group(function(){
+
+    Route::get('/', 'DashboardController');
+});
+
 Route::get('/create_shop', function () {
     return view('dashboard.shop.create');
 })->name('create_shop');
+Route::get('/my_shops', function () {
+    return view('dashboard.shop.all_shop');
+})->name('my_shops');
 Route::get('/', function () {
     return view('home.index');
 })->name('home');
@@ -39,6 +36,5 @@ Route::get('/show', function () {
     return view('dashboard.product.show');
 })->name('product.show');
 
-Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');

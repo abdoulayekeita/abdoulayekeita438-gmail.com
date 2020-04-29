@@ -20,6 +20,19 @@
                     <h4 class="kt-menu__section-text">Produit</h4>
                     <i class="kt-menu__section-icon flaticon-more-v2"></i>
                 </li>
+                <li class="kt-menu__item  kt-menu__item--submenu " aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/>
+                                <rect fill="#000000"  transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"/>
+                            </g>
+                        </svg>
+                        </span><span class="kt-menu__link-text">Déposer une annonce</span></a>
+                </li>
+                <li class="kt-menu__section ">
+                    <h4 class="kt-menu__section-text">Boutique</h4>
+                    <i class="kt-menu__section-icon flaticon-more-v2"></i>
+                </li>
                 <li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--active" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -27,7 +40,24 @@
                                 <rect fill="#000000"  transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"/>
                             </g>
                         </svg>
-                        </span><span class="kt-menu__link-text">Ajouter un produit</span></a>
+                        </span><span class="kt-menu__link-text">Créer une boutique</span></a>
+                </li>
+                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('my_shops')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
+                       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <rect x="0" y="0" width="24" height="24"/>
+                                <rect fill="#000000" opacity="0.3" x="4" y="4" width="4" height="4" rx="2"/>
+                                <rect fill="#000000" x="4" y="10" width="4" height="4" rx="2"/>
+                                <rect fill="#000000" x="10" y="4" width="4" height="4" rx="2"/>
+                                <rect fill="#000000" x="10" y="10" width="4" height="4" rx="2"/>
+                                <rect fill="#000000" x="16" y="4" width="4" height="4" rx="2"/>
+                                <rect fill="#000000" x="16" y="10" width="4" height="4" rx="2"/>
+                                <rect fill="#000000" x="4" y="16" width="4" height="4" rx="2"/>
+                                <rect fill="#000000" x="10" y="16" width="4" height="4" rx="2"/>
+                                <rect fill="#000000" x="16" y="16" width="4" height="4" rx="2"/>
+                            </g>
+                        </svg>
+                        </span><span class="kt-menu__link-text">Mes boutiques</span></a>
                 </li>
                 <li class="kt-menu__section ">
                     <h4 class="kt-menu__section-text">Aide</h4>
@@ -209,35 +239,23 @@
                     <div class="kt-grid__item kt-grid__item--fluid kt-wizard-v4__wrapper">
                         <form class="kt-form" action="{{url('store/image')}}">
                             <div class="form-group row">
-                                <label class="col-form-label col-lg-3 col-sm-12">Chosisez les images du produit</label>
-                                <div class="col-lg-4 col-md-9 col-sm-12">
-                                    <div class="dropzone dropzone-default dropzone-brand" id="kt_dropzone_3">
-                                        <div class="dropzone-msg dz-message needsclick">
-                                            <h3 class="dropzone-msg-title">Glisser les image ou clicquer pour charger.</h3>
-                                            <span class="dropzone-msg-desc">charger jusqu'a 10 images</span>
-                                        </div>
+                                <label class="col-xl-3 col-lg-3 col-form-label">Photo</label>
+                                <div class="col-lg-9 col-xl-6">
+                                    <div class="kt-avatar kt-avatar--outline" id="kt_user_add_avatar">
+                                        <div class="kt-avatar__holder" style="background-image: url({{asset('assets/media/users/300_10.jpg')}})"></div>
+                                        <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="Change avatar">
+                                            <i class="fa fa-edit"></i>
+                                            <input type="file" name="kt_user_add_user_avatar">
+                                        </label>
+                                        <span class="kt-avatar__cancel" data-toggle="kt-tooltip" title="Cancel avatar">
+																							<i class="fa fa-times"></i>
+                                                                    </span>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label>Nom </label>
-                                <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Entrer le nom du produit">
-                            </div>
-                            <div class="form-group">
-                                <label>Prix</label>
-                                <input type="number" class="form-control" aria-describedby="emailHelp" placeholder="Entrer le prix du produit">
-                            </div>
-                            <div class="form-group">
-                                <div class="kt-checkbox-inline">
-                                    <label class="kt-checkbox">
-                                        <input type="checkbox"> Prix négociable
-                                        <span></span>
-                                    </label>
-                                    <label class="kt-checkbox">
-                                        <input type="checkbox"> Possibilité d'échange
-                                        <span></span>
-                                    </label>
-                                </div>
+                                <label>Nom de la boutique</label>
+                                <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Entrer le nom de la boutique">
                             </div>
                             <div class="form-group ">
                                 <label >Catégorie</label>
@@ -308,6 +326,22 @@
                             <div class="form-group">
                                 <label for="exampleTextarea">Description</label>
                                 <textarea class="form-control"  rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label>Ma page facebook</label>
+                                        <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="https://web.facebook.com/maboutique">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>Mon URL Instagram</label>
+                                        <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="https://instagram.com/votrenomdeprofilinstagram">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>Site internet</label>
+                                        <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="htpps://www.mon-site-web.com">
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-group row justify-content-center">
                                 <button type="button"  class="btn btn-outline-primary w-auto text-uppercase text-bold btn-pill btn-elevate btn-elevate-air ">

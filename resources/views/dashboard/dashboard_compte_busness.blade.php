@@ -48,11 +48,19 @@
                         </svg>
                         </span><span class="kt-menu__link-text">Créer une boutique</span></a>
                 </li>
-                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('create_shop')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
+                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('my_shops')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/>
-                                <rect fill="#000000"  transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"/>
+                                <rect x="0" y="0" width="24" height="24"/>
+                                <rect fill="#000000" opacity="0.3" x="4" y="4" width="4" height="4" rx="2"/>
+                                <rect fill="#000000" x="4" y="10" width="4" height="4" rx="2"/>
+                                <rect fill="#000000" x="10" y="4" width="4" height="4" rx="2"/>
+                                <rect fill="#000000" x="10" y="10" width="4" height="4" rx="2"/>
+                                <rect fill="#000000" x="16" y="4" width="4" height="4" rx="2"/>
+                                <rect fill="#000000" x="16" y="10" width="4" height="4" rx="2"/>
+                                <rect fill="#000000" x="4" y="16" width="4" height="4" rx="2"/>
+                                <rect fill="#000000" x="10" y="16" width="4" height="4" rx="2"/>
+                                <rect fill="#000000" x="16" y="16" width="4" height="4" rx="2"/>
                             </g>
                         </svg>
                         </span><span class="kt-menu__link-text">Mes boutiques</span></a>
@@ -191,7 +199,12 @@
                         </a>
 
                         <div class="kt-notification__custom kt-space-between justify-content-center">
-                            <a href="custom/user/login-v2.html" target="_blank" class="btn btn-label btn-label-brand btn-sm btn-bold">Se déconnecter</a>
+                            <a href="{{ route('logout') }}" target="_blank" class="btn btn-label btn-label-brand btn-sm btn-bold"onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                {{ __('Se déconnecter') }}</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         </div>
                     </div>
 

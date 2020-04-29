@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use   \App\models\Profile;
 
 class DatabaseSeeder extends Seeder
 {
@@ -11,6 +12,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+      Profile::create(['role'=>"admin"]);
+      Profile::create(['role'=>"Particulier"]);
+      Profile::create(['role'=>"Busness"]);
     }
 }

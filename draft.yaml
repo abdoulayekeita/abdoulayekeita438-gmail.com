@@ -1,0 +1,71 @@
+models:
+  CategoryProduct:
+    name: string
+
+  SubCategoryProduct:
+    name: string
+    CategoryProduct_id: id
+
+  CategoryShop:
+    name: string
+
+  Shop:
+    name: string
+    image: string
+    description: longtext
+    address: string
+    urlPageFacebook: string
+    urlPageInstagram: string
+    urlSite: string
+    CategoryShop_id: id
+    user_id: id
+  Product:
+    name: string
+    price: decimal
+    isPriceNegotiate: boolean
+    isPossibleToChange: boolean
+    description: longtext
+    subCategoryProduct_id: id
+
+  Image:
+    url: string
+    product_id: id
+
+  Post:
+    product_id: id
+    user_id: id
+    shop_id: is nullable
+    published_at: nullable timestamp
+
+controllers:
+  Shop:
+    index:
+      query: all
+      render: dashboard.shop.index with:shops
+    create:
+      render: dashboard.shop.create
+    store:
+      validate: name, image ,description, address, urlPageFacebook, urlPageInstagram, urlSite, CategoryShop_id, user_id
+      save: post
+      render: dashboard.shop.index
+  Product:
+    index:
+      query: all
+      render: dashboard.product.index with:shops
+    create:
+      render: dashboard.product.create
+    store:
+      validate: name, price ,isPriceNegotiate, isPossibleToChange, description, subCategoryProduct_id
+      save: post
+      render: dashboard.product.index
+  Post:
+    index:
+      query: all
+      render: dashboard.product.index with:shops
+    create:
+      render: dashboard.product.create
+    store:
+      validate: name, price ,isPriceNegotiate, isPossibleToChange, description, subCategoryProduct_id
+      save: post
+      render: dashboard.product.index
+

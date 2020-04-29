@@ -8,8 +8,8 @@
         <title>Yankadi-Shop</title>
 
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-        <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet" type="text/css" >
-        <link href="{{ secure_asset('css/footer.css') }}" rel="stylesheet" type="text/css" >
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" >
+        <link href="{{ asset('css/footer.css') }}" rel="stylesheet" type="text/css" >
         <style>
             .kt-svg-icon g [fill] {
                 fill: #478fcd;
@@ -37,6 +37,7 @@
             /*}*/
         </style>
         @yield('style')
+
     </head>
     <body>
 
@@ -49,8 +50,8 @@
             src="https://code.jquery.com/jquery-2.2.4.js"
             integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
             crossorigin="anonymous"></script>
-        <script src="{{ secure_asset('js/jquery.fancybox.min.js') }}"></script>
-        <script src="{{ secure_asset('js/app.js') }}"></script>
+        <script src="{{ asset('js/jquery.fancybox.min.js') }}"></script>
+        <script src="{{ asset('js/app.js') }}"></script>
         @yield('script')
         <script>
             var navbar = document.querySelector('nav')

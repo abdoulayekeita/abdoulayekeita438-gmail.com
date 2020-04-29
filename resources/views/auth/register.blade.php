@@ -79,8 +79,8 @@
                         <div class="kt-grid__item kt-grid__item--fluid kt-wizard-v4__wrapper">
 
                             <!--begin: Form Wizard Form-->
-                            <form class="kt-form" id="kt_user_add_form">
-
+                            <form class="kt-form" id="kt_user_add_form"  method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+                            {{ csrf_field() }}
                                 <!--begin: Form Wizard Step 1-->
                                 <div class="kt-wizard-v4__content" data-ktwizard-type="step-content" data-ktwizard-state="current">
                                     <div class="kt-heading kt-heading--md">Details du Profile:</div>
@@ -93,36 +93,48 @@
                                                             <label class="col-xl-3 col-lg-3 col-form-label">Photo</label>
                                                             <div class="col-lg-9 col-xl-6">
                                                                 <div class="kt-avatar kt-avatar--outline" id="kt_user_add_avatar">
-                                                                    <div class="kt-avatar__holder" style="background-image: url(assets/media/users/300_10.jpg)"></div>
-                                                                    <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="Change avatar">
+                                                                    <div class="kt-avatar__holder" style="background-image: url({{asset('assets/media/users/300_10.jpg')}})" id="profile_holder"></div>
+                                                                    <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="Change l'image">
                                                                         <i class="fa fa-edit"></i>
-                                                                        <input type="file" name="kt_user_add_user_avatar">
+                                                                        <input type="file" name="image">
                                                                     </label>
                                                                     <span class="kt-avatar__cancel" data-toggle="kt-tooltip" title="Cancel avatar">
 																							<i class="fa fa-times"></i>
                                                                     </span>
                                                                 </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label class="col-xl-3 col-lg-3 col-form-label">Prenom</label>
-                                                            <div class="col-lg-9 col-xl-9">
-                                                                <input class="form-control" type="text" placeholder="prenom">
+                                                                @error('image')
+                                                                <div class="alert alert-danger mt-1">{{ $message }}</div>
+                                                                @enderror
                                                             </div>
                                                         </div>
                                                         <div class="form-group row">
                                                             <label class="col-xl-3 col-lg-3 col-form-label">Nom</label>
                                                             <div class="col-lg-9 col-xl-9">
-                                                                <input class="form-control" type="text" placeholder="nom">
+                                                                <input class="form-control" type="text" placeholder="nom" name="last_name"   value="{{ old('last_name') }}" onkeyup="myLastName(this)">
                                                             </div>
+                                                            @error('last_name')
+                                                            <div class="alert alert-danger mt-1">{{ $message }}</div>
+                                                            @enderror
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-xl-3 col-lg-3 col-form-label">Prenom</label>
+                                                            <div class="col-lg-9 col-xl-9">
+                                                                <input class="form-control @error('first_name') is-invalid @enderror" type="text" placeholder="prenom"  name="first_name" value="{{ old('first_name') }}" onkeyup="myFirstName(this)">
+                                                            </div>
+                                                            @error('first_name')
+                                                            <div class="alert alert-danger mt-1">{{ $message }}</div>
+                                                            @enderror
                                                         </div>
                                                         <div class="form-group row">
                                                             <label class="col-xl-3 col-lg-3 col-form-label">Tel</label>
                                                             <div class="col-lg-9 col-xl-9">
                                                                 <div class="input-group">
                                                                     <div class="input-group-prepend"><span class="input-group-text"><i class="la la-phone"></i></span></div>
-                                                                    <input type="text" class="form-control"  placeholder="tel" aria-describedby="basic-addon1">
+                                                                    <input type="tel" class="form-control @error('phone') is-invalid @enderror"  placeholder="tel" aria-describedby="basic-addon1"  name="phone" value="{{ old('phone') }}" onkeyup="myPhone(this)">
                                                                 </div>
+                                                                @error('phone')
+                                                                <div class="alert alert-danger mt-1">{{ $message }}</div>
+                                                                @enderror
                                                             </div>
                                                         </div>
                                                         <div class="form-group row">
@@ -130,10 +142,39 @@
                                                             <div class="col-lg-9 col-xl-9">
                                                                 <div class="input-group">
                                                                     <div class="input-group-prepend"><span class="input-group-text"><i class="la la-at"></i></span></div>
-                                                                    <input type="text" class="form-control" placeholder="nom.prenom@email.com" aria-describedby="basic-addon1">
+                                                                    <input type="email" class="form-control @error('email') is-invalid @enderror" placeholder="nom.prenom@email.com" aria-describedby="basic-addon1" name="email" value="{{ old('email') }}" onkeyup="myEmail(this)">
                                                                 </div>
+                                                                @error('email')
+                                                                <div class="alert alert-danger mt-1">{{ $message }}</div>
+                                                                @enderror
                                                             </div>
                                                         </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-xl-3 col-lg-3 col-form-label">Mot de passe </label>
+                                                            <div class="col-lg-9 col-xl-9">
+                                                                <div class="input-group">
+                                                                    <div class="input-group-prepend"><span class="input-group-text"><i class="la la-at"></i></span></div>
+                                                                    <input type="password" class="form-control @error('password') is-invalid @enderror" placeholder="mot de passe" aria-describedby="basic-addon1" name="password" value="{{ old('password') }}">
+                                                                </div>
+                                                                @error('password')
+                                                                <div class="alert alert-danger mt-1">{{ $message }}</div>
+                                                                @enderror
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-xl-3 col-lg-3 col-form-label">Confirmation </label>
+                                                            <div class="col-lg-9 col-xl-9">
+                                                                <div class="input-group">
+                                                                    <div class="input-group-prepend"><span class="input-group-text"><i class="la la-at"></i></span></div>
+                                                                    <input type="password" class="form-control" placeholder="mot de passe" aria-describedby="basic-addon1" name="password_confirmation" value="{{ old('password_confirmation') }}">
+                                                                </div>
+                                                                @error('password_confirmation')
+                                                                <div class="alert alert-danger mt-1">{{ $message }}</div>
+                                                                @enderror
+                                                            </div>
+                                                        </div>
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -158,20 +199,26 @@
                                                         <div class="form-group form-group-last row">
                                                             <label class="col-xl-3 col-lg-3 col-form-label">Type de compte</label>
                                                             <div class="col-lg-9 col-xl-6">
-                                                                <div class="kt-checkbox-inline">
-                                                                    <label class="kt-checkbox">
-                                                                        <input type="radio" checked=""> Particulier
-                                                                        <span></span>
-                                                                    </label>
-                                                                    <label class="kt-checkbox">
-                                                                        <input type="radio" > Busness
-                                                                        <span></span>
-                                                                    </label>
-
+                                                                <div class="kt-radio-inline">
+                                                                    @foreach($profiles as $profile)
+                                                                        @if ($loop->first)
+                                                                            <label class="kt-radio">
+                                                                                <input type="radio" name="profile_id" value="{{$profile->id}}" checked> {{$profile->role}}
+                                                                                <span></span>
+                                                                            </label>
+                                                                        @else
+                                                                            <label class="kt-radio">
+                                                                                <input type="radio" name="profile_id" value="{{$profile->id}}"> {{$profile->role}}
+                                                                                <span></span>
+                                                                            </label>
+                                                                        @endif
+                                                                    @endforeach
                                                                 </div>
                                                             </div>
+                                                            @error('profile')
+                                                            <div class="alert alert-danger mt-1">{{ $message }}</div>
+                                                            @enderror
                                                         </div>
-                                                        <div class="kt-separator kt-separator--border-dashed kt-separator--portlet-fit kt-separator--space-lg"></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -188,19 +235,25 @@
                                         <div class="kt-wizard-v4__form">
                                             <div class="form-group">
                                                 <label>Address </label>
-                                                <input type="text" class="form-control" name="address2" placeholder="Address" >
+                                                <input type="text" class="form-control @error('address') is-invalid @enderror" name="address" placeholder="Address" name="address"  value="{{ old('address') }}" onkeyup="myAddress(this)">
                                             </div>
+                                            @error('address')
+                                            <div class="alert alert-danger mt-1">{{ $message }}</div>
+                                            @enderror
                                             <div class="row">
                                                 <div class="col-xl-6">
                                                     <div class="form-group">
                                                         <label>Ville</label>
-                                                        <input type="text" class="form-control" name="state" placeholder="ville" >
+                                                        <input type="text" class="form-control @error('city') is-invalid @enderror" name="city" placeholder="ville" value="{{ old('city') }}" onkeyup="myCity(this)">
+                                                        @error('city')
+                                                        <div class="alert alert-danger mt-1">{{ $message }}</div>
+                                                        @enderror
                                                     </div>
                                                 </div>
                                                 <div class="col-xl-6">
                                                     <div class="form-group">
                                                         <label>Pays:</label>
-                                                        <select name="country" class="form-control">
+                                                        <select name="country" class="form-control @error('country') is-invalid @enderror" onchange="myCountry(this)">
                                                             <option value="">Select</option>
                                                             <option value="AF">Afghanistan</option>
                                                             <option value="AX">Åland Islands</option>
@@ -452,6 +505,9 @@
                                                             <option value="ZM">Zambia</option>
                                                             <option value="ZW">Zimbabwe</option>
                                                         </select>
+                                                        @error('country')
+                                                        <div class="alert alert-danger mt-1">{{ $message }}</div>
+                                                        @enderror
                                                     </div>
                                                 </div>
                                             </div>
@@ -463,37 +519,27 @@
 
                                 <!--begin: Form Wizard Step 4-->
                                 <div class="kt-wizard-v4__content" data-ktwizard-type="step-content">
-                                    <div class="kt-heading kt-heading--md">Review your Details and Submit</div>
+                                    <div class="kt-heading kt-heading--md">Revoir les détails et envoyer</div>
                                     <div class="kt-form__section kt-form__section--first">
                                         <div class="kt-wizard-v4__review">
                                             <div class="kt-wizard-v4__review-item">
                                                 <div class="kt-wizard-v4__review-title">
-                                                    Your Account Details
+                                                    Détail de votre compte
                                                 </div>
                                                 <div class="kt-wizard-v4__review-content">
-                                                    John Wick
-                                                    <br /> Phone: +61412345678
-                                                    <br /> Email: johnwick@reeves.com
+                                                    <span id="myFirstName"></span>    <span id="myLastName"></span> {{ old('first_name') }}  {{ old('first_name') }}
+                                                    <br /> Phone: <span id="myPhone"></span> {{ old('phone') }}
+                                                    <br /> Email: <span id="myEmail"></span> {{ old('email') }}
                                                 </div>
                                             </div>
                                             <div class="kt-wizard-v4__review-item">
                                                 <div class="kt-wizard-v4__review-title">
-                                                    Your Address Details
+                                                    Détail de votre address
                                                 </div>
                                                 <div class="kt-wizard-v4__review-content">
-                                                    Address Line 1
-                                                    <br /> Address Line 2
-                                                    <br /> Melbourne 3000, VIC, Australia
-                                                </div>
-                                            </div>
-                                            <div class="kt-wizard-v4__review-item">
-                                                <div class="kt-wizard-v4__review-title">
-                                                    Payment Details
-                                                </div>
-                                                <div class="kt-wizard-v4__review-content">
-                                                    Card Number: xxxx xxxx xxxx 1111
-                                                    <br /> Card Name: John Wick
-                                                    <br /> Card Expiry: 01/21
+                                                    Ville : <span id="myCity"></span> {{ old('city') }}
+                                                    <br /> Address : <span id="myAddress"></span> {{ old('address') }}
+                                                    <br /> Pays : <span id="myCountry"></span> {{ old('country') }}
                                                 </div>
                                             </div>
                                         </div>
@@ -507,12 +553,11 @@
                                     <div class="btn btn-secondary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-prev">
                                         Précédent
                                     </div>
-                                    <div class="btn btn-success btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-submit" style="background-color: #478fcd">
-                                        Enregistrer
-                                    </div>
                                     <div class="btn btn-brand btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-next" style="background-color: #478fcd">
                                         Suivant
                                     </div>
+                                    <button class="btn btn-success btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-submit"   type="submit" style="background-color: #478fcd">Enregistrer</button>
+
                                 </div>
 
                                 <!--end: Form Actions -->
@@ -525,78 +570,30 @@
             </div>
         </div>
     </div>
-
-    {{--    <div class="container">--}}
-{{--    <div class="row justify-content-center">--}}
-{{--        <div class="col-md-8">--}}
-{{--            <div class="card">--}}
-{{--                <div class="card-header">{{ __('Register') }}</div>--}}
-
-{{--                <div class="card-body">--}}
-{{--                    <form method="POST" action="{{ route('register') }}">--}}
-{{--                        @csrf--}}
-
-{{--                        <div class="form-group row">--}}
-{{--                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>--}}
-
-{{--                            <div class="col-md-6">--}}
-{{--                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>--}}
-
-{{--                                @error('name')--}}
-{{--                                    <span class="invalid-feedback" role="alert">--}}
-{{--                                        <strong>{{ $message }}</strong>--}}
-{{--                                    </span>--}}
-{{--                                @enderror--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-
-{{--                        <div class="form-group row">--}}
-{{--                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>--}}
-
-{{--                            <div class="col-md-6">--}}
-{{--                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">--}}
-
-{{--                                @error('email')--}}
-{{--                                    <span class="invalid-feedback" role="alert">--}}
-{{--                                        <strong>{{ $message }}</strong>--}}
-{{--                                    </span>--}}
-{{--                                @enderror--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-
-{{--                        <div class="form-group row">--}}
-{{--                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>--}}
-
-{{--                            <div class="col-md-6">--}}
-{{--                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">--}}
-
-{{--                                @error('password')--}}
-{{--                                    <span class="invalid-feedback" role="alert">--}}
-{{--                                        <strong>{{ $message }}</strong>--}}
-{{--                                    </span>--}}
-{{--                                @enderror--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-
-{{--                        <div class="form-group row">--}}
-{{--                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>--}}
-
-{{--                            <div class="col-md-6">--}}
-{{--                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-
-{{--                        <div class="form-group row mb-0">--}}
-{{--                            <div class="col-md-6 offset-md-4">--}}
-{{--                                <button type="submit" class="btn btn-primary">--}}
-{{--                                    {{ __('Register') }}--}}
-{{--                                </button>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </form>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</div>--}}
+@endsection
+@section('script')
+    <script>
+        function myFirstName(thi) {
+            $('#myFirstName').text(thi.value)
+        }
+        function myLastName(thi) {
+            $('#myLastName').text(thi.value)
+        }
+        function myPhone(thi) {
+            $('#myPhone').text(thi.value)
+        }
+        function myEmail(thi) {
+            $('#myEmail').text(thi.value)
+        }
+        function myAddress(thi) {
+            $('#myAddress').text(thi.value)
+        }
+        function myCountry(thi) {
+            console.log(thi)
+            $('#myCountry').text(thi.value)
+        }
+        function myCity(thi) {
+            $('#myCity').text(thi.value)
+        }
+    </script>
 @endsection

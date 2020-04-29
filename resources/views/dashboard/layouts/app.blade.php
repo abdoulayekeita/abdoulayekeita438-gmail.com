@@ -18,7 +18,7 @@
     <!--begin::Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Roboto:300,400,500,600,700">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="{{secure_asset('css/app.css')}}" rel="stylesheet" type="text/css" >
+    <link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css" >
     <!--end::Fonts -->
 
     @yield('style')
@@ -997,8 +997,8 @@
     src="https://code.jquery.com/jquery-2.2.4.js"
     integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
     crossorigin="anonymous"></script>
-<script src="{{secure_asset('js/app.js')}}"></script>
-<script src="{{secure_asset('js/jquery.fancybox.min.js')}}"></script>>
+<script src="{{asset('js/app.js')}}"></script>
+<script src="{{asset('js/jquery.fancybox.min.js')}}"></script>>
 
 @yield('script')
 </body>
