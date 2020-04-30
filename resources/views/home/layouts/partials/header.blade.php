@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light   fixed-top "  >
    <div class="container">
-       <a class="navbar-brand" href="{{route('home')}}">
+       <a class="navbar-brand" href="">
            <img alt="Logo" src="{{asset('images/dashboard/yankadi2.png')}}"   style="height: 50px;width: 250px;background: transparent !important;"/>
        </a>
        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,7 +21,7 @@
                    </a>
                </li>
                <li class="nav-item my-3 mr-3">
-                   <a class="nav-link  text-dark   d-inline  " href="{{route('shop')}}" style="font-size: 16px">
+                   <a class="nav-link  text-dark   d-inline  " href="" style="font-size: 16px">
 
                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">

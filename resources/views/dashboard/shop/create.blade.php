@@ -33,7 +33,7 @@
                     <h4 class="kt-menu__section-text">Boutique</h4>
                     <i class="kt-menu__section-icon flaticon-more-v2"></i>
                 </li>
-                <li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--active" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
+                <li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--active" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('shop.create')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                 <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/>
@@ -42,7 +42,7 @@
                         </svg>
                         </span><span class="kt-menu__link-text">Créer une boutique</span></a>
                 </li>
-                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('my_shops')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
+                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('shop.index')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                 <rect x="0" y="0" width="24" height="24"/>
@@ -121,29 +121,29 @@
             <!--begin: Search -->
 
             <!--begin: Language bar -->
-            <div class="kt-header__topbar-item kt-header__topbar-item--langs">
-                <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px">
-                                <span class="kt-header__topbar-icon">
-                                    <img class="" src="assets/media/flags/195-france.svg" alt="" />
-                                </span>
-                </div>
-                <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround">
-                    <ul class="kt-nav kt-margin-t-10 kt-margin-b-10">
-                        <li class="kt-nav__item kt-nav__item--active">
-                            <a href="#" class="kt-nav__link">
-                                <span class="kt-nav__link-icon"><img src="assets/media/flags/195-france.svg" alt="" /></span>
-                                <span class="kt-nav__link-text">Français</span>
-                            </a>
-                        </li>
-                        <li class="kt-nav__item">
-                            <a href="#" class="kt-nav__link">
-                                <span class="kt-nav__link-icon"><img src="assets/media/flags/226-united-states.svg" alt="" /></span>
-                                <span class="kt-nav__link-text">English</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+{{--            <div class="kt-header__topbar-item kt-header__topbar-item--langs">--}}
+{{--                <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px">--}}
+{{--                                <span class="kt-header__topbar-icon">--}}
+{{--                                    <img class="" src="assets/media/flags/195-france.svg" alt="" />--}}
+{{--                                </span>--}}
+{{--                </div>--}}
+{{--                <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround">--}}
+{{--                    <ul class="kt-nav kt-margin-t-10 kt-margin-b-10">--}}
+{{--                        <li class="kt-nav__item kt-nav__item--active">--}}
+{{--                            <a href="#" class="kt-nav__link">--}}
+{{--                                <span class="kt-nav__link-icon"><img src="assets/media/flags/195-france.svg" alt="" /></span>--}}
+{{--                                <span class="kt-nav__link-text">Français</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li class="kt-nav__item">--}}
+{{--                            <a href="#" class="kt-nav__link">--}}
+{{--                                <span class="kt-nav__link-icon"><img src="assets/media/flags/226-united-states.svg" alt="" /></span>--}}
+{{--                                <span class="kt-nav__link-text">English</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
             <!--end: Language bar -->
 
@@ -152,7 +152,7 @@
                 <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="0px,0px">
                     <div class="kt-header__topbar-user">
                         <span class="kt-header__topbar-welcome kt-hidden-mobile">Bienvenue,</span>
-                        <span class="kt-header__topbar-username kt-hidden-mobile">Keita</span>
+                        <span class="kt-header__topbar-username kt-hidden-mobile">{{auth()->user()->first_name}}</span>
                         <img class="kt-hidden" alt="Pic" src="assets/media/users/300_25.jpg" />
 
                         <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
@@ -162,9 +162,9 @@
                 <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-xl">
 
                     <!--begin: Head -->
-                    <div class="kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x" style="background-image: url(assets/media/misc/bg-1.jpg)">
+                    <div class="kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x" style="background-image: url({{asset('assets/media/misc/bg-1.jpg')}})">
                         <div class="kt-user-card__avatar">
-                            <img class="kt-hidden" alt="Pic" src="assets/media/users/300_25.jpg" />
+                            <img class="kt-hidden" alt="Pic" src="{{asset('assets/media/users/300_25.jpg')}}" />
 
                             <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
                             <span class="kt-badge kt-badge--lg kt-badge--rounded kt-badge--bold kt-font-success">S</span>
@@ -220,7 +220,7 @@
                 <span class="kt-subheader__separator kt-subheader__separator--v"></span>
                 <div class="kt-subheader__group" id="kt_subheader_search">
 										<span class="kt-subheader__desc" id="kt_subheader_total">
-											Entrer les détails du produit et enregistrer </span>
+											Entrer les détails de la boutique et enregistrer </span>
                 </div>
             </div>
 
@@ -237,114 +237,91 @@
             <div class="kt-portlet__body kt-portlet__body--fit">
                 <div class="kt-grid">
                     <div class="kt-grid__item kt-grid__item--fluid kt-wizard-v4__wrapper">
-                        <form class="kt-form" action="{{url('store/image')}}">
+                        <form class="kt-form" id="kt_user_add_form" action="{{route('shop.store')}}" method="POST" enctype="multipart/form-data">
+                            {{ csrf_field() }}
+                            <input type="hidden" name="user_id" value="{{auth()->user()->id}}">
                             <div class="form-group row">
                                 <label class="col-xl-3 col-lg-3 col-form-label">Photo</label>
                                 <div class="col-lg-9 col-xl-6">
                                     <div class="kt-avatar kt-avatar--outline" id="kt_user_add_avatar">
-                                        <div class="kt-avatar__holder" style="background-image: url({{asset('assets/media/users/300_10.jpg')}})"></div>
-                                        <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="Change avatar">
+                                        <div class="kt-avatar__holder" style="background-image: url({{asset('assets/media/users/300_10.jpg')}})" id="profile_holder"></div>
+                                        <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="Change l'image">
                                             <i class="fa fa-edit"></i>
-                                            <input type="file" name="kt_user_add_user_avatar">
+                                            <input type="file" name="image">
                                         </label>
                                         <span class="kt-avatar__cancel" data-toggle="kt-tooltip" title="Cancel avatar">
 																							<i class="fa fa-times"></i>
                                                                     </span>
                                     </div>
                                 </div>
+                                @error('image')
+                                    <span class="alert alert-danger mt-1" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label>Nom de la boutique</label>
-                                <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Entrer le nom de la boutique">
+                                <input type="text" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}" aria-describedby="emailHelp" placeholder="Entrer le nom de la boutique" name="name">
                             </div>
+                            @error('name')
+                            <span class="alert alert-danger mt-1" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                             <div class="form-group ">
                                 <label >Catégorie</label>
-                                <select class="form-control kt-select2" id="kt_select2_4" name="param">
-                                    <option></option>
-                                    <optgroup label="Alaskan/Hawaiian Time Zone">
-                                        <option value="AK">Alaska</option>
-                                        <option value="HI">Hawaii</option>
-                                    </optgroup>
-                                    <optgroup label="Pacific Time Zone">
-                                        <option value="CA">California</option>
-                                        <option value="NV">Nevada</option>
-                                        <option value="OR">Oregon</option>
-                                        <option value="WA">Washington</option>
-                                    </optgroup>
-                                    <optgroup label="Mountain Time Zone">
-                                        <option value="AZ">Arizona</option>
-                                        <option value="CO">Colorado</option>
-                                        <option value="ID">Idaho</option>
-                                        <option value="MT">Montana</option>
-                                        <option value="NE">Nebraska</option>
-                                        <option value="NM">New Mexico</option>
-                                        <option value="ND">North Dakota</option>
-                                        <option value="UT">Utah</option>
-                                        <option value="WY">Wyoming</option>
-                                    </optgroup>
-                                    <optgroup label="Central Time Zone">
-                                        <option value="AL">Alabama</option>
-                                        <option value="AR">Arkansas</option>
-                                        <option value="IL">Illinois</option>
-                                        <option value="IA">Iowa</option>
-                                        <option value="KS">Kansas</option>
-                                        <option value="KY">Kentucky</option>
-                                        <option value="LA">Louisiana</option>
-                                        <option value="MN">Minnesota</option>
-                                        <option value="MS">Mississippi</option>
-                                        <option value="MO">Missouri</option>
-                                        <option value="OK">Oklahoma</option>
-                                        <option value="SD">South Dakota</option>
-                                        <option value="TX">Texas</option>
-                                        <option value="TN">Tennessee</option>
-                                        <option value="WI">Wisconsin</option>
-                                    </optgroup>
-                                    <optgroup label="Eastern Time Zone">
-                                        <option value="CT">Connecticut</option>
-                                        <option value="DE">Delaware</option>
-                                        <option value="FL">Florida</option>
-                                        <option value="GA">Georgia</option>
-                                        <option value="IN">Indiana</option>
-                                        <option value="ME">Maine</option>
-                                        <option value="MD">Maryland</option>
-                                        <option value="MA">Massachusetts</option>
-                                        <option value="MI">Michigan</option>
-                                        <option value="NH">New Hampshire</option>
-                                        <option value="NJ">New Jersey</option>
-                                        <option value="NY">New York</option>
-                                        <option value="NC">North Carolina</option>
-                                        <option value="OH">Ohio</option>
-                                        <option value="PA">Pennsylvania</option>
-                                        <option value="RI">Rhode Island</option>
-                                        <option value="SC">South Carolina</option>
-                                        <option value="VT">Vermont</option>
-                                        <option value="VA">Virginia</option>
-                                        <option value="WV">West Virginia</option>
-                                    </optgroup>
+                                <select class="form-control kt-select2" id="kt_select2_4" name="sub_category_id">
+                                    <option disabled="" selected="" value=""> -- Sélectionnez une catégorie -- </option>                                    @foreach($categorys as $category)
+                                        <optgroup label="{{$category->name}}">
+                                            @foreach($category->subCategorys as $subCategory)
+                                                <option value="{{$subCategory->id}}">{{$subCategory->name}}</option>
+                                            @endforeach
+                                        </optgroup>
+                                    @endforeach
                                 </select>
                             </div>
+                            @error('sub_category_id')
+                            <span class="alert alert-danger mt-1" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                            <div class="form-group">
+                                <label>Address</label>
+                                <input type="text" class="form-control @error('address') is-invalid @enderror" value="{{ old('address') }}" aria-describedby="emailHelp" placeholder="Entrer l'address  " name="address">
+                            </div>
+                            @error('address')
+                            <span class="alert alert-danger mt-1" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                             <div class="form-group">
                                 <label for="exampleTextarea">Description</label>
-                                <textarea class="form-control"  rows="3"></textarea>
+                                <textarea class="form-control @error('address') is-invalid @enderror"  rows="3" name="description">{{ old('description') }}</textarea>
                             </div>
+                            @error('address')
+                            <span class="alert alert-danger mt-1" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-md-4">
                                         <label>Ma page facebook</label>
-                                        <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="https://web.facebook.com/maboutique">
+                                        <input type="text" class="form-control" value="{{ old('urlPageFacebook') }}" aria-describedby="emailHelp" placeholder="https://web.facebook.com/maboutique" name="urlPageFacebook">
                                     </div>
                                     <div class="col-md-4">
                                         <label>Mon URL Instagram</label>
-                                        <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="https://instagram.com/votrenomdeprofilinstagram">
+                                        <input type="text" class="form-control" value="{{ old('urlPageInstagram') }}" aria-describedby="emailHelp" placeholder="https://instagram.com/votrenomdeprofilinstagram" name="urlPageInstagram">
                                     </div>
                                     <div class="col-md-4">
                                         <label>Site internet</label>
-                                        <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="htpps://www.mon-site-web.com">
+                                        <input type="text" class="form-control" value="{{ old('urlSite') }}" aria-describedby="emailHelp" placeholder="htpps://www.mon-site-web.com" name="urlSite">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group row justify-content-center">
-                                <button type="button"  class="btn btn-outline-primary w-auto text-uppercase text-bold btn-pill btn-elevate btn-elevate-air ">
+                                <button type="submit"  class="btn btn-outline-primary w-auto text-uppercase text-bold btn-pill btn-elevate btn-elevate-air ">
 
                                     Enregistrer</button>
                             </div>
@@ -359,18 +336,8 @@
 <!-- end:: Content -->
 
 @section('script')
-    <script>
-        $('#kt_dropzone_3').dropzone({
-            url: "/store/image", // Set the url for your upload script location
-            paramName: "file", // The name that will be used to transfer the file
-            maxFiles: 10,
-            maxFilesize: 10, // MB
-            addRemoveLinks: true,
-            acceptedFiles: "image/*",
-
-        });
-
-    </script>
-    {{--    <script src="{{asset('js/dropzonejs.js')}}" type="text/javascript"></script>--}}
+<script>
+    new KTAvatar("kt_user_add_avatar");
+</script>
 @endsection
 

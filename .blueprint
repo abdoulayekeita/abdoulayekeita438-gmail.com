@@ -1,0 +1,43 @@
+created:
+    - database/migrations/2020_04_29_114516_create_category_products_table.php
+    - database/migrations/2020_04_29_114517_create_sub_category_products_table.php
+    - database/migrations/2020_04_29_114518_create_category_shops_table.php
+    - database/migrations/2020_04_29_114519_create_shops_table.php
+    - database/migrations/2020_04_29_114520_create_products_table.php
+    - database/migrations/2020_04_29_114521_create_images_table.php
+    - database/migrations/2020_04_29_114522_create_posts_table.php
+    - app/CategoryProduct.php
+    - app/SubCategoryProduct.php
+    - app/CategoryShop.php
+    - app/Shop.php
+    - app/Product.php
+    - app/Image.php
+    - app/Post.php
+    - database/factories/CategoryProductFactory.php
+    - database/factories/SubCategoryProductFactory.php
+    - database/factories/CategoryShopFactory.php
+    - database/factories/ShopFactory.php
+    - database/factories/ProductFactory.php
+    - database/factories/ImageFactory.php
+    - database/factories/PostFactory.php
+    - app/Http/Controllers/ShopController.php
+    - app/Http/Controllers/ProductController.php
+    - app/Http/Controllers/PostController.php
+    - app/Http/Requests/ShopStoreRequest.php
+    - app/Http/Requests/ProductStoreRequest.php
+    - app/Http/Requests/PostStoreRequest.php
+    - resources/views/dashboard/shop/index.blade.php
+    - resources/views/dashboard/product/index.blade.php
+    - tests/Feature/Http/Controllers/ShopControllerTest.php
+    - tests/Feature/Http/Controllers/ProductControllerTest.php
+    - tests/Feature/Http/Controllers/PostControllerTest.php
+updated:
+    - routes/web.php
+models:
+    CategoryProduct: { name: string }
+    SubCategoryProduct: { name: string, CategoryProduct_id: id }
+    CategoryShop: { name: string }
+    Shop: { name: string, image: string, description: longtext, address: string, urlPageFacebook: string, urlPageInstagram: string, urlSite: string, CategoryShop_id: id, user_id: id }
+    Product: { name: string, price: decimal, isPriceNegotiate: boolean, isPossibleToChange: boolean, description: longtext, subCategoryProduct_id: id }
+    Image: { url: string, product_id: id }
+    Post: { product_id: id, user_id: id, shop_id: 'is nullable', published_at: 'nullable timestamp' }

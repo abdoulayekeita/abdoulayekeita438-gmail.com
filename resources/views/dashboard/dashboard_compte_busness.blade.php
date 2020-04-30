@@ -39,7 +39,7 @@
                     <h4 class="kt-menu__section-text">Boutique</h4>
                     <i class="kt-menu__section-icon flaticon-more-v2"></i>
                 </li>
-                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('create_shop')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
+                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('shop.create')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                 <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/>
@@ -48,7 +48,7 @@
                         </svg>
                         </span><span class="kt-menu__link-text">Créer une boutique</span></a>
                 </li>
-                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('my_shops')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
+                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('shop.index')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                 <rect x="0" y="0" width="24" height="24"/>
@@ -127,29 +127,29 @@
             <!--begin: Search -->
 
             <!--begin: Language bar -->
-            <div class="kt-header__topbar-item kt-header__topbar-item--langs">
-                <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px">
-                                <span class="kt-header__topbar-icon">
-                                    <img class="" src="assets/media/flags/195-france.svg" alt="" />
-                                </span>
-                </div>
-                <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround">
-                    <ul class="kt-nav kt-margin-t-10 kt-margin-b-10">
-                        <li class="kt-nav__item kt-nav__item--active">
-                            <a href="#" class="kt-nav__link">
-                                <span class="kt-nav__link-icon"><img src="assets/media/flags/195-france.svg" alt="" /></span>
-                                <span class="kt-nav__link-text">Français</span>
-                            </a>
-                        </li>
-                        <li class="kt-nav__item">
-                            <a href="#" class="kt-nav__link">
-                                <span class="kt-nav__link-icon"><img src="assets/media/flags/226-united-states.svg" alt="" /></span>
-                                <span class="kt-nav__link-text">English</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+{{--            <div class="kt-header__topbar-item kt-header__topbar-item--langs">--}}
+{{--                <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px">--}}
+{{--                                <span class="kt-header__topbar-icon">--}}
+{{--                                    <img class="" src="assets/media/flags/195-france.svg" alt="" />--}}
+{{--                                </span>--}}
+{{--                </div>--}}
+{{--                <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround">--}}
+{{--                    <ul class="kt-nav kt-margin-t-10 kt-margin-b-10">--}}
+{{--                        <li class="kt-nav__item kt-nav__item--active">--}}
+{{--                            <a href="#" class="kt-nav__link">--}}
+{{--                                <span class="kt-nav__link-icon"><img src="assets/media/flags/195-france.svg" alt="" /></span>--}}
+{{--                                <span class="kt-nav__link-text">Français</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li class="kt-nav__item">--}}
+{{--                            <a href="#" class="kt-nav__link">--}}
+{{--                                <span class="kt-nav__link-icon"><img src="assets/media/flags/226-united-states.svg" alt="" /></span>--}}
+{{--                                <span class="kt-nav__link-text">English</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
             <!--end: Language bar -->
 
@@ -159,7 +159,7 @@
                     <div class="kt-header__topbar-user">
                         <span class="kt-header__topbar-welcome kt-hidden-mobile">Bienvenue,</span>
                         <span class="kt-header__topbar-username kt-hidden-mobile">Keita</span>
-                        <img class="kt-hidden" alt="Pic" src="assets/media/users/300_25.jpg" />
+                        <img class="kt-hidden" alt="Pic" src="{{asset('storage/'.auth()->user()->image)}}" />
 
                         <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
                         <span class="kt-badge kt-badge--username kt-badge--unified-success kt-badge--lg kt-badge--rounded kt-badge--bold">S</span>
@@ -168,15 +168,15 @@
                 <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-xl">
 
                     <!--begin: Head -->
-                    <div class="kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x" style="background-image: url(assets/media/misc/bg-1.jpg)">
+                    <div class="kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x" style="background-image: url({{asset('assets/media/misc/bg-1.jpg')}})">
                         <div class="kt-user-card__avatar">
-                            <img class="kt-hidden" alt="Pic" src="assets/media/users/300_25.jpg" />
+                            <img class="kt-hidden" alt="Pic" src="{{asset('assets/media/users/300_25.jpg')}}" />
 
                             <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
                             <span class="kt-badge kt-badge--lg kt-badge--rounded kt-badge--bold kt-font-success">S</span>
                         </div>
                         <div class="kt-user-card__name">
-                            Keita
+                            {{auth()->user()->first_name}}
                         </div>
                     </div>
 
@@ -307,7 +307,7 @@
                                             </a>
                                         </li>
                                         <li class="kt-nav__item">
-                                            <a href="{{route('product.show')}}" class="kt-nav__link">
+                                            <a href="" class="kt-nav__link">
                                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                                                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                                         <rect x="0" y="0" width="24" height="24"/>
@@ -359,7 +359,7 @@
                                     </div>
                                 </div>
                                 <div class="kt-widget__footer">
-                                    <button href="{{route('product.show')}}"  class="btn btn-outline-primary btn-lg ">Détail du produit</button>
+                                    <button href=""  class="btn btn-outline-primary btn-lg ">Détail du produit</button>
                                 </div>
                             </div>
 
@@ -416,7 +416,7 @@
                                             </a>
                                         </li>
                                         <li class="kt-nav__item">
-                                            <a href="{{route('product.show')}}" class="kt-nav__link">
+                                            <a href="" class="kt-nav__link">
                                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                                                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                                         <rect x="0" y="0" width="24" height="24"/>
@@ -468,7 +468,7 @@
                                     </div>
                                 </div>
                                 <div class="kt-widget__footer">
-                                    <button href="{{route('product.show')}}"  class="btn btn-outline-primary btn-lg ">Détail du produit</button>
+                                    <button href=""  class="btn btn-outline-primary btn-lg ">Détail du produit</button>
                                 </div>
                             </div>
 
@@ -525,7 +525,7 @@
                                             </a>
                                         </li>
                                         <li class="kt-nav__item">
-                                            <a href="{{route('product.show')}}" class="kt-nav__link">
+                                            <a href="" class="kt-nav__link">
                                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                                                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                                         <rect x="0" y="0" width="24" height="24"/>
@@ -577,7 +577,7 @@
                                     </div>
                                 </div>
                                 <div class="kt-widget__footer">
-                                    <button href="{{route('product.show')}}"  class="btn btn-outline-primary btn-lg ">Détail du produit</button>
+                                    <button href=""  class="btn btn-outline-primary btn-lg ">Détail du produit</button>
                                 </div>
                             </div>
 
@@ -634,7 +634,7 @@
                                             </a>
                                         </li>
                                         <li class="kt-nav__item">
-                                            <a href="{{route('product.show')}}" class="kt-nav__link">
+                                            <a href="" class="kt-nav__link">
                                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                                                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                                         <rect x="0" y="0" width="24" height="24"/>
@@ -686,7 +686,7 @@
                                     </div>
                                 </div>
                                 <div class="kt-widget__footer">
-                                    <button href="{{route('product.show')}}"  class="btn btn-outline-primary btn-lg ">Détail du produit</button>
+                                    <button href=""  class="btn btn-outline-primary btn-lg ">Détail du produit</button>
                                 </div>
                             </div>
 

@@ -1,7 +1,7 @@
 <!-- begin:: Header Mobile -->
 <div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
     <div class="kt-header-mobile__logo">
-        <a href="{{route('home')}}">
+        <a href="">
             <img alt="Logo" src="{{asset('images/dashboard/yankadi2.png')}}" height="50px" width="100px" />
         </a>
     </div>

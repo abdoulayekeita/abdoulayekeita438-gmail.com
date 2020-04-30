@@ -934,7 +934,7 @@
                         <div id="myCarousel" class="carousel slide" data-ride="carousel">
                             <div class="carousel-inner row w-100 ">
                                 <div class="carousel-item col-lg-4 active" >
-                                    <a href="{{route('detail_annonce')}}">
+                                    <a href="">
                                         <div class="card" >
                                             <img src="{{asset('images/dashboard/keita1.jpg')}}" class="img-fluid rounded " style=" height: 250px; width: 100% !important;display: inline-block;"/>
                                             <div class="card-body ">
@@ -946,7 +946,7 @@
                                     </a>
                                 </div>
                                 <div class="carousel-item col-lg-4" >
-                                    <a href="{{route('detail_annonce')}}">
+                                    <a href="">
                                         <div class="card" >
                                             <img src="{{asset('images/dashboard/keita1.jpg')}}" class="img-fluid rounded " style=" height: 250px; width: 100% !important;display: inline-block;"/>
                                             <div class="card-body ">
@@ -958,7 +958,7 @@
                                     </a>
                                 </div>
                                 <div class="carousel-item col-lg-4">
-                                    <a href="{{route('detail_annonce')}}">
+                                    <a href="">
                                         <div class="card" >
                                             <img src="{{asset('images/dashboard/keita1.jpg')}}" class="img-fluid rounded " style=" height: 250px; width: 100% !important;display: inline-block;"/>
                                             <div class="card-body ">
@@ -970,7 +970,7 @@
                                     </a>
                                 </div>
                                 <div class="carousel-item col-lg-4">
-                                    <a href="{{route('detail_annonce')}}">
+                                    <a href="">
                                         <div class="card" >
                                             <img src="{{asset('images/dashboard/keita1.jpg')}}" class="img-fluid rounded " style=" height: 250px; width: 100% !important;display: inline-block;"/>
                                             <div class="card-body ">
@@ -982,7 +982,7 @@
                                     </a>
                                 </div>
                                 <div class="carousel-item col-lg-4">
-                                    <a href="{{route('detail_annonce')}}">
+                                    <a href="">
                                         <div class="card" >
                                             <img src="{{asset('images/dashboard/keita1.jpg')}}" class="img-fluid rounded " style=" height: 250px; width: 100% !important;display: inline-block;"/>
                                             <div class="card-body ">

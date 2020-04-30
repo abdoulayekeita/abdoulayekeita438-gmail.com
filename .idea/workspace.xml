@@ -2,38 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d91704f-1b08-4daf-9039-655bb2001cc5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/draft.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/fr/auth.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/fr/pagination.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/fr/passwords.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/fr/validation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shop.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_01_230535_create_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_01_230435_create_categories_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_01_230925_create_modelivraisons_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_01_230855_create_modelivraisons_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_01_231009_create_etatscmd_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_01_230500_create_etatscmd_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_03_183848_create_sous_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_01_230447_create_sous_categories_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_12_232437_create_profiles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_10_232437_create_profiles_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/Annonce.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/Boutique.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/Categorie.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/Commande.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/EtatCmd.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/Facture.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/ImagesBoutique.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/ImagesProduit.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/Livraison.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/ModeLivraison.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/Produit.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/SousCategorie.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_01_230408_create_boutiques_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_01_230435_create_categories_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_01_230447_create_sous_categories_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_01_230448_create_produits_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_01_230500_create_etatscmd_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_01_230710_create_annonces_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_01_230738_create_commandes_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_01_230804_create_factures_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_01_230855_create_modelivraisons_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_01_230858_create_livraisons_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_27_215511_create_images_produit_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_27_221218_create_images_boutique_table.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dashboard/dashboard_compte_busness.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/dashboard_compte_busness.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/dashboard_compte_particuler.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/dashboard_compte_particulier.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dashboard/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/partials/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/product/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/product/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/shop/all_shop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/shop/content_shop.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dashboard/shop/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/shop/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/layouts/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/layouts/partials/header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -175,25 +182,25 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/lang" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/package-lock.json" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/package-lock.json" />
     <property name="two.files.diff.last.used.folder" value="$PROJECT_DIR$/resources/views/layouts" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\dell\Documents\laravel\shop\resources\views\home" />
-      <recent name="C:\Users\dell\Documents\laravel\shop\public\js" />
-      <recent name="C:\Users\dell\Documents\laravel\shop\public\scss" />
-      <recent name="C:\Users\dell\Documents\laravel\shop\resources\views\home\layouts" />
-      <recent name="C:\Users\dell\Documents\laravel\shop\resources\views\home\layout" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\dell\Documents\laravel\shop\resources\lang" />
       <recent name="C:\Users\dell\Documents\laravel\shop\public\css" />
       <recent name="C:\Users\dell\Documents\laravel\shop\public\scss" />
       <recent name="C:\Users\dell\Documents\laravel\shop\public\js" />
       <recent name="C:\Users\dell\Documents\laravel\shop\database\migrations" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\dell\Documents\laravel\shop\app\models" />
+      <recent name="C:\Users\dell\Documents\laravel\shop\resources\views\home" />
+      <recent name="C:\Users\dell\Documents\laravel\shop\public\js" />
+      <recent name="C:\Users\dell\Documents\laravel\shop\public\scss" />
+      <recent name="C:\Users\dell\Documents\laravel\shop\resources\views\home\layouts" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -239,7 +246,8 @@
       <workItem from="1586507482131" duration="37540000" />
       <workItem from="1586794097680" duration="120493000" />
       <workItem from="1587721102080" duration="40049000" />
-      <workItem from="1588073951663" duration="17820000" />
+      <workItem from="1588073951663" duration="37883000" />
+      <workItem from="1588195260334" duration="30845000" />
     </task>
     <servers />
   </component>

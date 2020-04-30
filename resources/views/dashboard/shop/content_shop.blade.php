@@ -1,6 +1,6 @@
 @extends('dashboard.layouts.app')
 @section('style')
-
+    <link rel="stylesheet" href="{{ asset('css/searchcard.css') }}">
 @endsection
 
 <!-- begin:: Aside Menu -->
@@ -20,14 +20,44 @@
                     <h4 class="kt-menu__section-text">Produit</h4>
                     <i class="kt-menu__section-icon flaticon-more-v2"></i>
                 </li>
-                <li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--active" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
+                <li class="kt-menu__item  kt-menu__item--submenu " aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                 <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/>
                                 <rect fill="#000000"  transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"/>
                             </g>
                         </svg>
-                        </span><span class="kt-menu__link-text">Ajouter un produit</span></a>
+                        </span><span class="kt-menu__link-text">Déposer une annonce</span></a>
+                </li>
+                <li class="kt-menu__section ">
+                    <h4 class="kt-menu__section-text">Boutique</h4>
+                    <i class="kt-menu__section-icon flaticon-more-v2"></i>
+                </li>
+                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('shop.create')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/>
+                                <rect fill="#000000"  transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"/>
+                            </g>
+                        </svg>
+                        </span><span class="kt-menu__link-text">Créer une boutique</span></a>
+                </li>
+                <li class="kt-menu__item  kt-menu__item--submenu  kt-menu__item--active" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('shop.index')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
+                       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <rect x="0" y="0" width="24" height="24"/>
+                                <rect fill="#000000" opacity="0.3" x="4" y="4" width="4" height="4" rx="2"/>
+                                <rect fill="#000000" x="4" y="10" width="4" height="4" rx="2"/>
+                                <rect fill="#000000" x="10" y="4" width="4" height="4" rx="2"/>
+                                <rect fill="#000000" x="10" y="10" width="4" height="4" rx="2"/>
+                                <rect fill="#000000" x="16" y="4" width="4" height="4" rx="2"/>
+                                <rect fill="#000000" x="16" y="10" width="4" height="4" rx="2"/>
+                                <rect fill="#000000" x="4" y="16" width="4" height="4" rx="2"/>
+                                <rect fill="#000000" x="10" y="16" width="4" height="4" rx="2"/>
+                                <rect fill="#000000" x="16" y="16" width="4" height="4" rx="2"/>
+                            </g>
+                        </svg>
+                        </span><span class="kt-menu__link-text">Mes boutiques</span></a>
                 </li>
                 <li class="kt-menu__section ">
                     <h4 class="kt-menu__section-text">Aide</h4>
@@ -91,29 +121,7 @@
             <!--begin: Search -->
 
             <!--begin: Language bar -->
-            <div class="kt-header__topbar-item kt-header__topbar-item--langs">
-                <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px">
-                                <span class="kt-header__topbar-icon">
-                                    <img class="" src="{{asset('assets/media/flags/195-france.svg')}}" alt="" />
-                                </span>
-                </div>
-                <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround">
-                    <ul class="kt-nav kt-margin-t-10 kt-margin-b-10">
-                        <li class="kt-nav__item kt-nav__item--active">
-                            <a href="#" class="kt-nav__link">
-                                <span class="kt-nav__link-icon"><img src="{{asset('assets/media/flags/195-france.svg')}}" alt="" /></span>
-                                <span class="kt-nav__link-text">Français</span>
-                            </a>
-                        </li>
-                        <li class="kt-nav__item">
-                            <a href="#" class="kt-nav__link">
-                                <span class="kt-nav__link-icon"><img src="{{asset('assets/media/flags/226-united-states.svg')}}" alt="" /></span>
-                                <span class="kt-nav__link-text">English</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+
 
             <!--end: Language bar -->
 
@@ -123,7 +131,7 @@
                     <div class="kt-header__topbar-user">
                         <span class="kt-header__topbar-welcome kt-hidden-mobile">Bienvenue,</span>
                         <span class="kt-header__topbar-username kt-hidden-mobile">{{auth()->user()->first_name}}</span>
-                        <img class="kt-hidden" alt="Pic" src="{{asset('assets/media/users/300_25.jpg')}}" />
+                        <img class="kt-hidden" alt="Pic" src="assets/media/users/300_25.jpg" />
 
                         <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
                         <span class="kt-badge kt-badge--username kt-badge--unified-success kt-badge--lg kt-badge--rounded kt-badge--bold">S</span>
@@ -181,162 +189,131 @@
 
 <!-- begin:: Content Head -->
 @section('ContentHead')
-    <div class="kt-subheader   kt-grid__item" id="kt_subheader">
-        <div class="kt-container  kt-container--fluid ">
-            <div class="kt-subheader__main">
-                <h3 class="kt-subheader__title">
-                    Nouveau produit
-                </h3>
-                <span class="kt-subheader__separator kt-subheader__separator--v"></span>
-                <div class="kt-subheader__group" id="kt_subheader_search">
-										<span class="kt-subheader__desc" id="kt_subheader_total">
-											Entrer les détails du produit et enregistrer </span>
+    <div class=" pr-5 pl-5 justify-content-center " >
+
+        <form class="pr-3 pl-3">
+            <div class="form-group ">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Rechercher un produit">
+                    <div class="input-group-append">
+                        <button class="btn btn-secondary" type="button"><i class="fa fa-search"></i></button>
+                    </div>
                 </div>
             </div>
-
+        </form>
+        <div class="mb-4 pl-3">
+            <a href="{{route('product.create')}}"  class="btn btn-outline-primary text-primary btn-hover-light btn-pill btn-elevate btn-elevate-air ">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/>
+                        <rect fill="#000000"  transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"/>
+                    </g>
+                </svg>
+                Ajouter un produit</a>
         </div>
     </div>
+
 
 @endsection
 <!-- end:: Content Head -->
 
 <!-- begin:: Content -->
 @section('Content')
-    <div class="kt-container  kt-container">
-        <div class="kt-portlet p-5">
-            <div class="kt-portlet__body kt-portlet__body--fit">
-                <div class="kt-grid">
-                    <div class="kt-grid__item kt-grid__item--fluid kt-wizard-v4__wrapper">
-                        <form class="kt-form" action="">
-                            <div class="form-group row">
-                                <label class="col-form-label col-lg-3 col-sm-12">Chosisez les images du produit</label>
-                                <div class="col-lg-4 col-md-9 col-sm-12">
-                                    <div class="dropzone dropzone-default dropzone-brand" id="kt_dropzone_3">
-                                        <div class="dropzone-msg dz-message needsclick">
-                                            <h3 class="dropzone-msg-title">Glisser les image ou clicquer pour charger.</h3>
-                                            <span class="dropzone-msg-desc">charger jusqu'a 10 images</span>
+    <section >
+
+        <div class="kt-container--fluid " >
+            <div class="kt-portlet container ">
+                <div class="kt-portlet__body ">
+                    <h2 class="row justify-content-center">{{$shop->name}}</h2>
+                    <div class="row">
+                        <a href="">
+                            <div class="card-media">
+                                <!-- media container -->
+                                <div class="card-media-object-container">
+                                    <div class="card-media-object" style="background-image: url({{asset('images/dashboard/ecommerce1.jpg')}});"></div>
+                                </div>
+                                <!-- body container -->
+                                <div class="card-media-body">
+                                    <div class="card-media-body-top" style="margin-bottom: 2rem;">
+                                        <span class="font-weight-bold  lead" style="color: #478fcd;font-size: 20px">nom du produit</span>
+                                        <div class="card-media-body-top-icons u-float-right">
                                         </div>
                                     </div>
+                                    <span class="card-media-body-heading text-primary h-pay" style="font-size: 15px"><strong>4000 FCFA</strong></span>
+                                    <span class="card-media-body-heading text-success h-pay mt-4"><span class="text-dark">publier depuis 10/10/2020 </span></span>
+                                    <div class="card-media-body-supporting-bottom">
+                                        <span class="card-media-body-supporting-bottom-text subtle">Immobilier</span>
+                                    </div>
+                                    <div class="card-media-body-supporting-bottom card-media-body-supporting-bottom-reveal">
+                                        <br>
+                                        <a href="" class="card-media-body-supporting-bottom-text card-media-link u-float-right">En savoir plus</a>
+                                    </div>
+                                </div>{{--        <span class="card-media-body-supporting-bottom-text mt-2 text-primary">#Music #Party</span>--}}
+                            </div>
+                        </a>
+                    </div>
+                    <div class="row">
+                        <a href="">
+                            <div class="card-media">
+                                <!-- media container -->
+                                <div class="card-media-object-container">
+                                    <div class="card-media-object" style="background-image: url({{asset('images/dashboard/cafe.jpg')}});"></div>
                                 </div>
+                                <!-- body container -->
+                                <div class="card-media-body">
+                                    <div class="card-media-body-top" style="margin-bottom: 2rem;">
+                                        <span class="font-weight-bold  lead" style="color: #478fcd;font-size: 20px">nom du produit</span>
+                                        <div class="card-media-body-top-icons u-float-right">
+                                        </div>
+                                    </div>
+                                    <span class="card-media-body-heading text-primary h-pay" style="font-size: 15px"><strong>4000 FCFA</strong></span>
+                                    <span class="card-media-body-heading text-success h-pay mt-4"><span class="text-dark">publier depuis 10/10/2020 </span></span>
+                                    <div class="card-media-body-supporting-bottom">
+                                        <span class="card-media-body-supporting-bottom-text subtle">Immobilier</span>
+                                    </div>
+                                    <div class="card-media-body-supporting-bottom card-media-body-supporting-bottom-reveal">
+                                        <br>
+                                        <a href="" class="card-media-body-supporting-bottom-text card-media-link u-float-right">En savoir plus</a>
+                                    </div>
+                                </div>{{--        <span class="card-media-body-supporting-bottom-text mt-2 text-primary">#Music #Party</span>--}}
                             </div>
-                            <div class="form-group">
-                                <label>Nom </label>
-                                <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Entrer le nom du produit">
-                            </div>
-                            <div class="form-group">
-                                <label>Prix</label>
-                                <input type="number" class="form-control" aria-describedby="emailHelp" placeholder="Entrer le prix du produit">
-                            </div>
-                            <div class="form-group">
-                                <div class="kt-checkbox-inline">
-                                    <label class="kt-checkbox">
-                                        <input type="checkbox"> Prix négociable
-                                        <span></span>
-                                    </label>
-                                    <label class="kt-checkbox">
-                                        <input type="checkbox"> Possibilité d'échange
-                                        <span></span>
-                                    </label>
+                        </a>
+                    </div>
+                    <div class="row">
+                        <a href="">
+                            <div class="card-media">
+                                <!-- media container -->
+                                <div class="card-media-object-container">
+                                    <div class="card-media-object" style="background-image: url({{asset('images/dashboard/shop1.jpg')}});"></div>
                                 </div>
+                                <!-- body container -->
+                                <div class="card-media-body">
+                                    <div class="card-media-body-top" style="margin-bottom: 2rem;">
+                                        <span class="font-weight-bold  lead" style="color: #478fcd;font-size: 20px">nom du produit</span>
+                                        <div class="card-media-body-top-icons u-float-right">
+                                        </div>
+                                    </div>
+                                    <span class="card-media-body-heading text-primary h-pay" style="font-size: 15px"><strong>4000 FCFA</strong></span>
+                                    <span class="card-media-body-heading text-success h-pay mt-4"><span class="text-dark">publier depuis 10/10/2020 </span></span>
+                                    <div class="card-media-body-supporting-bottom">
+                                        <span class="card-media-body-supporting-bottom-text subtle">Immobilier</span>
+                                    </div>
+                                    <div class="card-media-body-supporting-bottom card-media-body-supporting-bottom-reveal">
+                                        <br>
+                                        <a href="" class="card-media-body-supporting-bottom-text card-media-link u-float-right">En savoir plus</a>
+                                    </div>
+                                </div>{{--        <span class="card-media-body-supporting-bottom-text mt-2 text-primary">#Music #Party</span>--}}
                             </div>
-                            <div class="form-group ">
-                                <label >Catégorie</label>
-                                <select class="form-control kt-select2" id="kt_select2_4" name="param">
-                                    <option></option>
-                                    <optgroup label="Alaskan/Hawaiian Time Zone">
-                                        <option value="AK">Alaska</option>
-                                        <option value="HI">Hawaii</option>
-                                    </optgroup>
-                                    <optgroup label="Pacific Time Zone">
-                                        <option value="CA">California</option>
-                                        <option value="NV">Nevada</option>
-                                        <option value="OR">Oregon</option>
-                                        <option value="WA">Washington</option>
-                                    </optgroup>
-                                    <optgroup label="Mountain Time Zone">
-                                        <option value="AZ">Arizona</option>
-                                        <option value="CO">Colorado</option>
-                                        <option value="ID">Idaho</option>
-                                        <option value="MT">Montana</option>
-                                        <option value="NE">Nebraska</option>
-                                        <option value="NM">New Mexico</option>
-                                        <option value="ND">North Dakota</option>
-                                        <option value="UT">Utah</option>
-                                        <option value="WY">Wyoming</option>
-                                    </optgroup>
-                                    <optgroup label="Central Time Zone">
-                                        <option value="AL">Alabama</option>
-                                        <option value="AR">Arkansas</option>
-                                        <option value="IL">Illinois</option>
-                                        <option value="IA">Iowa</option>
-                                        <option value="KS">Kansas</option>
-                                        <option value="KY">Kentucky</option>
-                                        <option value="LA">Louisiana</option>
-                                        <option value="MN">Minnesota</option>
-                                        <option value="MS">Mississippi</option>
-                                        <option value="MO">Missouri</option>
-                                        <option value="OK">Oklahoma</option>
-                                        <option value="SD">South Dakota</option>
-                                        <option value="TX">Texas</option>
-                                        <option value="TN">Tennessee</option>
-                                        <option value="WI">Wisconsin</option>
-                                    </optgroup>
-                                    <optgroup label="Eastern Time Zone">
-                                        <option value="CT">Connecticut</option>
-                                        <option value="DE">Delaware</option>
-                                        <option value="FL">Florida</option>
-                                        <option value="GA">Georgia</option>
-                                        <option value="IN">Indiana</option>
-                                        <option value="ME">Maine</option>
-                                        <option value="MD">Maryland</option>
-                                        <option value="MA">Massachusetts</option>
-                                        <option value="MI">Michigan</option>
-                                        <option value="NH">New Hampshire</option>
-                                        <option value="NJ">New Jersey</option>
-                                        <option value="NY">New York</option>
-                                        <option value="NC">North Carolina</option>
-                                        <option value="OH">Ohio</option>
-                                        <option value="PA">Pennsylvania</option>
-                                        <option value="RI">Rhode Island</option>
-                                        <option value="SC">South Carolina</option>
-                                        <option value="VT">Vermont</option>
-                                        <option value="VA">Virginia</option>
-                                        <option value="WV">West Virginia</option>
-                                    </optgroup>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleTextarea">Description</label>
-                                <textarea class="form-control"  rows="3"></textarea>
-                            </div>
-                            <div class="form-group row justify-content-center">
-                                <button type="button"  class="btn btn-outline-primary w-auto text-uppercase text-bold btn-pill btn-elevate btn-elevate-air ">
-
-                                    Enregistrer</button>
-                            </div>
-                        </form>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
 @endsection
 <!-- end:: Content -->
 
 @section('script')
-    <script>
-        $('#kt_dropzone_3').dropzone({
-            url: "/store/image", // Set the url for your upload script location
-            paramName: "file", // The name that will be used to transfer the file
-            maxFiles: 10,
-            maxFilesize: 10, // MB
-            addRemoveLinks: true,
-            acceptedFiles: "image/*",
 
-        });
-
-    </script>
-{{--    <script src="{{asset('js/dropzonejs.js')}}" type="text/javascript"></script>--}}
 @endsection
-
