@@ -14,7 +14,6 @@ class Post extends Model
     protected $fillable = [
         'product_id',
         'user_id',
-        'shop_id',
         'published_at',
     ];
 
@@ -41,11 +40,11 @@ class Post extends Model
 
     public function product()
     {
-        return $this->belongsTo(\App\Product::class);
+        return $this->belongsTo(Product::class);
     }
 
     public function user()
     {
-        return $this->belongsTo(\App\User::class);
+        return $this->belongsTo(User::class);
     }
 }

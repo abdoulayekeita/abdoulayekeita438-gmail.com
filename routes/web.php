@@ -8,12 +8,14 @@ Route::middleware('auth')->namespace('Dashboard')->prefix('dashboard')->name('da
 
     Route::get('/', 'DashboardController');
 });
+Route::post('/product/image/upload','ImageUploadController@store');
+Route::get('/product/image/delete', 'ImageUploadController@destroy');
 
-Route::resource('shop', 'ShopController')->only('index', 'create', 'store','show');
+Route::resource('shop', 'ShopController');
 
-Route::resource('product', 'ProductController')->only('index', 'create', 'store');
+Route::resource('shop.product', 'ProductController');
 
-Route::resource('post', 'PostController')->only('index', 'create', 'store');
+Route::resource('post', 'PostController');
 
 Route::get('/',function (){
     return view('home.index');

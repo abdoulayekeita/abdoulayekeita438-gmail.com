@@ -1,6 +1,6 @@
 @extends('dashboard.layouts.app')
 @section('style')
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.0/dropzone.css">
 @endsection
 
 <!-- begin:: Aside Menu -->
@@ -207,110 +207,81 @@
             <div class="kt-portlet__body kt-portlet__body--fit">
                 <div class="kt-grid">
                     <div class="kt-grid__item kt-grid__item--fluid kt-wizard-v4__wrapper">
-                        <form class="kt-form" action="">
-                            <div class="form-group row">
-                                <label class="col-form-label col-lg-3 col-sm-12">Chosisez les images du produit</label>
-                                <div class="col-lg-4 col-md-9 col-sm-12">
-                                    <div class="dropzone dropzone-default dropzone-brand" id="kt_dropzone_3">
-                                        <div class="dropzone-msg dz-message needsclick">
-                                            <h3 class="dropzone-msg-title">Glisser les image ou clicquer pour charger.</h3>
-                                            <span class="dropzone-msg-desc">charger jusqu'a 10 images</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <form  class="dropzone " method="post" enctype="multipart/form-data">
+                            {!! csrf_field() !!}
+                        </form>
+                        <form class="mt-2"  action="{{route('shop.product.store',$shop)}}" accept-charset="UTF-8"  method="POST" enctype="multipart/form-data" >
+                            @csrf
+                            <input type="hidden" name="shop_id" value="{{$shop->id}}">
+                            <input type="hidden" autocomplete="OFF" name="item_images" id="item_images" placeholder="" class="form-control input-sm" required />
                             <div class="form-group">
                                 <label>Nom </label>
-                                <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Entrer le nom du produit">
+                                <input type="text" class="form-control  @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}"  placeholder="Entrer le nom du produit">
                             </div>
+                            @error('name')
+                                <span class="alert alert-danger mt-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                             <div class="form-group">
                                 <label>Prix</label>
-                                <input type="number" class="form-control" aria-describedby="emailHelp" placeholder="Entrer le prix du produit">
+                                <input type="number" class="form-control @error('price') is-invalid @enderror" name="price" value="{{ old('price') }}"  placeholder="Entrer le prix du produit">
                             </div>
+                            @error('price')
+                            <span class="alert alert-danger mt-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                             <div class="form-group">
                                 <div class="kt-checkbox-inline">
                                     <label class="kt-checkbox">
-                                        <input type="checkbox"> Prix négociable
+                                        <input type="checkbox" name="isPriceNegotiate" value="{{true}}"> Prix négociable
                                         <span></span>
                                     </label>
+                                    @error('isPriceNegotiate')
+                                        <span class="alert alert-danger mt-1" role="alert">
+                                             <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                     <label class="kt-checkbox">
-                                        <input type="checkbox"> Possibilité d'échange
+                                        <input type="checkbox" name="isPossibleToChange" value="{{true}}"> Possibilité d'échange
                                         <span></span>
                                     </label>
+                                    @error('isPossibleToChange')
+                                         <span class="alert alert-danger mt-1" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                         </span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-group ">
                                 <label >Catégorie</label>
-                                <select class="form-control kt-select2" id="kt_select2_4" name="param">
-                                    <option></option>
-                                    <optgroup label="Alaskan/Hawaiian Time Zone">
-                                        <option value="AK">Alaska</option>
-                                        <option value="HI">Hawaii</option>
-                                    </optgroup>
-                                    <optgroup label="Pacific Time Zone">
-                                        <option value="CA">California</option>
-                                        <option value="NV">Nevada</option>
-                                        <option value="OR">Oregon</option>
-                                        <option value="WA">Washington</option>
-                                    </optgroup>
-                                    <optgroup label="Mountain Time Zone">
-                                        <option value="AZ">Arizona</option>
-                                        <option value="CO">Colorado</option>
-                                        <option value="ID">Idaho</option>
-                                        <option value="MT">Montana</option>
-                                        <option value="NE">Nebraska</option>
-                                        <option value="NM">New Mexico</option>
-                                        <option value="ND">North Dakota</option>
-                                        <option value="UT">Utah</option>
-                                        <option value="WY">Wyoming</option>
-                                    </optgroup>
-                                    <optgroup label="Central Time Zone">
-                                        <option value="AL">Alabama</option>
-                                        <option value="AR">Arkansas</option>
-                                        <option value="IL">Illinois</option>
-                                        <option value="IA">Iowa</option>
-                                        <option value="KS">Kansas</option>
-                                        <option value="KY">Kentucky</option>
-                                        <option value="LA">Louisiana</option>
-                                        <option value="MN">Minnesota</option>
-                                        <option value="MS">Mississippi</option>
-                                        <option value="MO">Missouri</option>
-                                        <option value="OK">Oklahoma</option>
-                                        <option value="SD">South Dakota</option>
-                                        <option value="TX">Texas</option>
-                                        <option value="TN">Tennessee</option>
-                                        <option value="WI">Wisconsin</option>
-                                    </optgroup>
-                                    <optgroup label="Eastern Time Zone">
-                                        <option value="CT">Connecticut</option>
-                                        <option value="DE">Delaware</option>
-                                        <option value="FL">Florida</option>
-                                        <option value="GA">Georgia</option>
-                                        <option value="IN">Indiana</option>
-                                        <option value="ME">Maine</option>
-                                        <option value="MD">Maryland</option>
-                                        <option value="MA">Massachusetts</option>
-                                        <option value="MI">Michigan</option>
-                                        <option value="NH">New Hampshire</option>
-                                        <option value="NJ">New Jersey</option>
-                                        <option value="NY">New York</option>
-                                        <option value="NC">North Carolina</option>
-                                        <option value="OH">Ohio</option>
-                                        <option value="PA">Pennsylvania</option>
-                                        <option value="RI">Rhode Island</option>
-                                        <option value="SC">South Carolina</option>
-                                        <option value="VT">Vermont</option>
-                                        <option value="VA">Virginia</option>
-                                        <option value="WV">West Virginia</option>
-                                    </optgroup>
+                                <select class="form-control kt-select2" id="kt_select2_4" name="sub_category_id">
+                                    <option disabled="" selected="" value=""> -- Sélectionnez une catégorie -- </option>                                    @foreach($categorys as $category)
+                                        <optgroup label="{{$category->name}}">
+                                            @foreach($category->subCategorys as $subCategory)
+                                                <option value="{{$subCategory->id}}">{{$subCategory->name}}</option>
+                                            @endforeach
+                                        </optgroup>
+                                    @endforeach
                                 </select>
                             </div>
+                            @error('sub_category_id')
+                                 <span class="alert alert-danger mt-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                 </span>
+                            @enderror
                             <div class="form-group">
                                 <label for="exampleTextarea">Description</label>
-                                <textarea class="form-control"  rows="3"></textarea>
+                                <textarea class="form-control @error('description') is-invalid @enderror"  rows="3" name="description">{{ old('description') }}</textarea>
                             </div>
+                            @error('description')
+                                 <span class="alert alert-danger mt-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                 </span>
+                            @enderror
                             <div class="form-group row justify-content-center">
-                                <button type="button"  class="btn btn-outline-primary w-auto text-uppercase text-bold btn-pill btn-elevate btn-elevate-air ">
+                                <button type="submit"  class="btn btn-outline-primary w-auto text-uppercase text-bold btn-pill btn-elevate btn-elevate-air ">
 
                                     Enregistrer</button>
                             </div>
@@ -325,18 +296,84 @@
 <!-- end:: Content -->
 
 @section('script')
+{{--    <script src="{{asset('js/dropzonejs.js')}}"></script>--}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.0/dropzone.js"></script>
     <script>
-        $('#kt_dropzone_3').dropzone({
-            url: "/store/image", // Set the url for your upload script location
-            paramName: "file", // The name that will be used to transfer the file
-            maxFiles: 10,
-            maxFilesize: 10, // MB
+
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    Dropzone.autoDiscover = false;
+    var acceptedFileTypes = "image/*"; //dropzone requires this param be a comma separated list
+    // imageDataArray variable to set value in crud form
+    var imageDataArray = new Array;
+    // fileList variable to store current files index and name
+    var fileList = new Array;
+    var i = 0;
+
+    $(function(){
+
+        uploader = new Dropzone(".dropzone",{
+            url: "{{url('/product/image/upload')}}",
+            paramName : "file",
+            uploadMultiple :false,
+            acceptedFiles : "image/*",
             addRemoveLinks: true,
-            acceptedFiles: "image/*",
+            forceFallback: false,
+            dictDefaultMessage: "Choisisez vos images",
+            maxFilesize: 256, // Set the maximum file size to 256 MB
+            parallelUploads: 100,
+
+        });//end drop zone
+
+        uploader.on("success", function(file,response) {
+            imageDataArray.push(response)
+
+            fileList[i] = {
+                "serverFileName": response,
+                "fileName": file.name,
+                "fileId": i
+            };
+
+            i += 1;
+            console.log(response)
+            $('#item_images').val(imageDataArray);
 
         });
 
-    </script>
-{{--    <script src="{{asset('js/dropzonejs.js')}}" type="text/javascript"></script>--}}
+        uploader.on("removedfile", function(file) {
+            var rmvFile = "";
+            for (var f = 0; f < fileList.length; f++) {
+
+                if (fileList[f].fileName == file.name) {
+
+                    // remove file from original array by database image name
+                    imageDataArray.splice(imageDataArray.indexOf(fileList[f].serverFileName), 1);
+                    $('#item_images').val(imageDataArray);
+
+                    // get removed database file name
+                    rmvFile = fileList[f].serverFileName;
+
+                    // get request to remove the uploaded file from server
+                    $.get( "{{url('/product/image/delete')}}", { file: rmvFile } )
+                        .done(function( data ) {
+                            console.log(data)
+                        });
+
+                    // reset imageDataArray variable to set value in crud form
+
+                   // console.log(imageDataArray)
+                }
+            }
+
+        });
+
+
+    });
+</script>
+
 @endsection
 

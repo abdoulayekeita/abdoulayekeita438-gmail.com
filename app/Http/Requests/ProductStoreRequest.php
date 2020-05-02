@@ -25,11 +25,13 @@ class ProductStoreRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'price ' => 'required',
-            'isPriceNegotiate' => 'required',
-            'isPossibleToChange' => 'required',
+            'item_images' => 'required',
+            'price' => 'required',
+            'isPriceNegotiate' => 'boolean',
+            'isPossibleToChange' => 'boolean',
             'description' => 'required|string',
-            'subCategoryProduct_id' => 'required|integer|exists:subCategoryProducts,id',
+            'sub_category_id' => 'required|integer|exists:sub_categorys,id',
+            'shop_id' => 'required|integer|exists:shops,id',
         ];
     }
 }

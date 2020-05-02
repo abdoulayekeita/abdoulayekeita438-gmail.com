@@ -22,10 +22,10 @@
                                         </svg></span>
                         <span class="kt-menu__link-text"> Tableau de bord</span></a></li>
                 <li class="kt-menu__section ">
-                    <h4 class="kt-menu__section-text">Produit</h4>
+                    <h4 class="kt-menu__section-text">Annonce</h4>
                     <i class="kt-menu__section-icon flaticon-more-v2"></i>
                 </li>
-                <li class="kt-menu__item  kt-menu__item--submenu " aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
+                <li class="kt-menu__item  kt-menu__item--submenu " aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('post.create')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                 <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/>
@@ -33,6 +33,36 @@
                             </g>
                         </svg>
                         </span><span class="kt-menu__link-text">Déposer une annonce</span></a>
+                </li>
+                <li class="kt-menu__item  kt-menu__item--submenu  kt-menu__item--active" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('shop.create')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
+                       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <rect x="0" y="0" width="24" height="24"/>
+                                <path d="M10,4 L21,4 C21.5522847,4 22,4.44771525 22,5 L22,7 C22,7.55228475 21.5522847,8 21,8 L10,8 C9.44771525,8 9,7.55228475 9,7 L9,5 C9,4.44771525 9.44771525,4 10,4 Z M10,10 L21,10 C21.5522847,10 22,10.4477153 22,11 L22,13 C22,13.5522847 21.5522847,14 21,14 L10,14 C9.44771525,14 9,13.5522847 9,13 L9,11 C9,10.4477153 9.44771525,10 10,10 Z M10,16 L21,16 C21.5522847,16 22,16.4477153 22,17 L22,19 C22,19.5522847 21.5522847,20 21,20 L10,20 C9.44771525,20 9,19.5522847 9,19 L9,17 C9,16.4477153 9.44771525,16 10,16 Z" fill="#000000"/>
+                                <rect fill="#000000" opacity="0.3" x="2" y="4" width="5" height="16" rx="1"/>
+                            </g>
+                        </svg>
+                        </span><span class="kt-menu__link-text">Détail de l'annonce</span></a>
+                </li>
+                <li class="kt-menu__item  kt-menu__item--submenu " aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('post.edit',$post)}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <rect x="0" y="0" width="24" height="24"/>
+                                <path d="M8,17.9148182 L8,5.96685884 C8,5.56391781 8.16211443,5.17792052 8.44982609,4.89581508 L10.965708,2.42895648 C11.5426798,1.86322723 12.4640974,1.85620921 13.0496196,2.41308426 L15.5337377,4.77566479 C15.8314604,5.0588212 16,5.45170806 16,5.86258077 L16,17.9148182 C16,18.7432453 15.3284271,19.4148182 14.5,19.4148182 L9.5,19.4148182 C8.67157288,19.4148182 8,18.7432453 8,17.9148182 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000000, 10.707409) rotate(-135.000000) translate(-12.000000, -10.707409) "/>
+                                <rect fill="#000000" opacity="0.3" x="5" y="20" width="15" height="2" rx="1"/>
+                            </g>
+                        </svg>
+                        </span><span class="kt-menu__link-text">Modifier l'annonce</span></a>
+                </li>
+                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('shop.create')}}" class="kt-menu__link kt-menu__toggle" data-toggle="modal" data-target="#kt_modal_6"><span class="kt-menu__link-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <rect x="0" y="0" width="24" height="24"/>
+                                <path d="M6,8 L18,8 L17.106535,19.6150447 C17.04642,20.3965405 16.3947578,21 15.6109533,21 L8.38904671,21 C7.60524225,21 6.95358004,20.3965405 6.89346498,19.6150447 L6,8 Z M8,10 L8.45438229,14.0894406 L15.5517885,14.0339036 L16,10 L8,10 Z" fill="#000000" fill-rule="nonzero"/>
+                                <path d="M14,4.5 L14,3.5 C14,3.22385763 13.7761424,3 13.5,3 L10.5,3 C10.2238576,3 10,3.22385763 10,3.5 L10,4.5 L5.5,4.5 C5.22385763,4.5 5,4.72385763 5,5 L5,5.5 C5,5.77614237 5.22385763,6 5.5,6 L18.5,6 C18.7761424,6 19,5.77614237 19,5.5 L19,5 C19,4.72385763 18.7761424,4.5 18.5,4.5 L14,4.5 Z" fill="#000000" opacity="0.3"/>
+                            </g>
+                        </svg>
+                        </span><span class="kt-menu__link-text">Supprimer l'annonce</span></a>
                 </li>
                 <li class="kt-menu__section ">
                     <h4 class="kt-menu__section-text">Boutique</h4>
@@ -63,36 +93,6 @@
                             </g>
                         </svg>
                         </span><span class="kt-menu__link-text">Mes boutiques</span></a>
-                </li>
-                <li class="kt-menu__item  kt-menu__item--submenu  kt-menu__item--active" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('shop.create')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
-                       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <rect x="0" y="0" width="24" height="24"/>
-                                <path d="M10,4 L21,4 C21.5522847,4 22,4.44771525 22,5 L22,7 C22,7.55228475 21.5522847,8 21,8 L10,8 C9.44771525,8 9,7.55228475 9,7 L9,5 C9,4.44771525 9.44771525,4 10,4 Z M10,10 L21,10 C21.5522847,10 22,10.4477153 22,11 L22,13 C22,13.5522847 21.5522847,14 21,14 L10,14 C9.44771525,14 9,13.5522847 9,13 L9,11 C9,10.4477153 9.44771525,10 10,10 Z M10,16 L21,16 C21.5522847,16 22,16.4477153 22,17 L22,19 C22,19.5522847 21.5522847,20 21,20 L10,20 C9.44771525,20 9,19.5522847 9,19 L9,17 C9,16.4477153 9.44771525,16 10,16 Z" fill="#000000"/>
-                                <rect fill="#000000" opacity="0.3" x="2" y="4" width="5" height="16" rx="1"/>
-                            </g>
-                        </svg>
-                        </span><span class="kt-menu__link-text">Détail Produit</span></a>
-                </li>
-                <li class="kt-menu__item  kt-menu__item--submenu " aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('shop.product.edit',[$shop,$product])}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <rect x="0" y="0" width="24" height="24"/>
-                                <path d="M8,17.9148182 L8,5.96685884 C8,5.56391781 8.16211443,5.17792052 8.44982609,4.89581508 L10.965708,2.42895648 C11.5426798,1.86322723 12.4640974,1.85620921 13.0496196,2.41308426 L15.5337377,4.77566479 C15.8314604,5.0588212 16,5.45170806 16,5.86258077 L16,17.9148182 C16,18.7432453 15.3284271,19.4148182 14.5,19.4148182 L9.5,19.4148182 C8.67157288,19.4148182 8,18.7432453 8,17.9148182 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000000, 10.707409) rotate(-135.000000) translate(-12.000000, -10.707409) "/>
-                                <rect fill="#000000" opacity="0.3" x="5" y="20" width="15" height="2" rx="1"/>
-                            </g>
-                        </svg>
-                        </span><span class="kt-menu__link-text">Modifier le produit</span></a>
-                </li>
-                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="#" class="kt-menu__link kt-menu__toggle" data-toggle="modal" data-target="#kt_modal_6"><span class="kt-menu__link-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <rect x="0" y="0" width="24" height="24"/>
-                                <path d="M6,8 L18,8 L17.106535,19.6150447 C17.04642,20.3965405 16.3947578,21 15.6109533,21 L8.38904671,21 C7.60524225,21 6.95358004,20.3965405 6.89346498,19.6150447 L6,8 Z M8,10 L8.45438229,14.0894406 L15.5517885,14.0339036 L16,10 L8,10 Z" fill="#000000" fill-rule="nonzero"/>
-                                <path d="M14,4.5 L14,3.5 C14,3.22385763 13.7761424,3 13.5,3 L10.5,3 C10.2238576,3 10,3.22385763 10,3.5 L10,4.5 L5.5,4.5 C5.22385763,4.5 5,4.72385763 5,5 L5,5.5 C5,5.77614237 5.22385763,6 5.5,6 L18.5,6 C18.7761424,6 19,5.77614237 19,5.5 L19,5 C19,4.72385763 18.7761424,4.5 18.5,4.5 L14,4.5 Z" fill="#000000" opacity="0.3"/>
-                            </g>
-                        </svg>
-                        </span><span class="kt-menu__link-text">Supprimer le produit</span></a>
                 </li>
                 <li class="kt-menu__section ">
                     <h4 class="kt-menu__section-text">Aide</h4>
@@ -142,16 +142,16 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Suppression du produit {{$product->name}}</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Suppression de l'annonce  </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 </button>
             </div>
             <div class="modal-body">
-                <p>Voulez-vous vraiment supprimer le produit</p>
+                <p>Voulez-vous vraiment supprimer ce annonce</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                <form action="{{route('shop.product.destroy',[$shop,$product])}}" method="POST">
+                <form action="{{route('post.destroy',$post)}}" method="POST">
                     {{ csrf_field() }}
                     {{method_field('DELETE')}}
                     <button  class="btn btn-danger text-white">Supprimer</button>
@@ -271,17 +271,17 @@
 
 <!-- begin:: Content Head -->
 @section('ContentHead')
-{{--    <div class="kt-subheader   kt-grid__item" id="kt_subheader">--}}
-{{--        <div class="kt-container  row justify-content-center ">--}}
-{{--            <div class="kt-subheader__main">--}}
-{{--                <div class="kt-subheader__group " id="kt_subheader_search">--}}
-{{--										<span class="kt-subheader__desc" id="kt_subheader_total">--}}
-{{--											Les détails du produit </span>--}}
-{{--                </div>--}}
-{{--            </div>--}}
+    {{--    <div class="kt-subheader   kt-grid__item" id="kt_subheader">--}}
+    {{--        <div class="kt-container  row justify-content-center ">--}}
+    {{--            <div class="kt-subheader__main">--}}
+    {{--                <div class="kt-subheader__group " id="kt_subheader_search">--}}
+    {{--										<span class="kt-subheader__desc" id="kt_subheader_total">--}}
+    {{--											Les détails du produit </span>--}}
+    {{--                </div>--}}
+    {{--            </div>--}}
 
-{{--        </div>--}}
-{{--    </div>--}}
+    {{--        </div>--}}
+    {{--    </div>--}}
 
 @endsection
 <!-- end:: Content Head -->
@@ -301,7 +301,7 @@
 
 
     <!-- end:: Hero -->
-<div class="kt-negative-spacing--7"></div>
+    <div class="kt-negative-spacing--7"></div>
     <!-- begin:: Section -->
     <div class="kt-container ">
         <div class="kt-portlet">
@@ -312,17 +312,17 @@
                             <aside class="col-lg-6" >
                                 <div class="card card-product">
                                     <div class="card-image " >
-                                        @if($product->images)
-                                            @foreach($product->images as $image)
+                                        @if($post->product->images)
+                                            @foreach($post->product->images as $image)
                                                 @if ($loop->first)
                                                     <div class="col-12 mb-2 ">
-                                                        <a href="{{asset('storage/'.$image->url)}}" data-fancybox="1" data-caption="{{$product->name}}" >
+                                                        <a href="{{asset('storage/'.$image->url)}}" data-fancybox="1" data-caption="{{$post->product->name}}" >
                                                             <img src="{{asset('storage/'.$image->url)}}" class="img-fluid rounded " style=" height: 450px; width: 100% !important;display: inline-block;"/>
                                                         </a>
                                                     </div>
                                                 @else
                                                     <div class="col-12 mb-2 ll">
-                                                        <a href="{{asset('storage/'.$image->url)}}" data-fancybox="1" data-caption="{{$product->name}}">
+                                                        <a href="{{asset('storage/'.$image->url)}}" data-fancybox="1" data-caption="{{$post->product->name}}">
                                                             <img src="{{asset('storage/'.$image->url)}}" class="img-fluid rounded" />
                                                         </a>
                                                     </div>
@@ -331,7 +331,7 @@
 
                                         @else
                                             <div class="col-12 mb-2 ll">
-                                                <a href="{{asset('images/dashboard/keita2.jpg')}}" data-fancybox="1" data-caption="{{$product->name}}">
+                                                <a href="{{asset('images/dashboard/keita2.jpg')}}" data-fancybox="1" data-caption="{{$post->product->name}}">
                                                     <img src="{{asset('images/dashboard/keita2.jpg')}}" class="img-fluid rounded" />
                                                 </a>
                                             </div>
@@ -341,7 +341,7 @@
                             </aside>
                             <aside class="card col-lg-6 p-0">
                                 <div class="card-header  kt-bg-fill-primary">
-                                    <h3 class="text-center text-uppercase text-white">{{$product->name}}</h3>
+                                    <h3 class="text-center text-uppercase text-white">{{$post->product->name}}</h3>
                                 </div>
                                 <div class="card-body">
                                     <div class="mt-4">
@@ -356,7 +356,7 @@
                                             Description
                                         </span>
                                         <p class="lead">
-                                            {{$product->description}}
+                                            {{$post->product->description}}
                                         </p>
                                     </div>
                                     <div class="mt-4">
@@ -386,7 +386,7 @@
                                              </svg>
                                              Prix
                                          </span>
-                                        <p class=" font-weight-bold pl-2 pt-1 lead "> {{$product->price}} FCFA</p>
+                                        <p class=" font-weight-bold pl-2 pt-1 lead ">{{$post->product->price}} FCFA</p>
                                     </div>
                                     <div class="mt-4">
                                          <span class="font-weight-bold text-info " style="font-size: 15px;">

@@ -56,7 +56,13 @@ class ShopController extends Controller
 
     public function show(Shop $shop){
 
-        $products = Product::where('shop_id',$shop->id)->paginate(6);
+        $products = $shop->products()->paginate(6);
         return view('dashboard.shop.content_shop',compact('products','shop'));
+    }
+
+    public function edit(Shop $shop){
+
+        $categorys = Category::all();
+        return view('dashboard.shop.edit',compact('shop','categorys'));
     }
 }

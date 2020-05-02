@@ -3,9 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductStoreRequest;
+use App\Models\Category;
+use App\Models\Image;
 use App\Models\Post;
 use App\Models\Product;
+use App\Models\Shop;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 
 class ProductController extends Controller
 {
@@ -24,9 +28,11 @@ class ProductController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create(Shop $shop)
     {
-        return view('dashboard.product.create');
+
+        $categorys = Category::all();
+        return view('dashboard.product.create',compact('categorys','shop'));
     }
 
     /**
@@ -35,8 +41,83 @@ class ProductController extends Controller
      */
     public function store(ProductStoreRequest $request)
     {
-        $post = Post::create($request->all());
+        $validated = $request->validated();
+        $shop = Shop::find($validated['shop_id']);
+        $validated = Arr::except($validated,'item_images');
+        $product = Product::create($validated);
 
-        return view('dashboard.product.index');
+        foreach (explode(',', $request->validated()['item_images']) as $url){
+            $url = str_replace("\\", '', $url);
+            $url = str_replace('"', '',$url);
+            Image::create(['url'=>$url,'product_id'=>$product->id]);
+        }
+
+        return redirect()->route('shop.show',$shop);
+    }
+
+    /**
+     * @param Shop $shop
+     * @param Product $product
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function show(Shop $shop,Product $product){
+
+        return view('dashboard.product.show',compact('shop','product'));
+    }
+
+    /**
+     * @param Shop $shop
+     * @param Product $product
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function edit(Shop $shop,Product $product){
+
+        $categorys = Category::all();
+        return view('dashboard.product.edit',compact('shop','product','categorys'));
+    }
+
+    /**
+     * @param ProductStoreRequest $request
+     * @param Shop $shop
+     * @param Product $product
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function update(ProductStoreRequest $request,Shop $shop,Product $product){
+
+        $validated = $request->validated();
+        $validated = Arr::except($validated,'item_images');
+        $product->update($validated);
+
+        if (!empty(explode(',', $request->validated()['item_images']))){
+
+            if (!empty($product->images)){
+
+                foreach ($product->images as $image){
+
+                    unlink(storage_path('app/public/'.$image->url));
+                    Image::destroy($image->id);
+                }
+            }
+
+            foreach (explode(',', $request->validated()['item_images']) as $url){
+                $url = str_replace("\\", '', $url);
+                $url = str_replace('"', '',$url);
+                Image::create(['url'=>$url,'product_id'=>$product->id]);
+            }
+        }
+
+        return redirect()->route('shop.product.show',[$shop,$product]);
+    }
+
+    /**
+     * @param Shop $shop
+     * @param Product $product
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Exception
+     */
+    public function destroy(Shop $shop,Product $product){
+
+            $product->delete();
+            return redirect()->route('shop.show',$shop);
     }
 }

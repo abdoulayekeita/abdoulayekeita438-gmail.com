@@ -42,7 +42,7 @@
                         </svg>
                         </span><span class="kt-menu__link-text">Créer une boutique</span></a>
                 </li>
-                <li class="kt-menu__item  kt-menu__item--submenu  kt-menu__item--active" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('shop.index')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
+                <li class="kt-menu__item  kt-menu__item--submenu  " aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('shop.index')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                 <rect x="0" y="0" width="24" height="24"/>
@@ -58,6 +58,33 @@
                             </g>
                         </svg>
                         </span><span class="kt-menu__link-text">Mes boutiques</span></a>
+                </li>
+                <li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--active" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/>
+                                <rect fill="#000000"  transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"/>
+                            </g>
+                        </svg>
+                        </span><span class="kt-menu__link-text">Boutique {{$shop->name}}</span></a>
+                </li>
+                <li class="kt-menu__item  kt-menu__item--submenu " aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('shop.edit',$shop)}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/>
+                                <rect fill="#000000"  transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"/>
+                            </g>
+                        </svg>
+                        </span><span class="kt-menu__link-text">Modifier boutique {{$shop->name}}</span></a>
+                </li>
+                <li class="kt-menu__item  kt-menu__item--submenu " aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle" data-toggle="modal" data-target="#kt_modal_6"><span class="kt-menu__link-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/>
+                                <rect fill="#000000"  transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"/>
+                            </g>
+                        </svg>
+                        </span><span class="kt-menu__link-text">Supprimer boutique {{$shop->name}}</span></a>
                 </li>
                 <li class="kt-menu__section ">
                     <h4 class="kt-menu__section-text">Aide</h4>
@@ -101,6 +128,30 @@
         </div>
     </div>
 @endsection
+<div class="modal fade" id="kt_modal_6" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="fa">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Suppression de la boutique {{$shop->name}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Voulez-vous vraiment supprimer cette boutique</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                <form action="{{route('shop.destroy',$shop)}}" method="POST">
+                    {{ csrf_field() }}
+                    {{method_field('DELETE')}}
+                    <button  class="btn btn-danger text-white">Supprimer</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- end:: Aside Menu -->
 
 <!-- begin:: Header -->
@@ -202,7 +253,7 @@
             </div>
         </form>
         <div class="mb-4 pl-3">
-            <a href="{{route('product.create')}}"  class="btn btn-outline-primary text-primary btn-hover-light btn-pill btn-elevate btn-elevate-air ">
+            <a href="{{route('shop.product.create',$shop)}}"  class="btn btn-outline-primary text-primary btn-hover-light btn-pill btn-elevate btn-elevate-air ">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                         <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/>
@@ -225,87 +276,56 @@
             <div class="kt-portlet container ">
                 <div class="kt-portlet__body ">
                     <h2 class="row justify-content-center">{{$shop->name}}</h2>
-                    <div class="row">
-                        <a href="">
-                            <div class="card-media">
-                                <!-- media container -->
-                                <div class="card-media-object-container">
-                                    <div class="card-media-object" style="background-image: url({{asset('images/dashboard/ecommerce1.jpg')}});"></div>
-                                </div>
-                                <!-- body container -->
-                                <div class="card-media-body">
-                                    <div class="card-media-body-top" style="margin-bottom: 2rem;">
-                                        <span class="font-weight-bold  lead" style="color: #478fcd;font-size: 20px">nom du produit</span>
-                                        <div class="card-media-body-top-icons u-float-right">
+                    @if(count($products) >= 1)
+                        @foreach($products as $product)
+                            <div class="row">
+                                <a href="{{route('shop.product.show',[$shop,$product])}}">
+                                    <div class="card-media">
+                                        <!-- media container -->
+                                        <div class="card-media-object-container">
+                                            @if($product->images)
+                                                @foreach($product->images as $image)
+                                                    @if ($loop->first)
+                                                        <div class="card-media-object" style="background-image: url({{asset('storage/'.$image->url)}});"></div>
+                                                    @endif
+                                                @endforeach
+
+                                            @else
+                                                <div class="card-media-object" style="background-image: url({{asset('images/dashboard/ecommerce1.jpg')}});"></div>
+                                            @endif
                                         </div>
+                                        <!-- body container -->
+                                        <div class="card-media-body">
+                                            <div class="card-media-body-top" style="margin-bottom: 2rem;">
+                                                <span class="font-weight-bold  lead" style="color: #478fcd;font-size: 20px">{{$product->name}}</span>
+                                                <div class="card-media-body-top-icons u-float-right">
+                                                </div>
+                                            </div>
+                                            <span class="card-media-body-heading text-primary h-pay" style="font-size: 15px"><strong>{{$product->price}} FCFA</strong></span>
+                                            <span class="card-media-body-heading text-success h-pay mt-4"><span class="text-dark">publier depuis 10/10/2020 </span></span>
+                                            <div class="card-media-body-supporting-bottom">
+                                                <span class="card-media-body-supporting-bottom-text subtle">{{$product->subCategory->name}}</span>
+                                            </div>
+                                            <div class="card-media-body-supporting-bottom card-media-body-supporting-bottom-reveal">
+                                                <br>
+                                                <a href="" class="card-media-body-supporting-bottom-text card-media-link u-float-right">En savoir plus</a>
+                                            </div>
+                                        </div>{{--        <span class="card-media-body-supporting-bottom-text mt-2 text-primary">#Music #Party</span>--}}
                                     </div>
-                                    <span class="card-media-body-heading text-primary h-pay" style="font-size: 15px"><strong>4000 FCFA</strong></span>
-                                    <span class="card-media-body-heading text-success h-pay mt-4"><span class="text-dark">publier depuis 10/10/2020 </span></span>
-                                    <div class="card-media-body-supporting-bottom">
-                                        <span class="card-media-body-supporting-bottom-text subtle">Immobilier</span>
-                                    </div>
-                                    <div class="card-media-body-supporting-bottom card-media-body-supporting-bottom-reveal">
-                                        <br>
-                                        <a href="" class="card-media-body-supporting-bottom-text card-media-link u-float-right">En savoir plus</a>
-                                    </div>
-                                </div>{{--        <span class="card-media-body-supporting-bottom-text mt-2 text-primary">#Music #Party</span>--}}
+                                </a>
                             </div>
-                        </a>
-                    </div>
-                    <div class="row">
-                        <a href="">
-                            <div class="card-media">
-                                <!-- media container -->
-                                <div class="card-media-object-container">
-                                    <div class="card-media-object" style="background-image: url({{asset('images/dashboard/cafe.jpg')}});"></div>
-                                </div>
-                                <!-- body container -->
-                                <div class="card-media-body">
-                                    <div class="card-media-body-top" style="margin-bottom: 2rem;">
-                                        <span class="font-weight-bold  lead" style="color: #478fcd;font-size: 20px">nom du produit</span>
-                                        <div class="card-media-body-top-icons u-float-right">
-                                        </div>
-                                    </div>
-                                    <span class="card-media-body-heading text-primary h-pay" style="font-size: 15px"><strong>4000 FCFA</strong></span>
-                                    <span class="card-media-body-heading text-success h-pay mt-4"><span class="text-dark">publier depuis 10/10/2020 </span></span>
-                                    <div class="card-media-body-supporting-bottom">
-                                        <span class="card-media-body-supporting-bottom-text subtle">Immobilier</span>
-                                    </div>
-                                    <div class="card-media-body-supporting-bottom card-media-body-supporting-bottom-reveal">
-                                        <br>
-                                        <a href="" class="card-media-body-supporting-bottom-text card-media-link u-float-right">En savoir plus</a>
-                                    </div>
-                                </div>{{--        <span class="card-media-body-supporting-bottom-text mt-2 text-primary">#Music #Party</span>--}}
-                            </div>
-                        </a>
-                    </div>
-                    <div class="row">
-                        <a href="">
-                            <div class="card-media">
-                                <!-- media container -->
-                                <div class="card-media-object-container">
-                                    <div class="card-media-object" style="background-image: url({{asset('images/dashboard/shop1.jpg')}});"></div>
-                                </div>
-                                <!-- body container -->
-                                <div class="card-media-body">
-                                    <div class="card-media-body-top" style="margin-bottom: 2rem;">
-                                        <span class="font-weight-bold  lead" style="color: #478fcd;font-size: 20px">nom du produit</span>
-                                        <div class="card-media-body-top-icons u-float-right">
-                                        </div>
-                                    </div>
-                                    <span class="card-media-body-heading text-primary h-pay" style="font-size: 15px"><strong>4000 FCFA</strong></span>
-                                    <span class="card-media-body-heading text-success h-pay mt-4"><span class="text-dark">publier depuis 10/10/2020 </span></span>
-                                    <div class="card-media-body-supporting-bottom">
-                                        <span class="card-media-body-supporting-bottom-text subtle">Immobilier</span>
-                                    </div>
-                                    <div class="card-media-body-supporting-bottom card-media-body-supporting-bottom-reveal">
-                                        <br>
-                                        <a href="" class="card-media-body-supporting-bottom-text card-media-link u-float-right">En savoir plus</a>
-                                    </div>
-                                </div>{{--        <span class="card-media-body-supporting-bottom-text mt-2 text-primary">#Music #Party</span>--}}
-                            </div>
-                        </a>
-                    </div>
+                        @endforeach
+                    @else
+                        <div class="col-md-12" style="margin-top: 150px;">
+                            <div class="text-center"><i class="fa fa-calendar fa-5x text-primary"></i></div>
+                        </div>
+                        <div class="col-md-12" style="margin-bottom: 150px">
+                            <h1 class="text-center text-success"><p><small class="text-center">Aucun produit ajouter pour le moment</small></p></h1>
+                        </div>
+                    @endif
+                </div>
+                <div class="row justify-content-center">
+                    {{$products->links()}}
                 </div>
             </div>
         </div>

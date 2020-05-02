@@ -29,6 +29,6 @@ class Image extends Model
 
     public function product()
     {
-        return $this->belongsTo(\App\Product::class);
+        return $this->belongsTo(Product::class);
     }
 }

@@ -24,12 +24,13 @@ class PostStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'price ' => 'required',
-            'isPriceNegotiate' => 'required',
-            'isPossibleToChange' => 'required',
-            'description' => 'required',
-            'subCategoryProduct_id' => 'required',
+            'name' => 'required|string',
+            'item_images' => 'required',
+            'price' => 'required',
+            'isPriceNegotiate' => 'boolean',
+            'isPossibleToChange' => 'boolean',
+            'description' => 'required|string',
+            'sub_category_id' => 'required|integer|exists:sub_categorys,id',
         ];
     }
 }

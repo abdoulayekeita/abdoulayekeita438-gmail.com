@@ -17,8 +17,8 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('name');
             $table->decimal('price');
-            $table->boolean('isPriceNegotiate');
-            $table->boolean('isPossibleToChange');
+            $table->boolean('isPriceNegotiate')->default(false);
+            $table->boolean('isPossibleToChange')->default(false);
             $table->longText('description');
             $table->unsignedBigInteger('sub_category_id');
 
@@ -26,14 +26,6 @@ class CreateProductsTable extends Migration
                 ->foreign('sub_category_id')
                 ->references('id')
                 ->on('sub_categorys')
-                ->onDelete('cascade');
-
-            $table->unsignedBigInteger('image_id');
-
-            $table
-                ->foreign('image_id')
-                ->references('id')
-                ->on('images')
                 ->onDelete('cascade');
 
             $table->unsignedBigInteger('shop_id')->nullable();

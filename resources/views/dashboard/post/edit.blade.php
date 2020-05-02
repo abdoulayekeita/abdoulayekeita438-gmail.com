@@ -29,6 +29,36 @@
                         </svg>
                         </span><span class="kt-menu__link-text">Déposer une annonce</span></a>
                 </li>
+                <li class="kt-menu__item  kt-menu__item--submenu  " aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('post.show',$post)}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
+                       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <rect x="0" y="0" width="24" height="24"/>
+                                <path d="M10,4 L21,4 C21.5522847,4 22,4.44771525 22,5 L22,7 C22,7.55228475 21.5522847,8 21,8 L10,8 C9.44771525,8 9,7.55228475 9,7 L9,5 C9,4.44771525 9.44771525,4 10,4 Z M10,10 L21,10 C21.5522847,10 22,10.4477153 22,11 L22,13 C22,13.5522847 21.5522847,14 21,14 L10,14 C9.44771525,14 9,13.5522847 9,13 L9,11 C9,10.4477153 9.44771525,10 10,10 Z M10,16 L21,16 C21.5522847,16 22,16.4477153 22,17 L22,19 C22,19.5522847 21.5522847,20 21,20 L10,20 C9.44771525,20 9,19.5522847 9,19 L9,17 C9,16.4477153 9.44771525,16 10,16 Z" fill="#000000"/>
+                                <rect fill="#000000" opacity="0.3" x="2" y="4" width="5" height="16" rx="1"/>
+                            </g>
+                        </svg>
+                        </span><span class="kt-menu__link-text">Détail de l'annonce</span></a>
+                </li>
+                <li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--active" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('post.edit',$post)}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <rect x="0" y="0" width="24" height="24"/>
+                                <path d="M8,17.9148182 L8,5.96685884 C8,5.56391781 8.16211443,5.17792052 8.44982609,4.89581508 L10.965708,2.42895648 C11.5426798,1.86322723 12.4640974,1.85620921 13.0496196,2.41308426 L15.5337377,4.77566479 C15.8314604,5.0588212 16,5.45170806 16,5.86258077 L16,17.9148182 C16,18.7432453 15.3284271,19.4148182 14.5,19.4148182 L9.5,19.4148182 C8.67157288,19.4148182 8,18.7432453 8,17.9148182 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000000, 10.707409) rotate(-135.000000) translate(-12.000000, -10.707409) "/>
+                                <rect fill="#000000" opacity="0.3" x="5" y="20" width="15" height="2" rx="1"/>
+                            </g>
+                        </svg>
+                        </span><span class="kt-menu__link-text">Modifier l'annonce</span></a>
+                </li>
+                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="#" data-toggle="modal" data-target="#kt_modal_6" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <rect x="0" y="0" width="24" height="24"/>
+                                <path d="M6,8 L18,8 L17.106535,19.6150447 C17.04642,20.3965405 16.3947578,21 15.6109533,21 L8.38904671,21 C7.60524225,21 6.95358004,20.3965405 6.89346498,19.6150447 L6,8 Z M8,10 L8.45438229,14.0894406 L15.5517885,14.0339036 L16,10 L8,10 Z" fill="#000000" fill-rule="nonzero"/>
+                                <path d="M14,4.5 L14,3.5 C14,3.22385763 13.7761424,3 13.5,3 L10.5,3 C10.2238576,3 10,3.22385763 10,3.5 L10,4.5 L5.5,4.5 C5.22385763,4.5 5,4.72385763 5,5 L5,5.5 C5,5.77614237 5.22385763,6 5.5,6 L18.5,6 C18.7761424,6 19,5.77614237 19,5.5 L19,5 C19,4.72385763 18.7761424,4.5 18.5,4.5 L14,4.5 Z" fill="#000000" opacity="0.3"/>
+                            </g>
+                        </svg>
+                        </span><span class="kt-menu__link-text">Supprimer l'annonce</span></a>
+                </li>
                 <li class="kt-menu__section ">
                     <h4 class="kt-menu__section-text">Boutique</h4>
                     <i class="kt-menu__section-icon flaticon-more-v2"></i>
@@ -58,36 +88,6 @@
                             </g>
                         </svg>
                         </span><span class="kt-menu__link-text">Mes boutiques</span></a>
-                </li>
-                <li class="kt-menu__item  kt-menu__item--submenu  " aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('shop.create')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
-                       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <rect x="0" y="0" width="24" height="24"/>
-                                <path d="M10,4 L21,4 C21.5522847,4 22,4.44771525 22,5 L22,7 C22,7.55228475 21.5522847,8 21,8 L10,8 C9.44771525,8 9,7.55228475 9,7 L9,5 C9,4.44771525 9.44771525,4 10,4 Z M10,10 L21,10 C21.5522847,10 22,10.4477153 22,11 L22,13 C22,13.5522847 21.5522847,14 21,14 L10,14 C9.44771525,14 9,13.5522847 9,13 L9,11 C9,10.4477153 9.44771525,10 10,10 Z M10,16 L21,16 C21.5522847,16 22,16.4477153 22,17 L22,19 C22,19.5522847 21.5522847,20 21,20 L10,20 C9.44771525,20 9,19.5522847 9,19 L9,17 C9,16.4477153 9.44771525,16 10,16 Z" fill="#000000"/>
-                                <rect fill="#000000" opacity="0.3" x="2" y="4" width="5" height="16" rx="1"/>
-                            </g>
-                        </svg>
-                        </span><span class="kt-menu__link-text">Détail Produit</span></a>
-                </li>
-                <li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--active" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('shop.product.edit',[$shop,$product])}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <rect x="0" y="0" width="24" height="24"/>
-                                <path d="M8,17.9148182 L8,5.96685884 C8,5.56391781 8.16211443,5.17792052 8.44982609,4.89581508 L10.965708,2.42895648 C11.5426798,1.86322723 12.4640974,1.85620921 13.0496196,2.41308426 L15.5337377,4.77566479 C15.8314604,5.0588212 16,5.45170806 16,5.86258077 L16,17.9148182 C16,18.7432453 15.3284271,19.4148182 14.5,19.4148182 L9.5,19.4148182 C8.67157288,19.4148182 8,18.7432453 8,17.9148182 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000000, 10.707409) rotate(-135.000000) translate(-12.000000, -10.707409) "/>
-                                <rect fill="#000000" opacity="0.3" x="5" y="20" width="15" height="2" rx="1"/>
-                            </g>
-                        </svg>
-                        </span><span class="kt-menu__link-text">Modifier le produit</span></a>
-                </li>
-                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('shop.create')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <rect x="0" y="0" width="24" height="24"/>
-                                <path d="M6,8 L18,8 L17.106535,19.6150447 C17.04642,20.3965405 16.3947578,21 15.6109533,21 L8.38904671,21 C7.60524225,21 6.95358004,20.3965405 6.89346498,19.6150447 L6,8 Z M8,10 L8.45438229,14.0894406 L15.5517885,14.0339036 L16,10 L8,10 Z" fill="#000000" fill-rule="nonzero"/>
-                                <path d="M14,4.5 L14,3.5 C14,3.22385763 13.7761424,3 13.5,3 L10.5,3 C10.2238576,3 10,3.22385763 10,3.5 L10,4.5 L5.5,4.5 C5.22385763,4.5 5,4.72385763 5,5 L5,5.5 C5,5.77614237 5.22385763,6 5.5,6 L18.5,6 C18.7761424,6 19,5.77614237 19,5.5 L19,5 C19,4.72385763 18.7761424,4.5 18.5,4.5 L14,4.5 Z" fill="#000000" opacity="0.3"/>
-                            </g>
-                        </svg>
-                        </span><span class="kt-menu__link-text">Supprimer le produit</span></a>
                 </li>
 
                 <li class="kt-menu__section ">
@@ -132,6 +132,30 @@
         </div>
     </div>
 @endsection
+<div class="modal fade" id="kt_modal_6" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="fa">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Suppression de l'annonce {{$post->product->name}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Voulez-vous vraiment supprimer cette annonce</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                <form action="{{route('post.destroy',$post)}}" method="POST">
+                    {{ csrf_field() }}
+                    {{method_field('DELETE')}}
+                    <button  class="btn btn-danger text-white">Supprimer</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- end:: Aside Menu -->
 
 <!-- begin:: Header -->
@@ -246,12 +270,12 @@
         <div class="kt-container  kt-container--fluid ">
             <div class="kt-subheader__main">
                 <h3 class="kt-subheader__title">
-                    Modification du  produit {{$product->name}}
+                    Modification de l'annonce {{$post->product->name}}
                 </h3>
                 <span class="kt-subheader__separator kt-subheader__separator--v"></span>
                 <div class="kt-subheader__group" id="kt_subheader_search">
 										<span class="kt-subheader__desc" id="kt_subheader_total">
-											Modifier le produit et enregistrer </span>
+											Modifier l'annonce et enregistrer </span>
                 </div>
             </div>
 
@@ -271,14 +295,13 @@
                         <form  class="dropzone " method="post" enctype="multipart/form-data">
                             {!! csrf_field() !!}
                         </form>
-                        <form class="mt-2"  action="{{route('shop.product.update',[$shop,$product])}}" accept-charset="UTF-8"  method="POST" enctype="multipart/form-data" >
+                        <form class="mt-2"  action="{{route('post.update',$post)}}" accept-charset="UTF-8"  method="POST" enctype="multipart/form-data" >
                             {{ csrf_field() }}
                             {{method_field('PUT')}}
-                            <input type="hidden" name="shop_id" value="{{$shop->id}}">
                             <input type="hidden" autocomplete="OFF" name="item_images" id="item_images" placeholder="" class="form-control input-sm" required />
                             <div class="form-group">
                                 <label>Nom </label>
-                                <input type="text" class="form-control  @error('name') is-invalid @enderror" name="name" value="{{old('name') ?? $product->name}}"  placeholder="Entrer le nom du produit">
+                                <input type="text" class="form-control  @error('name') is-invalid @enderror" name="name" value="{{old('name') ?? $post->product->name}}"  placeholder="Entrer le nom du produit">
                             </div>
                             @error('name')
                             <span class="alert alert-danger mt-1" role="alert">
@@ -287,7 +310,7 @@
                             @enderror
                             <div class="form-group">
                                 <label>Prix</label>
-                                <input type="number" class="form-control @error('price') is-invalid @enderror" name="price" value="{{ old('price') ?? $product->price}}"  placeholder="Entrer le prix du produit">
+                                <input type="number" class="form-control @error('price') is-invalid @enderror" name="price" value="{{ old('price') ?? $post->product->price}}"  placeholder="Entrer le prix du produit">
                             </div>
                             @error('price')
                             <span class="alert alert-danger mt-1" role="alert">
@@ -335,7 +358,7 @@
                             @enderror
                             <div class="form-group">
                                 <label for="exampleTextarea">Description</label>
-                                <textarea class="form-control @error('description') is-invalid @enderror"  rows="3" name="description">{{ old('description') ?? $product->description }}</textarea>
+                                <textarea class="form-control @error('description') is-invalid @enderror"  rows="3" name="description">{{ old('description') ?? $post->product->description }}</textarea>
                             </div>
                             @error('description')
                             <span class="alert alert-danger mt-1" role="alert">
@@ -437,10 +460,10 @@
         });
 
         $(document).ready(function(){
-            @if($product->isPossibleToChange)
+            @if($post->product->isPossibleToChange)
             document.getElementById('isPossibleToChange').checked=true
             @endif
-            @if($product->isPriceNegotiate)
+            @if($post->product->isPriceNegotiate)
             document.getElementById('isPriceNegotiate').checked=true
             @endif
         });

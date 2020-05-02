@@ -6,20 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+    protected $guarded = [];
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = [
-        'name',
-        'price',
-        'isPriceNegotiate',
-        'isPossibleToChange',
-        'description',
-        'sub_category_id',
-        'image_id',
-    ];
+
 
     /**
      * The attributes that should be cast to native types.
@@ -28,11 +22,11 @@ class Product extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'price' => 'decimal',
         'isPriceNegotiate' => 'boolean',
         'isPossibleToChange' => 'boolean',
         'sub_category_id' => 'integer',
         'image_id' => 'integer',
+        'shop_id' => 'integer',
     ];
 
 
