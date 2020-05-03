@@ -1,6 +1,6 @@
 @extends('home.layouts.app')
 @section('style')
-    <link rel="stylesheet" href="{{ asset('css/jquery.fancybox.min.css') }}">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
 @endsection
 @section('content')
 

@@ -1,7 +1,7 @@
 @extends('dashboard.layouts.app')
 @section('style')
-    <link href="{{ asset('css/purpose.css') }}" rel="stylesheet" type="text/css" >
-    <link href="{{ asset('css/jquery.fancybox.min.css') }}" rel="stylesheet" type="text/css" >
+    <link href="css/purpose.css" rel="stylesheet" type="text/css" >
+    <link href="css/jquery.fancybox.min.css" rel="stylesheet" type="text/css" >
     <style>
 
     </style>
@@ -480,6 +480,6 @@
         });
 
     </script>
-    <script src="{{asset('js/jquery.fancybox.min.js')}}" type="text/javascript"></script>
+    <script src="js/jquery.fancybox.min.js" type="text/javascript"></script>
 @endsection
 

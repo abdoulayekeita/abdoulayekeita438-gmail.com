@@ -1,6 +1,6 @@
 @extends('home.layouts.app')
 @section('style')
-    <link href="{{ asset('css/carousel_card.css') }}" rel="stylesheet" type="text/css" >
+    <link href="css/carousel_card.css" rel="stylesheet" type="text/css" >
 
     <style>
         .kt-svg-icon g [fill] {
@@ -1023,5 +1023,5 @@
 @endsection
 
 @section('script')
-    <script src="{{ asset('js/carousel_card.js') }}"></script>
+    <script src="js/carousel_card.js"></script>
 @endsection

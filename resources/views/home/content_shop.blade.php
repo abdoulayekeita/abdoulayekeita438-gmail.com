@@ -1,6 +1,6 @@
 @extends('home.layouts.app')
 @section('style')
-    <link rel="stylesheet" href="{{ asset('css/searchcard.css') }}">
+    <link rel="stylesheet" href="css/searchcard.css">
 @endsection
 
 @section('content')
