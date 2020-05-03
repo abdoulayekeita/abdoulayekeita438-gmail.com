@@ -4,25 +4,27 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::middleware('auth')->namespace('Dashboard')->prefix('dashboard')->name('dashboard')->group(function(){
+Route::middleware('auth')->namespace('Dashboard')->prefix('dashboard')->group(function(){
 
-    Route::get('/', 'DashboardController');
-});
-Route::post('/product/image/upload','ImageUploadController@store');
-Route::get('/product/image/delete', 'ImageUploadController@destroy');
+    Route::get('/', 'DashboardController')->name('dashboard');
+    Route::post('/product/image/upload','ImageUploadController@store');
+    Route::get('/product/image/delete', 'ImageUploadController@destroy');
+    Route::post('/search_annonce','SearchController@searchPost')->name('search.post');
+    Route::post('/search_product/{shop}','SearchController@searchProduct')->name('search.product');
 
-Route::resource('shop', 'ShopController');
+    Route::resource('shop', 'ShopController');
 
-Route::resource('shop.product', 'ProductController');
+    Route::resource('shop.product', 'ProductController');
 
-Route::resource('post', 'PostController');
-
-Route::get('/',function (){
-    return view('home.index');
+    Route::resource('post', 'PostController');
 });
 
+Route::namespace('Home')->group(function(){
 
-//Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/','HomeController@home');
+});
+
+
 
 
 

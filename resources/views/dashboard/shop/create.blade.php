@@ -105,11 +105,12 @@
 
 <!-- begin:: Header -->
 @section('Header')
-    <div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed ">
+    <div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed  justify-content-end ">
 
         <div class="kt-header-menu-wrapper" id="kt_header_menu_wrapper">
 
         </div>
+
 
         <!-- end:: Header Menu -->
 
@@ -121,29 +122,6 @@
             <!--begin: Search -->
 
             <!--begin: Language bar -->
-{{--            <div class="kt-header__topbar-item kt-header__topbar-item--langs">--}}
-{{--                <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px">--}}
-{{--                                <span class="kt-header__topbar-icon">--}}
-{{--                                    <img class="" src="assets/media/flags/195-france.svg" alt="" />--}}
-{{--                                </span>--}}
-{{--                </div>--}}
-{{--                <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround">--}}
-{{--                    <ul class="kt-nav kt-margin-t-10 kt-margin-b-10">--}}
-{{--                        <li class="kt-nav__item kt-nav__item--active">--}}
-{{--                            <a href="#" class="kt-nav__link">--}}
-{{--                                <span class="kt-nav__link-icon"><img src="assets/media/flags/195-france.svg" alt="" /></span>--}}
-{{--                                <span class="kt-nav__link-text">Français</span>--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
-{{--                        <li class="kt-nav__item">--}}
-{{--                            <a href="#" class="kt-nav__link">--}}
-{{--                                <span class="kt-nav__link-icon"><img src="assets/media/flags/226-united-states.svg" alt="" /></span>--}}
-{{--                                <span class="kt-nav__link-text">English</span>--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
-{{--                    </ul>--}}
-{{--                </div>--}}
-{{--            </div>--}}
 
             <!--end: Language bar -->
 
@@ -152,8 +130,8 @@
                 <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="0px,0px">
                     <div class="kt-header__topbar-user">
                         <span class="kt-header__topbar-welcome kt-hidden-mobile">Bienvenue,</span>
-                        <span class="kt-header__topbar-username kt-hidden-mobile">{{auth()->user()->first_name}}</span>
-                        <img class="kt-hidden" alt="Pic" src="assets/media/users/300_25.jpg" />
+                        <span class="kt-header__topbar-username kt-hidden-mobile">Keita</span>
+                        <img class="kt-hidden" alt="Pic" src="{{asset('assets/media/users/300_25.jpg')}}" />
 
                         <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
                         <span class="kt-badge kt-badge--username kt-badge--unified-success kt-badge--lg kt-badge--rounded kt-badge--bold">S</span>
@@ -178,22 +156,16 @@
 
                     <!--begin: Navigation -->
                     <div class="kt-notification">
-                        <a href="custom/apps/user/profile-1/personal-information.html" class="kt-notification__item">
-                            <div class="kt-notification__item-icon">
-                                <i class="flaticon2-calendar-3 kt-font-success"></i>
-                            </div>
-                            <div class="kt-notification__item-details">
-                                <div class="kt-notification__item-title kt-font-bold">
-                                    Mon Profile
-                                </div>
-                                <div class="kt-notification__item-time">
-                                    Modifier votre profile
-                                </div>
-                            </div>
-                        </a>
 
                         <div class="kt-notification__custom kt-space-between justify-content-center">
-                            <a href="custom/user/login-v2.html" target="_blank" class="btn btn-label btn-label-brand btn-sm btn-bold">Se déconnecter</a>
+                            <a  class="btn btn-label btn-label-brand btn-sm btn-bold" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                {{ __('Déconnexion') }}</a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         </div>
                     </div>
 

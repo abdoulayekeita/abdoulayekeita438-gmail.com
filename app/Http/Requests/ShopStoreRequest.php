@@ -25,7 +25,6 @@ class ShopStoreRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
-//            'image ' => 'required|image',
             'description' => 'required|string',
             'address' => 'required|string',
             'sub_category_id' => 'required|integer|exists:sub_categorys,id',

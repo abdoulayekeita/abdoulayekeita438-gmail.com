@@ -32601,7 +32601,7 @@ canvas {
 
 /* Customize website's scrollbar like Mac OS */
 
-/*
+/* 
 ::-webkit-scrollbar {
     background-color:#f6f6f6;
     width:14px;
@@ -65064,7 +65064,7 @@ body {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  color: #478fcd;
+  color: #959cb6;
   padding: 2rem 2.5rem;
 }
 
@@ -65078,7 +65078,7 @@ body {
   align-items: center;
   justify-content: center;
   background-color: rgba(93, 120, 255, 0.08);
-  color: #478fcd;
+  color: #5d78ff;
   margin-right: 1rem;
   border-radius: 0.5rem;
 }
@@ -65099,11 +65099,11 @@ body {
 
 .kt-wizard-v4 .kt-wizard-v4__nav .kt-wizard-v4__nav-items .kt-wizard-v4__nav-item[data-ktwizard-state=current] .kt-wizard-v4__nav-body .kt-wizard-v4__nav-number {
   color: #ffffff;
-  background-color: #478fcd;
+  background-color: #5d78ff;
 }
 
 .kt-wizard-v4 .kt-wizard-v4__nav .kt-wizard-v4__nav-items .kt-wizard-v4__nav-item[data-ktwizard-state=current] .kt-wizard-v4__nav-body .kt-wizard-v4__nav-label .kt-wizard-v4__nav-label-title {
-  color: #478fcd;
+  color: #5d78ff;
 }
 
 .kt-wizard-v4 .kt-wizard-v4__nav .kt-wizard-v4__nav-items.kt-wizard-v4__nav-items--clickable .kt-wizard-v4__nav-item {

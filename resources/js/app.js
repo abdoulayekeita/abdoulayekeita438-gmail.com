@@ -14,6 +14,8 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 require('jquery-validation');
+import '../demo1/tools/webpack/vendors/global';
+import '../demo1/tools/webpack/scripts';
 import '../demo1/src/assets/js/pages/custom/login/login-1';
 import '../demo1/src/assets/js/pages/custom/login/login-general';
 import '../demo1/src/assets/js/pages/custom/user/add-user.js';

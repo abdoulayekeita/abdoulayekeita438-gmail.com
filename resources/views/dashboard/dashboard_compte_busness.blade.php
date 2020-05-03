@@ -15,7 +15,7 @@
     <div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper">
         <div id="kt_aside_menu" class="kt-aside-menu " data-ktmenu-vertical="1" data-ktmenu-scroll="1" data-ktmenu-dropdown-timeout="500">
             <ul class="kt-menu__nav ">
-                <li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="index.html" class="kt-menu__link "><span class="kt-menu__link-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                <li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="{{route('dashboard')}}" class="kt-menu__link "><span class="kt-menu__link-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                                 <polygon points="0 0 24 0 24 24 0 24" />
                                                 <path d="M12.9336061,16.072447 L19.36,10.9564761 L19.5181585,10.8312381 C20.1676248,10.3169571 20.2772143,9.3735535 19.7629333,8.72408713 C19.6917232,8.63415859 19.6104327,8.55269514 19.5206557,8.48129411 L12.9336854,3.24257445 C12.3871201,2.80788259 11.6128799,2.80788259 11.0663146,3.24257445 L4.47482784,8.48488609 C3.82645598,9.00054628 3.71887192,9.94418071 4.23453211,10.5925526 C4.30500305,10.6811601 4.38527899,10.7615046 4.47382636,10.8320511 L4.63,10.9564761 L11.0659024,16.0730648 C11.6126744,16.5077525 12.3871218,16.5074963 12.9336061,16.072447 Z" fill="#000000" fill-rule="nonzero" />
@@ -35,36 +35,38 @@
                             </g>
                         </svg>
                         </span><span class="kt-menu__link-text">Déposer une annonce</span></a>
-                <li class="kt-menu__section ">
-                    <h4 class="kt-menu__section-text">Boutique</h4>
-                    <i class="kt-menu__section-icon flaticon-more-v2"></i>
-                </li>
-                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('shop.create')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/>
-                                <rect fill="#000000"  transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"/>
-                            </g>
-                        </svg>
-                        </span><span class="kt-menu__link-text">Créer une boutique</span></a>
-                </li>
-                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('shop.index')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <rect x="0" y="0" width="24" height="24"/>
-                                <rect fill="#000000" opacity="0.3" x="4" y="4" width="4" height="4" rx="2"/>
-                                <rect fill="#000000" x="4" y="10" width="4" height="4" rx="2"/>
-                                <rect fill="#000000" x="10" y="4" width="4" height="4" rx="2"/>
-                                <rect fill="#000000" x="10" y="10" width="4" height="4" rx="2"/>
-                                <rect fill="#000000" x="16" y="4" width="4" height="4" rx="2"/>
-                                <rect fill="#000000" x="16" y="10" width="4" height="4" rx="2"/>
-                                <rect fill="#000000" x="4" y="16" width="4" height="4" rx="2"/>
-                                <rect fill="#000000" x="10" y="16" width="4" height="4" rx="2"/>
-                                <rect fill="#000000" x="16" y="16" width="4" height="4" rx="2"/>
-                            </g>
-                        </svg>
-                        </span><span class="kt-menu__link-text">Mes boutiques</span></a>
-                </li>
+                @if(auth()->user()->profile->role=="Busness")
+                    <li class="kt-menu__section ">
+                        <h4 class="kt-menu__section-text">Boutique</h4>
+                        <i class="kt-menu__section-icon flaticon-more-v2"></i>
+                    </li>
+                    <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('shop.create')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/>
+                                    <rect fill="#000000"  transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"/>
+                                </g>
+                            </svg>
+                            </span><span class="kt-menu__link-text">Créer une boutique</span></a>
+                    </li>
+                    <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('shop.index')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <rect x="0" y="0" width="24" height="24"/>
+                                    <rect fill="#000000" opacity="0.3" x="4" y="4" width="4" height="4" rx="2"/>
+                                    <rect fill="#000000" x="4" y="10" width="4" height="4" rx="2"/>
+                                    <rect fill="#000000" x="10" y="4" width="4" height="4" rx="2"/>
+                                    <rect fill="#000000" x="10" y="10" width="4" height="4" rx="2"/>
+                                    <rect fill="#000000" x="16" y="4" width="4" height="4" rx="2"/>
+                                    <rect fill="#000000" x="16" y="10" width="4" height="4" rx="2"/>
+                                    <rect fill="#000000" x="4" y="16" width="4" height="4" rx="2"/>
+                                    <rect fill="#000000" x="10" y="16" width="4" height="4" rx="2"/>
+                                    <rect fill="#000000" x="16" y="16" width="4" height="4" rx="2"/>
+                                </g>
+                            </svg>
+                            </span><span class="kt-menu__link-text">Mes boutiques</span></a>
+                    </li>
+                @endif
                 <li class="kt-menu__section ">
                     <h4 class="kt-menu__section-text">Aide</h4>
                     <i class="kt-menu__section-icon flaticon-more-v2"></i>
@@ -111,11 +113,12 @@
 
 <!-- begin:: Header -->
 @section('Header')
-    <div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed ">
+    <div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed  justify-content-end ">
 
         <div class="kt-header-menu-wrapper" id="kt_header_menu_wrapper">
 
         </div>
+
 
         <!-- end:: Header Menu -->
 
@@ -127,29 +130,6 @@
             <!--begin: Search -->
 
             <!--begin: Language bar -->
-{{--            <div class="kt-header__topbar-item kt-header__topbar-item--langs">--}}
-{{--                <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px">--}}
-{{--                                <span class="kt-header__topbar-icon">--}}
-{{--                                    <img class="" src="assets/media/flags/195-france.svg" alt="" />--}}
-{{--                                </span>--}}
-{{--                </div>--}}
-{{--                <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround">--}}
-{{--                    <ul class="kt-nav kt-margin-t-10 kt-margin-b-10">--}}
-{{--                        <li class="kt-nav__item kt-nav__item--active">--}}
-{{--                            <a href="#" class="kt-nav__link">--}}
-{{--                                <span class="kt-nav__link-icon"><img src="assets/media/flags/195-france.svg" alt="" /></span>--}}
-{{--                                <span class="kt-nav__link-text">Français</span>--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
-{{--                        <li class="kt-nav__item">--}}
-{{--                            <a href="#" class="kt-nav__link">--}}
-{{--                                <span class="kt-nav__link-icon"><img src="assets/media/flags/226-united-states.svg" alt="" /></span>--}}
-{{--                                <span class="kt-nav__link-text">English</span>--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
-{{--                    </ul>--}}
-{{--                </div>--}}
-{{--            </div>--}}
 
             <!--end: Language bar -->
 
@@ -159,7 +139,7 @@
                     <div class="kt-header__topbar-user">
                         <span class="kt-header__topbar-welcome kt-hidden-mobile">Bienvenue,</span>
                         <span class="kt-header__topbar-username kt-hidden-mobile">Keita</span>
-                        <img class="kt-hidden" alt="Pic" src="{{asset('storage/'.auth()->user()->image)}}" />
+                        <img class="kt-hidden" alt="Pic" src="{{asset('assets/media/users/300_25.jpg')}}" />
 
                         <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
                         <span class="kt-badge kt-badge--username kt-badge--unified-success kt-badge--lg kt-badge--rounded kt-badge--bold">S</span>
@@ -176,7 +156,7 @@
                             <span class="kt-badge kt-badge--lg kt-badge--rounded kt-badge--bold kt-font-success">S</span>
                         </div>
                         <div class="kt-user-card__name">
-                            {{auth()->user()->first_name}}
+                            Keita
                         </div>
                     </div>
 
@@ -184,24 +164,13 @@
 
                     <!--begin: Navigation -->
                     <div class="kt-notification">
-                        <a href="custom/apps/user/profile-1/personal-information.html" class="kt-notification__item">
-                            <div class="kt-notification__item-icon">
-                                <i class="flaticon2-calendar-3 kt-font-success"></i>
-                            </div>
-                            <div class="kt-notification__item-details">
-                                <div class="kt-notification__item-title kt-font-bold">
-                                    Mon Profile
-                                </div>
-                                <div class="kt-notification__item-time">
-                                    Modifier votre profile
-                                </div>
-                            </div>
-                        </a>
 
                         <div class="kt-notification__custom kt-space-between justify-content-center">
-                            <a href="{{ route('logout') }}" target="_blank" class="btn btn-label btn-label-brand btn-sm btn-bold"onclick="event.preventDefault();
+                            <a  class="btn btn-label btn-label-brand btn-sm btn-bold" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                {{ __('Se déconnecter') }}</a>
+                                {{ __('Déconnexion') }}</a>
+
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
@@ -224,18 +193,19 @@
 @section('ContentHead')
     <div class=" pr-5 pl-5 justify-content-center " >
 
-        <form class="pr-3 pl-3">
+        <form class="pr-3 pl-3" action="{{route('search.post')}}" method="POST" >
+            {{ csrf_field() }}
             <div class="form-group ">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Rechercher une annonce">
+                    <input type="text" class="form-control" placeholder="Rechercher une annonce" name="query">
                     <div class="input-group-append">
-                        <button class="btn btn-secondary" type="button"><i class="fa fa-search"></i></button>
+                        <button type="submit" class="btn btn-secondary"><i class="fa fa-search"></i></button>
                     </div>
                 </div>
             </div>
         </form>
         <div class="mb-4 pl-3">
-            <a href=""  class="btn btn-outline-primary text-primary btn-hover-light btn-pill btn-elevate btn-elevate-air ">
+            <a href="{{route('post.create')}}"  class="btn btn-outline-primary text-primary btn-hover-light btn-pill btn-elevate btn-elevate-air ">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                         <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/>
@@ -260,442 +230,149 @@
 
             <!--Begin::Section-->
             <div class="row justify-content-center">
-                <div class="col-xl-3">
+                @if(count($posts) >= 1)
+                    @foreach($posts as $post)
+                        <div class="col-xl-3">
 
-                    <!--Begin::Portlet-->
-                    <div class="kt-portlet kt-portlet--height-fluid">
-                        <div class="kt-portlet__head kt-portlet__head--noborder">
-                            <div class="kt-portlet__head-label">
-                                <h3 class="kt-portlet__head-title">
-                                </h3>
-                            </div>
-                            <div class="kt-portlet__head-toolbar">
-                                <a href="#" class="btn btn-icon" data-toggle="dropdown">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                            <rect x="0" y="0" width="24" height="24"/>
-                                            <circle fill="#000000" cx="12" cy="5" r="2"/>
-                                            <circle fill="#000000" cx="12" cy="12" r="2"/>
-                                            <circle fill="#000000" cx="12" cy="19" r="2"/>
-                                        </g>
-                                    </svg>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <ul class="kt-nav">
-                                        <li class="kt-nav__item">
-                                            <a href="#" class="kt-nav__link">
-                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                        <rect x="0" y="0" width="24" height="24"/>
-                                                        <path d="M8,17.9148182 L8,5.96685884 C8,5.56391781 8.16211443,5.17792052 8.44982609,4.89581508 L10.965708,2.42895648 C11.5426798,1.86322723 12.4640974,1.85620921 13.0496196,2.41308426 L15.5337377,4.77566479 C15.8314604,5.0588212 16,5.45170806 16,5.86258077 L16,17.9148182 C16,18.7432453 15.3284271,19.4148182 14.5,19.4148182 L9.5,19.4148182 C8.67157288,19.4148182 8,18.7432453 8,17.9148182 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000000, 10.707409) rotate(-135.000000) translate(-12.000000, -10.707409) "/>
-                                                        <rect fill="#000000" opacity="0.3" x="5" y="20" width="15" height="2" rx="1"/>
-                                                    </g>
-                                                </svg>
-                                                <span class="kt-nav__link-text ml-2">Modifier</span>
-                                            </a>
-                                        </li>
-                                        <li class="kt-nav__item">
-                                            <a href="#" class="kt-nav__link">
-                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                        <rect x="0" y="0" width="24" height="24"/>
-                                                        <path d="M6,8 L18,8 L17.106535,19.6150447 C17.04642,20.3965405 16.3947578,21 15.6109533,21 L8.38904671,21 C7.60524225,21 6.95358004,20.3965405 6.89346498,19.6150447 L6,8 Z M8,10 L8.45438229,14.0894406 L15.5517885,14.0339036 L16,10 L8,10 Z" fill="#000000" fill-rule="nonzero"/>
-                                                        <path d="M14,4.5 L14,3.5 C14,3.22385763 13.7761424,3 13.5,3 L10.5,3 C10.2238576,3 10,3.22385763 10,3.5 L10,4.5 L5.5,4.5 C5.22385763,4.5 5,4.72385763 5,5 L5,5.5 C5,5.77614237 5.22385763,6 5.5,6 L18.5,6 C18.7761424,6 19,5.77614237 19,5.5 L19,5 C19,4.72385763 18.7761424,4.5 18.5,4.5 L14,4.5 Z" fill="#000000" opacity="0.3"/>
-                                                    </g>
-                                                </svg>
-                                                <span class="kt-nav__link-text ml-2 ">Supprimer</span>
-                                            </a>
-                                        </li>
-                                        <li class="kt-nav__item">
-                                            <a href="" class="kt-nav__link">
-                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                        <rect x="0" y="0" width="24" height="24"/>
-                                                        <path d="M3,12 C3,12 5.45454545,6 12,6 C16.9090909,6 21,12 21,12 C21,12 16.9090909,18 12,18 C5.45454545,18 3,12 3,12 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"/>
-                                                        <path d="M12,15 C10.3431458,15 9,13.6568542 9,12 C9,10.3431458 10.3431458,9 12,9 C13.6568542,9 15,10.3431458 15,12 C15,13.6568542 13.6568542,15 12,15 Z" fill="#000000" opacity="0.3"/>
-                                                    </g>
-                                                </svg>
-                                                <span class="kt-nav__link-text ml-2">Voir</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="kt-portlet__body">
-
-                            <!--begin::Widget -->
-                            <div class="kt-widget kt-widget--user-profile-2">
-                                <div class="kt-widget__head">
-                                    <div class="kt-widget__media">
-                                        <img class="kt-widget__img kt-hidden-" src="assets/media/users/300_21.jpg" alt="image">
-                                        <div class="kt-widget__pic kt-widget__pic--success kt-font-success kt-font-boldest kt-hidden">
-                                            ChS
-                                        </div>
+                            <!--Begin::Portlet-->
+                            <div class="kt-portlet kt-portlet--height-fluid">
+                                <div class="kt-portlet__head kt-portlet__head--noborder">
+                                    <div class="kt-portlet__head-label">
+                                        <h3 class="kt-portlet__head-title">
+                                        </h3>
                                     </div>
-                                    <div class="kt-widget__info">
-                                        <a href="#" class="kt-widget__username">
-                                            Nom du produit...
+                                    <div class="kt-portlet__head-toolbar">
+                                        <a href="#" class="btn btn-icon" data-toggle="dropdown">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <rect x="0" y="0" width="24" height="24"/>
+                                                    <circle fill="#000000" cx="12" cy="5" r="2"/>
+                                                    <circle fill="#000000" cx="12" cy="12" r="2"/>
+                                                    <circle fill="#000000" cx="12" cy="19" r="2"/>
+                                                </g>
+                                            </svg>
                                         </a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <ul class="kt-nav">
+                                                <li class="kt-nav__item">
+                                                    <a href="{{route('post.edit',$post)}}" class="kt-nav__link">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                                <rect x="0" y="0" width="24" height="24"/>
+                                                                <path d="M8,17.9148182 L8,5.96685884 C8,5.56391781 8.16211443,5.17792052 8.44982609,4.89581508 L10.965708,2.42895648 C11.5426798,1.86322723 12.4640974,1.85620921 13.0496196,2.41308426 L15.5337377,4.77566479 C15.8314604,5.0588212 16,5.45170806 16,5.86258077 L16,17.9148182 C16,18.7432453 15.3284271,19.4148182 14.5,19.4148182 L9.5,19.4148182 C8.67157288,19.4148182 8,18.7432453 8,17.9148182 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000000, 10.707409) rotate(-135.000000) translate(-12.000000, -10.707409) "/>
+                                                                <rect fill="#000000" opacity="0.3" x="5" y="20" width="15" height="2" rx="1"/>
+                                                            </g>
+                                                        </svg>
+                                                        <span class="kt-nav__link-text ml-2">Modifier</span>
+                                                    </a>
+                                                </li>
+                                                <li class="kt-nav__item">
+                                                    <a href="#" class="kt-nav__link" data-toggle="modal" data-target="#kt_modal_6">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                                <rect x="0" y="0" width="24" height="24"/>
+                                                                <path d="M6,8 L18,8 L17.106535,19.6150447 C17.04642,20.3965405 16.3947578,21 15.6109533,21 L8.38904671,21 C7.60524225,21 6.95358004,20.3965405 6.89346498,19.6150447 L6,8 Z M8,10 L8.45438229,14.0894406 L15.5517885,14.0339036 L16,10 L8,10 Z" fill="#000000" fill-rule="nonzero"/>
+                                                                <path d="M14,4.5 L14,3.5 C14,3.22385763 13.7761424,3 13.5,3 L10.5,3 C10.2238576,3 10,3.22385763 10,3.5 L10,4.5 L5.5,4.5 C5.22385763,4.5 5,4.72385763 5,5 L5,5.5 C5,5.77614237 5.22385763,6 5.5,6 L18.5,6 C18.7761424,6 19,5.77614237 19,5.5 L19,5 C19,4.72385763 18.7761424,4.5 18.5,4.5 L14,4.5 Z" fill="#000000" opacity="0.3"/>
+                                                            </g>
+                                                        </svg>
+                                                        <span class="kt-nav__link-text ml-2 ">Supprimer</span>
+                                                    </a>
+                                                </li>
+                                                <li class="kt-nav__item">
+                                                    <a href="{{route('post.show',$post)}}" class="kt-nav__link">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                                <rect x="0" y="0" width="24" height="24"/>
+                                                                <path d="M3,12 C3,12 5.45454545,6 12,6 C16.9090909,6 21,12 21,12 C21,12 16.9090909,18 12,18 C5.45454545,18 3,12 3,12 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"/>
+                                                                <path d="M12,15 C10.3431458,15 9,13.6568542 9,12 C9,10.3431458 10.3431458,9 12,9 C13.6568542,9 15,10.3431458 15,12 C15,13.6568542 13.6568542,15 12,15 Z" fill="#000000" opacity="0.3"/>
+                                                            </g>
+                                                        </svg>
+                                                        <span class="kt-nav__link-text ml-2">Voir</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="kt-widget__body">
-                                    <div class="kt-widget__section">
-                                        Description du produit..........
+                                <div class="kt-portlet__body">
+
+                                    <!--begin::Widget -->
+                                    <div class="kt-widget kt-widget--user-profile-2">
+                                        <div class="kt-widget__head">
+                                            <div class="kt-widget__media">
+                                                <img class="kt-widget__img kt-hidden-" src="assets/media/users/300_21.jpg" alt="image">
+                                                <div class="kt-widget__pic kt-widget__pic--success kt-font-success kt-font-boldest kt-hidden">
+                                                    ChS
+                                                </div>
+                                            </div>
+                                            <div class="kt-widget__info">
+                                                <a href="#" class="kt-widget__username">
+                                                    {{$post->product->name}}
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="kt-widget__body">
+                                            <div class="kt-widget__section">
+                                                {{$post->product->description}}
+                                            </div>
+                                            <div class="kt-widget__item">
+                                                <div class="kt-widget__contact">
+                                                    <span class="kt-widget__label">Prix :</span>
+                                                    <a href="#" class="kt-widget__data">{{$post->product->price}} FCFA</a>
+                                                </div>
+                                                <div class="kt-widget__contact">
+                                                    <span class="kt-widget__label">Stocke:</span>
+                                                    <a href="#" class="kt-widget__data">5</a>
+                                                </div>
+                                                <div class="kt-widget__contact">
+                                                    <span class="kt-widget__label">Publier depuis :</span>
+                                                    <span class="kt-widget__data">01/01/2020</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="kt-widget__footer">
+                                            <a href="{{route('post.show',$post)}}"  class="btn btn-outline-primary btn-lg ">Détail du produit</a>
+                                        </div>
                                     </div>
-                                    <div class="kt-widget__item">
-                                        <div class="kt-widget__contact">
-                                            <span class="kt-widget__label">Prix :</span>
-                                            <a href="#" class="kt-widget__data">8000 FCFA</a>
-                                        </div>
-                                        <div class="kt-widget__contact">
-                                            <span class="kt-widget__label">Stocke:</span>
-                                            <a href="#" class="kt-widget__data">5</a>
-                                        </div>
-                                        <div class="kt-widget__contact">
-                                            <span class="kt-widget__label">Publier depuis :</span>
-                                            <span class="kt-widget__data">01/01/2020</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="kt-widget__footer">
-                                    <button href=""  class="btn btn-outline-primary btn-lg ">Détail du produit</button>
+
+                                    <!--end::Widget -->
                                 </div>
                             </div>
 
-                            <!--end::Widget -->
+                            <!--End::Portlet-->
                         </div>
+                        <div class="modal fade" id="kt_modal_6" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="fa">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Suppression de la boutique {{$post->product->name}}</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Voulez-vous vraiment supprimer cette Annonce</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                                        <form action="{{route('post.destroy',$post)}}" method="POST">
+                                            {{ csrf_field() }}
+                                            {{method_field('DELETE')}}
+                                            <button  class="btn btn-danger text-white">Supprimer</button>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                @else
+                    <div class="col-md-12" style="margin-top: 150px;">
+                        <div class="text-center"><i class="fa fa-calendar fa-5x text-primary"></i></div>
                     </div>
-
-                    <!--End::Portlet-->
-                </div>
-                <div class="col-xl-3">
-
-                    <!--Begin::Portlet-->
-                    <div class="kt-portlet kt-portlet--height-fluid">
-                        <div class="kt-portlet__head kt-portlet__head--noborder">
-                            <div class="kt-portlet__head-label">
-                                <h3 class="kt-portlet__head-title">
-                                </h3>
-                            </div>
-                            <div class="kt-portlet__head-toolbar">
-                                <a href="#" class="btn btn-icon" data-toggle="dropdown">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                            <rect x="0" y="0" width="24" height="24"/>
-                                            <circle fill="#000000" cx="12" cy="5" r="2"/>
-                                            <circle fill="#000000" cx="12" cy="12" r="2"/>
-                                            <circle fill="#000000" cx="12" cy="19" r="2"/>
-                                        </g>
-                                    </svg>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <ul class="kt-nav">
-                                        <li class="kt-nav__item">
-                                            <a href="#" class="kt-nav__link">
-                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                        <rect x="0" y="0" width="24" height="24"/>
-                                                        <path d="M8,17.9148182 L8,5.96685884 C8,5.56391781 8.16211443,5.17792052 8.44982609,4.89581508 L10.965708,2.42895648 C11.5426798,1.86322723 12.4640974,1.85620921 13.0496196,2.41308426 L15.5337377,4.77566479 C15.8314604,5.0588212 16,5.45170806 16,5.86258077 L16,17.9148182 C16,18.7432453 15.3284271,19.4148182 14.5,19.4148182 L9.5,19.4148182 C8.67157288,19.4148182 8,18.7432453 8,17.9148182 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000000, 10.707409) rotate(-135.000000) translate(-12.000000, -10.707409) "/>
-                                                        <rect fill="#000000" opacity="0.3" x="5" y="20" width="15" height="2" rx="1"/>
-                                                    </g>
-                                                </svg>
-                                                <span class="kt-nav__link-text ml-2">Modifier</span>
-                                            </a>
-                                        </li>
-                                        <li class="kt-nav__item">
-                                            <a href="#" class="kt-nav__link">
-                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                        <rect x="0" y="0" width="24" height="24"/>
-                                                        <path d="M6,8 L18,8 L17.106535,19.6150447 C17.04642,20.3965405 16.3947578,21 15.6109533,21 L8.38904671,21 C7.60524225,21 6.95358004,20.3965405 6.89346498,19.6150447 L6,8 Z M8,10 L8.45438229,14.0894406 L15.5517885,14.0339036 L16,10 L8,10 Z" fill="#000000" fill-rule="nonzero"/>
-                                                        <path d="M14,4.5 L14,3.5 C14,3.22385763 13.7761424,3 13.5,3 L10.5,3 C10.2238576,3 10,3.22385763 10,3.5 L10,4.5 L5.5,4.5 C5.22385763,4.5 5,4.72385763 5,5 L5,5.5 C5,5.77614237 5.22385763,6 5.5,6 L18.5,6 C18.7761424,6 19,5.77614237 19,5.5 L19,5 C19,4.72385763 18.7761424,4.5 18.5,4.5 L14,4.5 Z" fill="#000000" opacity="0.3"/>
-                                                    </g>
-                                                </svg>
-                                                <span class="kt-nav__link-text ml-2 ">Supprimer</span>
-                                            </a>
-                                        </li>
-                                        <li class="kt-nav__item">
-                                            <a href="" class="kt-nav__link">
-                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                        <rect x="0" y="0" width="24" height="24"/>
-                                                        <path d="M3,12 C3,12 5.45454545,6 12,6 C16.9090909,6 21,12 21,12 C21,12 16.9090909,18 12,18 C5.45454545,18 3,12 3,12 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"/>
-                                                        <path d="M12,15 C10.3431458,15 9,13.6568542 9,12 C9,10.3431458 10.3431458,9 12,9 C13.6568542,9 15,10.3431458 15,12 C15,13.6568542 13.6568542,15 12,15 Z" fill="#000000" opacity="0.3"/>
-                                                    </g>
-                                                </svg>
-                                                <span class="kt-nav__link-text ml-2">Voir</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="kt-portlet__body">
-
-                            <!--begin::Widget -->
-                            <div class="kt-widget kt-widget--user-profile-2">
-                                <div class="kt-widget__head">
-                                    <div class="kt-widget__media">
-                                        <img class="kt-widget__img kt-hidden-" src="assets/media/users/300_21.jpg" alt="image">
-                                        <div class="kt-widget__pic kt-widget__pic--success kt-font-success kt-font-boldest kt-hidden">
-                                            ChS
-                                        </div>
-                                    </div>
-                                    <div class="kt-widget__info">
-                                        <a href="#" class="kt-widget__username">
-                                            Nom du produit...
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="kt-widget__body">
-                                    <div class="kt-widget__section">
-                                        Description du produit..........
-                                    </div>
-                                    <div class="kt-widget__item">
-                                        <div class="kt-widget__contact">
-                                            <span class="kt-widget__label">Prix :</span>
-                                            <a href="#" class="kt-widget__data">8000 FCFA</a>
-                                        </div>
-                                        <div class="kt-widget__contact">
-                                            <span class="kt-widget__label">Stocke:</span>
-                                            <a href="#" class="kt-widget__data">5</a>
-                                        </div>
-                                        <div class="kt-widget__contact">
-                                            <span class="kt-widget__label">Publier depuis :</span>
-                                            <span class="kt-widget__data">01/01/2020</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="kt-widget__footer">
-                                    <button href=""  class="btn btn-outline-primary btn-lg ">Détail du produit</button>
-                                </div>
-                            </div>
-
-                            <!--end::Widget -->
-                        </div>
+                    <div class="col-md-12" style="margin-bottom: 150px">
+                        <h1 class="text-center text-success"><p><small class="text-center">Aucune annonce ajoutée pour le moment</small></p></h1>
                     </div>
-
-                    <!--End::Portlet-->
-                </div>
-                <div class="col-xl-3">
-
-                    <!--Begin::Portlet-->
-                    <div class="kt-portlet kt-portlet--height-fluid">
-                        <div class="kt-portlet__head kt-portlet__head--noborder">
-                            <div class="kt-portlet__head-label">
-                                <h3 class="kt-portlet__head-title">
-                                </h3>
-                            </div>
-                            <div class="kt-portlet__head-toolbar">
-                                <a href="#" class="btn btn-icon" data-toggle="dropdown">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                            <rect x="0" y="0" width="24" height="24"/>
-                                            <circle fill="#000000" cx="12" cy="5" r="2"/>
-                                            <circle fill="#000000" cx="12" cy="12" r="2"/>
-                                            <circle fill="#000000" cx="12" cy="19" r="2"/>
-                                        </g>
-                                    </svg>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <ul class="kt-nav">
-                                        <li class="kt-nav__item">
-                                            <a href="#" class="kt-nav__link">
-                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                        <rect x="0" y="0" width="24" height="24"/>
-                                                        <path d="M8,17.9148182 L8,5.96685884 C8,5.56391781 8.16211443,5.17792052 8.44982609,4.89581508 L10.965708,2.42895648 C11.5426798,1.86322723 12.4640974,1.85620921 13.0496196,2.41308426 L15.5337377,4.77566479 C15.8314604,5.0588212 16,5.45170806 16,5.86258077 L16,17.9148182 C16,18.7432453 15.3284271,19.4148182 14.5,19.4148182 L9.5,19.4148182 C8.67157288,19.4148182 8,18.7432453 8,17.9148182 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000000, 10.707409) rotate(-135.000000) translate(-12.000000, -10.707409) "/>
-                                                        <rect fill="#000000" opacity="0.3" x="5" y="20" width="15" height="2" rx="1"/>
-                                                    </g>
-                                                </svg>
-                                                <span class="kt-nav__link-text ml-2">Modifier</span>
-                                            </a>
-                                        </li>
-                                        <li class="kt-nav__item">
-                                            <a href="#" class="kt-nav__link">
-                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                        <rect x="0" y="0" width="24" height="24"/>
-                                                        <path d="M6,8 L18,8 L17.106535,19.6150447 C17.04642,20.3965405 16.3947578,21 15.6109533,21 L8.38904671,21 C7.60524225,21 6.95358004,20.3965405 6.89346498,19.6150447 L6,8 Z M8,10 L8.45438229,14.0894406 L15.5517885,14.0339036 L16,10 L8,10 Z" fill="#000000" fill-rule="nonzero"/>
-                                                        <path d="M14,4.5 L14,3.5 C14,3.22385763 13.7761424,3 13.5,3 L10.5,3 C10.2238576,3 10,3.22385763 10,3.5 L10,4.5 L5.5,4.5 C5.22385763,4.5 5,4.72385763 5,5 L5,5.5 C5,5.77614237 5.22385763,6 5.5,6 L18.5,6 C18.7761424,6 19,5.77614237 19,5.5 L19,5 C19,4.72385763 18.7761424,4.5 18.5,4.5 L14,4.5 Z" fill="#000000" opacity="0.3"/>
-                                                    </g>
-                                                </svg>
-                                                <span class="kt-nav__link-text ml-2 ">Supprimer</span>
-                                            </a>
-                                        </li>
-                                        <li class="kt-nav__item">
-                                            <a href="" class="kt-nav__link">
-                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                        <rect x="0" y="0" width="24" height="24"/>
-                                                        <path d="M3,12 C3,12 5.45454545,6 12,6 C16.9090909,6 21,12 21,12 C21,12 16.9090909,18 12,18 C5.45454545,18 3,12 3,12 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"/>
-                                                        <path d="M12,15 C10.3431458,15 9,13.6568542 9,12 C9,10.3431458 10.3431458,9 12,9 C13.6568542,9 15,10.3431458 15,12 C15,13.6568542 13.6568542,15 12,15 Z" fill="#000000" opacity="0.3"/>
-                                                    </g>
-                                                </svg>
-                                                <span class="kt-nav__link-text ml-2">Voir</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="kt-portlet__body">
-
-                            <!--begin::Widget -->
-                            <div class="kt-widget kt-widget--user-profile-2">
-                                <div class="kt-widget__head">
-                                    <div class="kt-widget__media">
-                                        <img class="kt-widget__img kt-hidden-" src="assets/media/users/300_21.jpg" alt="image">
-                                        <div class="kt-widget__pic kt-widget__pic--success kt-font-success kt-font-boldest kt-hidden">
-                                            ChS
-                                        </div>
-                                    </div>
-                                    <div class="kt-widget__info">
-                                        <a href="#" class="kt-widget__username">
-                                            Nom du produit...
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="kt-widget__body">
-                                    <div class="kt-widget__section">
-                                        Description du produit..........
-                                    </div>
-                                    <div class="kt-widget__item">
-                                        <div class="kt-widget__contact">
-                                            <span class="kt-widget__label">Prix :</span>
-                                            <a href="#" class="kt-widget__data">8000 FCFA</a>
-                                        </div>
-                                        <div class="kt-widget__contact">
-                                            <span class="kt-widget__label">Stocke:</span>
-                                            <a href="#" class="kt-widget__data">5</a>
-                                        </div>
-                                        <div class="kt-widget__contact">
-                                            <span class="kt-widget__label">Publier depuis :</span>
-                                            <span class="kt-widget__data">01/01/2020</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="kt-widget__footer">
-                                    <button href=""  class="btn btn-outline-primary btn-lg ">Détail du produit</button>
-                                </div>
-                            </div>
-
-                            <!--end::Widget -->
-                        </div>
-                    </div>
-
-                    <!--End::Portlet-->
-                </div>
-                <div class="col-xl-3">
-
-                    <!--Begin::Portlet-->
-                    <div class="kt-portlet kt-portlet--height-fluid">
-                        <div class="kt-portlet__head kt-portlet__head--noborder">
-                            <div class="kt-portlet__head-label">
-                                <h3 class="kt-portlet__head-title">
-                                </h3>
-                            </div>
-                            <div class="kt-portlet__head-toolbar">
-                                <a href="#" class="btn btn-icon" data-toggle="dropdown">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                            <rect x="0" y="0" width="24" height="24"/>
-                                            <circle fill="#000000" cx="12" cy="5" r="2"/>
-                                            <circle fill="#000000" cx="12" cy="12" r="2"/>
-                                            <circle fill="#000000" cx="12" cy="19" r="2"/>
-                                        </g>
-                                    </svg>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <ul class="kt-nav">
-                                        <li class="kt-nav__item">
-                                            <a href="#" class="kt-nav__link">
-                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                        <rect x="0" y="0" width="24" height="24"/>
-                                                        <path d="M8,17.9148182 L8,5.96685884 C8,5.56391781 8.16211443,5.17792052 8.44982609,4.89581508 L10.965708,2.42895648 C11.5426798,1.86322723 12.4640974,1.85620921 13.0496196,2.41308426 L15.5337377,4.77566479 C15.8314604,5.0588212 16,5.45170806 16,5.86258077 L16,17.9148182 C16,18.7432453 15.3284271,19.4148182 14.5,19.4148182 L9.5,19.4148182 C8.67157288,19.4148182 8,18.7432453 8,17.9148182 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000000, 10.707409) rotate(-135.000000) translate(-12.000000, -10.707409) "/>
-                                                        <rect fill="#000000" opacity="0.3" x="5" y="20" width="15" height="2" rx="1"/>
-                                                    </g>
-                                                </svg>
-                                                <span class="kt-nav__link-text ml-2">Modifier</span>
-                                            </a>
-                                        </li>
-                                        <li class="kt-nav__item">
-                                            <a href="#" class="kt-nav__link">
-                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                        <rect x="0" y="0" width="24" height="24"/>
-                                                        <path d="M6,8 L18,8 L17.106535,19.6150447 C17.04642,20.3965405 16.3947578,21 15.6109533,21 L8.38904671,21 C7.60524225,21 6.95358004,20.3965405 6.89346498,19.6150447 L6,8 Z M8,10 L8.45438229,14.0894406 L15.5517885,14.0339036 L16,10 L8,10 Z" fill="#000000" fill-rule="nonzero"/>
-                                                        <path d="M14,4.5 L14,3.5 C14,3.22385763 13.7761424,3 13.5,3 L10.5,3 C10.2238576,3 10,3.22385763 10,3.5 L10,4.5 L5.5,4.5 C5.22385763,4.5 5,4.72385763 5,5 L5,5.5 C5,5.77614237 5.22385763,6 5.5,6 L18.5,6 C18.7761424,6 19,5.77614237 19,5.5 L19,5 C19,4.72385763 18.7761424,4.5 18.5,4.5 L14,4.5 Z" fill="#000000" opacity="0.3"/>
-                                                    </g>
-                                                </svg>
-                                                <span class="kt-nav__link-text ml-2 ">Supprimer</span>
-                                            </a>
-                                        </li>
-                                        <li class="kt-nav__item">
-                                            <a href="" class="kt-nav__link">
-                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                        <rect x="0" y="0" width="24" height="24"/>
-                                                        <path d="M3,12 C3,12 5.45454545,6 12,6 C16.9090909,6 21,12 21,12 C21,12 16.9090909,18 12,18 C5.45454545,18 3,12 3,12 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"/>
-                                                        <path d="M12,15 C10.3431458,15 9,13.6568542 9,12 C9,10.3431458 10.3431458,9 12,9 C13.6568542,9 15,10.3431458 15,12 C15,13.6568542 13.6568542,15 12,15 Z" fill="#000000" opacity="0.3"/>
-                                                    </g>
-                                                </svg>
-                                                <span class="kt-nav__link-text ml-2">Voir</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="kt-portlet__body">
-
-                            <!--begin::Widget -->
-                            <div class="kt-widget kt-widget--user-profile-2">
-                                <div class="kt-widget__head">
-                                    <div class="kt-widget__media">
-                                        <img class="kt-widget__img kt-hidden-" src="assets/media/users/300_21.jpg" alt="image">
-                                        <div class="kt-widget__pic kt-widget__pic--success kt-font-success kt-font-boldest kt-hidden">
-                                            ChS
-                                        </div>
-                                    </div>
-                                    <div class="kt-widget__info">
-                                        <a href="#" class="kt-widget__username">
-                                            Nom du produit...
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="kt-widget__body">
-                                    <div class="kt-widget__section">
-                                        Description du produit..........
-                                    </div>
-                                    <div class="kt-widget__item">
-                                        <div class="kt-widget__contact">
-                                            <span class="kt-widget__label">Prix :</span>
-                                            <a href="#" class="kt-widget__data">8000 FCFA</a>
-                                        </div>
-                                        <div class="kt-widget__contact">
-                                            <span class="kt-widget__label">Stocke:</span>
-                                            <a href="#" class="kt-widget__data">5</a>
-                                        </div>
-                                        <div class="kt-widget__contact">
-                                            <span class="kt-widget__label">Publier depuis :</span>
-                                            <span class="kt-widget__data">01/01/2020</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="kt-widget__footer">
-                                    <button href=""  class="btn btn-outline-primary btn-lg ">Détail du produit</button>
-                                </div>
-                            </div>
-
-                            <!--end::Widget -->
-                        </div>
-                    </div>
-
-                    <!--End::Portlet-->
-                </div>
+                @endif
             </div>
 
             <!--End::Section-->
@@ -703,61 +380,8 @@
 
 
             <!--Begin::Pagination-->
-            <div class="row ">
-                <div class="col-xl-12 ">
-
-                    <!--begin:: Components/Pagination/Default-->
-                    <div class="kt-portlet">
-                        <div class="kt-portlet__body">
-
-                            <!--begin: Pagination-->
-                            <div class="kt-pagination kt-pagination--brand justify-content-center">
-                                <ul class="kt-pagination__links">
-                                    <li class="kt-pagination__link--first">
-                                        <a href="#"><i class="fa fa-angle-double-left kt-font-brand"></i></a>
-                                    </li>
-                                    <li class="kt-pagination__link--next">
-                                        <a href="#"><i class="fa fa-angle-left kt-font-brand"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#">...</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">29</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">30</a>
-                                    </li>
-                                    <li class="kt-pagination__link--active">
-                                        <a href="#">31</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">32</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">33</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">34</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">...</a>
-                                    </li>
-                                    <li class="kt-pagination__link--prev">
-                                        <a href="#"><i class="fa fa-angle-right kt-font-brand"></i></a>
-                                    </li>
-                                    <li class="kt-pagination__link--last">
-                                        <a href="#"><i class="fa fa-angle-double-right kt-font-brand"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <!--end: Pagination-->
-                        </div>
-                    </div>
-
-                    <!--end:: Components/Pagination/Default-->
-                </div>
+            <div class="row justify-content-center">
+                {{$posts->links()}}
             </div>
 
             <!--End::Pagination-->
@@ -766,4 +390,5 @@
         <!--End::Dashboard 1-->
     </div>
 @endsection
+
 <!-- end:: Content -->

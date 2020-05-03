@@ -181,29 +181,6 @@
             <!--begin: Search -->
 
             <!--begin: Language bar -->
-            <div class="kt-header__topbar-item kt-header__topbar-item--langs">
-                <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px">
-                                <span class="kt-header__topbar-icon">
-                                    <img class="" src="assets/media/flags/195-france.svg" alt="" />
-                                </span>
-                </div>
-                <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround">
-                    <ul class="kt-nav kt-margin-t-10 kt-margin-b-10">
-                        <li class="kt-nav__item kt-nav__item--active">
-                            <a href="#" class="kt-nav__link">
-                                <span class="kt-nav__link-icon"><img src="assets/media/flags/195-france.svg" alt="" /></span>
-                                <span class="kt-nav__link-text">Français</span>
-                            </a>
-                        </li>
-                        <li class="kt-nav__item">
-                            <a href="#" class="kt-nav__link">
-                                <span class="kt-nav__link-icon"><img src="assets/media/flags/226-united-states.svg" alt="" /></span>
-                                <span class="kt-nav__link-text">English</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
 
             <!--end: Language bar -->
 
@@ -213,7 +190,7 @@
                     <div class="kt-header__topbar-user">
                         <span class="kt-header__topbar-welcome kt-hidden-mobile">Bienvenue,</span>
                         <span class="kt-header__topbar-username kt-hidden-mobile">Keita</span>
-                        <img class="kt-hidden" alt="Pic" src="assets/media/users/300_25.jpg" />
+                        <img class="kt-hidden" alt="Pic" src="{{asset('assets/media/users/300_25.jpg')}}" />
 
                         <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
                         <span class="kt-badge kt-badge--username kt-badge--unified-success kt-badge--lg kt-badge--rounded kt-badge--bold">S</span>
@@ -222,9 +199,9 @@
                 <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-xl">
 
                     <!--begin: Head -->
-                    <div class="kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x" style="background-image: url(assets/media/misc/bg-1.jpg)">
+                    <div class="kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x" style="background-image: url({{asset('assets/media/misc/bg-1.jpg')}})">
                         <div class="kt-user-card__avatar">
-                            <img class="kt-hidden" alt="Pic" src="assets/media/users/300_25.jpg" />
+                            <img class="kt-hidden" alt="Pic" src="{{asset('assets/media/users/300_25.jpg')}}" />
 
                             <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
                             <span class="kt-badge kt-badge--lg kt-badge--rounded kt-badge--bold kt-font-success">S</span>
@@ -238,22 +215,16 @@
 
                     <!--begin: Navigation -->
                     <div class="kt-notification">
-                        <a href="custom/apps/user/profile-1/personal-information.html" class="kt-notification__item">
-                            <div class="kt-notification__item-icon">
-                                <i class="flaticon2-calendar-3 kt-font-success"></i>
-                            </div>
-                            <div class="kt-notification__item-details">
-                                <div class="kt-notification__item-title kt-font-bold">
-                                    Mon Profile
-                                </div>
-                                <div class="kt-notification__item-time">
-                                    Modifier votre profile
-                                </div>
-                            </div>
-                        </a>
 
                         <div class="kt-notification__custom kt-space-between justify-content-center">
-                            <a href="custom/user/login-v2.html" target="_blank" class="btn btn-label btn-label-brand btn-sm btn-bold">Se déconnecter</a>
+                            <a  class="btn btn-label btn-label-brand btn-sm btn-bold" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                {{ __('Déconnexion') }}</a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         </div>
                     </div>
 
@@ -271,17 +242,6 @@
 
 <!-- begin:: Content Head -->
 @section('ContentHead')
-{{--    <div class="kt-subheader   kt-grid__item" id="kt_subheader">--}}
-{{--        <div class="kt-container  row justify-content-center ">--}}
-{{--            <div class="kt-subheader__main">--}}
-{{--                <div class="kt-subheader__group " id="kt_subheader_search">--}}
-{{--										<span class="kt-subheader__desc" id="kt_subheader_total">--}}
-{{--											Les détails du produit </span>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-
-{{--        </div>--}}
-{{--    </div>--}}
 
 @endsection
 <!-- end:: Content Head -->
@@ -413,87 +373,87 @@
     <!-- end:: Section -->
 
     <!-- begin:: Section -->
-    <div class="kt-container ">
-        <div class="row">
-            <div class="col-lg-4">
-                <a href="#" class="kt-portlet kt-iconbox kt-iconbox--animate-slow">
-                    <div class="kt-portlet__body">
-                        <div class="kt-iconbox__body">
-                            <div class="kt-iconbox__icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                        <rect x="0" y="0" width="24" height="24"/>
-                                        <path d="M3,12 C3,12 5.45454545,6 12,6 C16.9090909,6 21,12 21,12 C21,12 16.9090909,18 12,18 C5.45454545,18 3,12 3,12 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"/>
-                                        <path d="M12,15 C10.3431458,15 9,13.6568542 9,12 C9,10.3431458 10.3431458,9 12,9 C13.6568542,9 15,10.3431458 15,12 C15,13.6568542 13.6568542,15 12,15 Z" fill="#000000" opacity="0.3"/>
-                                    </g>
-                                </svg>
-                            </div>
-                            <div class="kt-iconbox__desc">
-                                <h3 class="kt-iconbox__title">
-                                    Nombre de vue
-                                </h3>
-                                <div class="kt-iconbox__content">
-                                    10
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4">
-                <a href="#" class="kt-portlet kt-iconbox kt-iconbox--animate">
-                    <div class="kt-portlet__body">
-                        <div class="kt-iconbox__body">
-                            <div class="kt-iconbox__icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                        <rect x="0" y="0" width="24" height="24"/>
-                                        <path d="M15.1231569,19.0111815 L7.83785094,14.818972 C8.31992102,14.3336937 8.67836566,13.7254559 8.86199856,13.0454449 L16.0980947,17.246999 C15.6352738,17.7346932 15.2940944,18.3389541 15.1231569,19.0111815 Z M7.75585639,9.10080708 L15.0774983,4.78750147 C15.2169157,5.48579221 15.5381369,6.11848298 15.9897205,6.63413231 L8.86499752,10.9657252 C8.67212677,10.2431476 8.28201274,9.60110795 7.75585639,9.10080708 Z" fill="#000000" fill-rule="nonzero"/>
-                                        <circle fill="#000000" opacity="0.3" cx="19" cy="4" r="3"/>
-                                        <circle fill="#000000" opacity="0.3" cx="19" cy="20" r="3"/>
-                                        <circle fill="#000000" opacity="0.3" cx="5" cy="12" r="3"/>
-                                    </g>
-                                </svg>
-                            </div>
-                            <div class="kt-iconbox__desc">
-                                <h3 class="kt-iconbox__title">
-                                    Nombre de partage
-                                </h3>
-                                <div class="kt-iconbox__content">
-                                    20
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4">
-                <a href="#" class="kt-portlet kt-iconbox kt-iconbox--animate-slower">
-                    <div class="kt-portlet__body">
-                        <div class="kt-iconbox__body">
-                            <div class="kt-iconbox__icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                        <rect x="0" y="0" width="24" height="24"/>
-                                        <path d="M9,10 L9,19 L10.1525987,19.3841996 C11.3761964,19.7920655 12.6575468,20 13.9473319,20 L17.5405883,20 C18.9706314,20 20.2018758,18.990621 20.4823303,17.5883484 L21.231529,13.8423552 C21.5564648,12.217676 20.5028146,10.6372006 18.8781353,10.3122648 C18.6189212,10.260422 18.353992,10.2430672 18.0902299,10.2606513 L14.5,10.5 L14.8641964,6.49383981 C14.9326895,5.74041495 14.3774427,5.07411874 13.6240179,5.00562558 C13.5827848,5.00187712 13.5414031,5 13.5,5 L13.5,5 C12.5694044,5 11.7070439,5.48826024 11.2282564,6.28623939 L9,10 Z" fill="#000000"/>
-                                        <rect fill="#000000" opacity="0.3" x="2" y="9" width="5" height="11" rx="1"/>
-                                    </g>
-                                </svg>
-                            </div>
-                            <div class="kt-iconbox__desc">
-                                <h3 class="kt-iconbox__title">
-                                    Nombre de j'aime
-                                </h3>
-                                <div class="kt-iconbox__content">
-                                    10
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
+{{--    <div class="kt-container ">--}}
+{{--        <div class="row">--}}
+{{--            <div class="col-lg-4">--}}
+{{--                <a href="#" class="kt-portlet kt-iconbox kt-iconbox--animate-slow">--}}
+{{--                    <div class="kt-portlet__body">--}}
+{{--                        <div class="kt-iconbox__body">--}}
+{{--                            <div class="kt-iconbox__icon">--}}
+{{--                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">--}}
+{{--                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">--}}
+{{--                                        <rect x="0" y="0" width="24" height="24"/>--}}
+{{--                                        <path d="M3,12 C3,12 5.45454545,6 12,6 C16.9090909,6 21,12 21,12 C21,12 16.9090909,18 12,18 C5.45454545,18 3,12 3,12 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"/>--}}
+{{--                                        <path d="M12,15 C10.3431458,15 9,13.6568542 9,12 C9,10.3431458 10.3431458,9 12,9 C13.6568542,9 15,10.3431458 15,12 C15,13.6568542 13.6568542,15 12,15 Z" fill="#000000" opacity="0.3"/>--}}
+{{--                                    </g>--}}
+{{--                                </svg>--}}
+{{--                            </div>--}}
+{{--                            <div class="kt-iconbox__desc">--}}
+{{--                                <h3 class="kt-iconbox__title">--}}
+{{--                                    Nombre de vue--}}
+{{--                                </h3>--}}
+{{--                                <div class="kt-iconbox__content">--}}
+{{--                                    10--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </a>--}}
+{{--            </div>--}}
+{{--            <div class="col-lg-4">--}}
+{{--                <a href="#" class="kt-portlet kt-iconbox kt-iconbox--animate">--}}
+{{--                    <div class="kt-portlet__body">--}}
+{{--                        <div class="kt-iconbox__body">--}}
+{{--                            <div class="kt-iconbox__icon">--}}
+{{--                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">--}}
+{{--                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">--}}
+{{--                                        <rect x="0" y="0" width="24" height="24"/>--}}
+{{--                                        <path d="M15.1231569,19.0111815 L7.83785094,14.818972 C8.31992102,14.3336937 8.67836566,13.7254559 8.86199856,13.0454449 L16.0980947,17.246999 C15.6352738,17.7346932 15.2940944,18.3389541 15.1231569,19.0111815 Z M7.75585639,9.10080708 L15.0774983,4.78750147 C15.2169157,5.48579221 15.5381369,6.11848298 15.9897205,6.63413231 L8.86499752,10.9657252 C8.67212677,10.2431476 8.28201274,9.60110795 7.75585639,9.10080708 Z" fill="#000000" fill-rule="nonzero"/>--}}
+{{--                                        <circle fill="#000000" opacity="0.3" cx="19" cy="4" r="3"/>--}}
+{{--                                        <circle fill="#000000" opacity="0.3" cx="19" cy="20" r="3"/>--}}
+{{--                                        <circle fill="#000000" opacity="0.3" cx="5" cy="12" r="3"/>--}}
+{{--                                    </g>--}}
+{{--                                </svg>--}}
+{{--                            </div>--}}
+{{--                            <div class="kt-iconbox__desc">--}}
+{{--                                <h3 class="kt-iconbox__title">--}}
+{{--                                    Nombre de partage--}}
+{{--                                </h3>--}}
+{{--                                <div class="kt-iconbox__content">--}}
+{{--                                    20--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </a>--}}
+{{--            </div>--}}
+{{--            <div class="col-lg-4">--}}
+{{--                <a href="#" class="kt-portlet kt-iconbox kt-iconbox--animate-slower">--}}
+{{--                    <div class="kt-portlet__body">--}}
+{{--                        <div class="kt-iconbox__body">--}}
+{{--                            <div class="kt-iconbox__icon">--}}
+{{--                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">--}}
+{{--                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">--}}
+{{--                                        <rect x="0" y="0" width="24" height="24"/>--}}
+{{--                                        <path d="M9,10 L9,19 L10.1525987,19.3841996 C11.3761964,19.7920655 12.6575468,20 13.9473319,20 L17.5405883,20 C18.9706314,20 20.2018758,18.990621 20.4823303,17.5883484 L21.231529,13.8423552 C21.5564648,12.217676 20.5028146,10.6372006 18.8781353,10.3122648 C18.6189212,10.260422 18.353992,10.2430672 18.0902299,10.2606513 L14.5,10.5 L14.8641964,6.49383981 C14.9326895,5.74041495 14.3774427,5.07411874 13.6240179,5.00562558 C13.5827848,5.00187712 13.5414031,5 13.5,5 L13.5,5 C12.5694044,5 11.7070439,5.48826024 11.2282564,6.28623939 L9,10 Z" fill="#000000"/>--}}
+{{--                                        <rect fill="#000000" opacity="0.3" x="2" y="9" width="5" height="11" rx="1"/>--}}
+{{--                                    </g>--}}
+{{--                                </svg>--}}
+{{--                            </div>--}}
+{{--                            <div class="kt-iconbox__desc">--}}
+{{--                                <h3 class="kt-iconbox__title">--}}
+{{--                                    Nombre de j'aime--}}
+{{--                                </h3>--}}
+{{--                                <div class="kt-iconbox__content">--}}
+{{--                                    10--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </a>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 
     <!-- end:: Section -->
 

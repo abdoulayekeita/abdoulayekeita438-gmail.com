@@ -1,6 +1,6 @@
 @extends('dashboard.layouts.app')
 @section('style')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.0/dropzone.css">
+
 @endsection
 
 <!-- begin:: Aside Menu -->
@@ -17,10 +17,10 @@
                                         </svg></span>
                         <span class="kt-menu__link-text"> Tableau de bord</span></a></li>
                 <li class="kt-menu__section ">
-                    <h4 class="kt-menu__section-text">Produit</h4>
+                    <h4 class="kt-menu__section-text">Annonce</h4>
                     <i class="kt-menu__section-icon flaticon-more-v2"></i>
                 </li>
-                <li class="kt-menu__item  kt-menu__item--submenu " aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
+                <li class="kt-menu__item  kt-menu__item--submenu " aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('post.create')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                 <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/>
@@ -33,7 +33,7 @@
                     <h4 class="kt-menu__section-text">Boutique</h4>
                     <i class="kt-menu__section-icon flaticon-more-v2"></i>
                 </li>
-                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('shop.create')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
+                <li class="kt-menu__item  kt-menu__item--submenu " aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('shop.create')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                 <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/>
@@ -42,7 +42,34 @@
                         </svg>
                         </span><span class="kt-menu__link-text">Créer une boutique</span></a>
                 </li>
-                <li class="kt-menu__item  kt-menu__item--submenu " aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('shop.index')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
+                <li class="kt-menu__item  kt-menu__item--submenu " aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('shop.show',$shop)}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/>
+                                <rect fill="#000000"  transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"/>
+                            </g>
+                        </svg>
+                        </span><span class="kt-menu__link-text">Boutique {{$shop->name}}</span></a>
+                </li>
+                <li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--active" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('shop.edit',$shop)}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/>
+                                <rect fill="#000000"  transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"/>
+                            </g>
+                        </svg>
+                        </span><span class="kt-menu__link-text">Modifier boutique {{$shop->name}}</span></a>
+                </li>
+                <li class="kt-menu__item  kt-menu__item--submenu " aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle" data-toggle="modal" data-target="#kt_modal_6"><span class="kt-menu__link-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/>
+                                <rect fill="#000000"  transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"/>
+                            </g>
+                        </svg>
+                        </span><span class="kt-menu__link-text">Supprimer boutique {{$shop->name}}</span></a>
+                </li>
+                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('shop.index')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                 <rect x="0" y="0" width="24" height="24"/>
@@ -59,37 +86,6 @@
                         </svg>
                         </span><span class="kt-menu__link-text">Mes boutiques</span></a>
                 </li>
-                <li class="kt-menu__item  kt-menu__item--submenu  " aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('shop.create')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
-                       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <rect x="0" y="0" width="24" height="24"/>
-                                <path d="M10,4 L21,4 C21.5522847,4 22,4.44771525 22,5 L22,7 C22,7.55228475 21.5522847,8 21,8 L10,8 C9.44771525,8 9,7.55228475 9,7 L9,5 C9,4.44771525 9.44771525,4 10,4 Z M10,10 L21,10 C21.5522847,10 22,10.4477153 22,11 L22,13 C22,13.5522847 21.5522847,14 21,14 L10,14 C9.44771525,14 9,13.5522847 9,13 L9,11 C9,10.4477153 9.44771525,10 10,10 Z M10,16 L21,16 C21.5522847,16 22,16.4477153 22,17 L22,19 C22,19.5522847 21.5522847,20 21,20 L10,20 C9.44771525,20 9,19.5522847 9,19 L9,17 C9,16.4477153 9.44771525,16 10,16 Z" fill="#000000"/>
-                                <rect fill="#000000" opacity="0.3" x="2" y="4" width="5" height="16" rx="1"/>
-                            </g>
-                        </svg>
-                        </span><span class="kt-menu__link-text">Détail Produit</span></a>
-                </li>
-                <li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--active" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('shop.product.edit',[$shop,$product])}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <rect x="0" y="0" width="24" height="24"/>
-                                <path d="M8,17.9148182 L8,5.96685884 C8,5.56391781 8.16211443,5.17792052 8.44982609,4.89581508 L10.965708,2.42895648 C11.5426798,1.86322723 12.4640974,1.85620921 13.0496196,2.41308426 L15.5337377,4.77566479 C15.8314604,5.0588212 16,5.45170806 16,5.86258077 L16,17.9148182 C16,18.7432453 15.3284271,19.4148182 14.5,19.4148182 L9.5,19.4148182 C8.67157288,19.4148182 8,18.7432453 8,17.9148182 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000000, 10.707409) rotate(-135.000000) translate(-12.000000, -10.707409) "/>
-                                <rect fill="#000000" opacity="0.3" x="5" y="20" width="15" height="2" rx="1"/>
-                            </g>
-                        </svg>
-                        </span><span class="kt-menu__link-text">Modifier le produit</span></a>
-                </li>
-                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('shop.create')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <rect x="0" y="0" width="24" height="24"/>
-                                <path d="M6,8 L18,8 L17.106535,19.6150447 C17.04642,20.3965405 16.3947578,21 15.6109533,21 L8.38904671,21 C7.60524225,21 6.95358004,20.3965405 6.89346498,19.6150447 L6,8 Z M8,10 L8.45438229,14.0894406 L15.5517885,14.0339036 L16,10 L8,10 Z" fill="#000000" fill-rule="nonzero"/>
-                                <path d="M14,4.5 L14,3.5 C14,3.22385763 13.7761424,3 13.5,3 L10.5,3 C10.2238576,3 10,3.22385763 10,3.5 L10,4.5 L5.5,4.5 C5.22385763,4.5 5,4.72385763 5,5 L5,5.5 C5,5.77614237 5.22385763,6 5.5,6 L18.5,6 C18.7761424,6 19,5.77614237 19,5.5 L19,5 C19,4.72385763 18.7761424,4.5 18.5,4.5 L14,4.5 Z" fill="#000000" opacity="0.3"/>
-                            </g>
-                        </svg>
-                        </span><span class="kt-menu__link-text">Supprimer le produit</span></a>
-                </li>
-
                 <li class="kt-menu__section ">
                     <h4 class="kt-menu__section-text">Aide</h4>
                     <i class="kt-menu__section-icon flaticon-more-v2"></i>
@@ -132,15 +128,40 @@
         </div>
     </div>
 @endsection
+<div class="modal fade" id="kt_modal_6" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="fa">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Suppression de la boutique {{$shop->name}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Voulez-vous vraiment supprimer cette boutique</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                <form action="{{route('shop.destroy',$shop)}}" method="POST">
+                    {{ csrf_field() }}
+                    {{method_field('DELETE')}}
+                    <button  class="btn btn-danger text-white">Supprimer</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- end:: Aside Menu -->
 
 <!-- begin:: Header -->
 @section('Header')
-    <div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed ">
+    <div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed  justify-content-end ">
 
         <div class="kt-header-menu-wrapper" id="kt_header_menu_wrapper">
 
         </div>
+
 
         <!-- end:: Header Menu -->
 
@@ -152,29 +173,6 @@
             <!--begin: Search -->
 
             <!--begin: Language bar -->
-            <div class="kt-header__topbar-item kt-header__topbar-item--langs">
-                <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px">
-                                <span class="kt-header__topbar-icon">
-                                    <img class="" src="{{asset('assets/media/flags/195-france.svg')}}" alt="" />
-                                </span>
-                </div>
-                <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround">
-                    <ul class="kt-nav kt-margin-t-10 kt-margin-b-10">
-                        <li class="kt-nav__item kt-nav__item--active">
-                            <a href="#" class="kt-nav__link">
-                                <span class="kt-nav__link-icon"><img src="{{asset('assets/media/flags/195-france.svg')}}" alt="" /></span>
-                                <span class="kt-nav__link-text">Français</span>
-                            </a>
-                        </li>
-                        <li class="kt-nav__item">
-                            <a href="#" class="kt-nav__link">
-                                <span class="kt-nav__link-icon"><img src="{{asset('assets/media/flags/226-united-states.svg')}}" alt="" /></span>
-                                <span class="kt-nav__link-text">English</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
 
             <!--end: Language bar -->
 
@@ -183,7 +181,7 @@
                 <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="0px,0px">
                     <div class="kt-header__topbar-user">
                         <span class="kt-header__topbar-welcome kt-hidden-mobile">Bienvenue,</span>
-                        <span class="kt-header__topbar-username kt-hidden-mobile">{{auth()->user()->first_name}}</span>
+                        <span class="kt-header__topbar-username kt-hidden-mobile">Keita</span>
                         <img class="kt-hidden" alt="Pic" src="{{asset('assets/media/users/300_25.jpg')}}" />
 
                         <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
@@ -209,22 +207,16 @@
 
                     <!--begin: Navigation -->
                     <div class="kt-notification">
-                        <a href="custom/apps/user/profile-1/personal-information.html" class="kt-notification__item">
-                            <div class="kt-notification__item-icon">
-                                <i class="flaticon2-calendar-3 kt-font-success"></i>
-                            </div>
-                            <div class="kt-notification__item-details">
-                                <div class="kt-notification__item-title kt-font-bold">
-                                    Mon Profile
-                                </div>
-                                <div class="kt-notification__item-time">
-                                    Modifier votre profile
-                                </div>
-                            </div>
-                        </a>
 
                         <div class="kt-notification__custom kt-space-between justify-content-center">
-                            <a href="custom/user/login-v2.html" target="_blank" class="btn btn-label btn-label-brand btn-sm btn-bold">Se déconnecter</a>
+                            <a  class="btn btn-label btn-label-brand btn-sm btn-bold" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                {{ __('Déconnexion') }}</a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         </div>
                     </div>
 
@@ -246,12 +238,12 @@
         <div class="kt-container  kt-container--fluid ">
             <div class="kt-subheader__main">
                 <h3 class="kt-subheader__title">
-                    Modification du  produit {{$product->name}}
+                    Nouveau boutique
                 </h3>
                 <span class="kt-subheader__separator kt-subheader__separator--v"></span>
                 <div class="kt-subheader__group" id="kt_subheader_search">
 										<span class="kt-subheader__desc" id="kt_subheader_total">
-											Modifier le produit et enregistrer </span>
+											Entrer les détails de la boutique et enregistrer </span>
                 </div>
             </div>
 
@@ -268,57 +260,42 @@
             <div class="kt-portlet__body kt-portlet__body--fit">
                 <div class="kt-grid">
                     <div class="kt-grid__item kt-grid__item--fluid kt-wizard-v4__wrapper">
-                        <form  class="dropzone " method="post" enctype="multipart/form-data">
-                            {!! csrf_field() !!}
-                        </form>
-                        <form class="mt-2"  action="{{route('shop.product.update',[$shop,$product])}}" accept-charset="UTF-8"  method="POST" enctype="multipart/form-data" >
+                        <form class="kt-form" id="kt_user_add_form" action="{{route('shop.update',$shop)}}" method="POST" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             {{method_field('PUT')}}
-                            <input type="hidden" name="shop_id" value="{{$shop->id}}">
-                            <input type="hidden" autocomplete="OFF" name="item_images" id="item_images" placeholder="" class="form-control input-sm" required />
+                            <input type="hidden" name="user_id" value="{{auth()->user()->id}}">
+                            <div class="form-group row">
+                                <label class="col-xl-3 col-lg-3 col-form-label">Photo</label>
+                                <div class="col-lg-9 col-xl-6">
+                                    <div class="kt-avatar kt-avatar--outline" id="kt_user_add_avatar">
+                                        <div class="kt-avatar__holder" style="background-image: url({{asset('assets/media/users/300_10.jpg')}})" id="profile_holder"></div>
+                                        <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="Change l'image">
+                                            <i class="fa fa-edit"></i>
+                                            <input type="file" name="image">
+                                        </label>
+                                        <span class="kt-avatar__cancel" data-toggle="kt-tooltip" title="Cancel avatar">
+																							<i class="fa fa-times"></i>
+                                                                    </span>
+                                    </div>
+                                </div>
+                                @error('image')
+                                <span class="alert alert-danger mt-1" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
                             <div class="form-group">
-                                <label>Nom </label>
-                                <input type="text" class="form-control  @error('name') is-invalid @enderror" name="name" value="{{old('name') ?? $product->name}}"  placeholder="Entrer le nom du produit">
+                                <label>Nom de la boutique</label>
+                                <input type="text" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') ?? $shop->name}}" aria-describedby="emailHelp" placeholder="Entrer le nom de la boutique" name="name">
                             </div>
                             @error('name')
                             <span class="alert alert-danger mt-1" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
+                                <strong>{{ $message }}</strong>
+                            </span>
                             @enderror
-                            <div class="form-group">
-                                <label>Prix</label>
-                                <input type="number" class="form-control @error('price') is-invalid @enderror" name="price" value="{{ old('price') ?? $product->price}}"  placeholder="Entrer le prix du produit">
-                            </div>
-                            @error('price')
-                            <span class="alert alert-danger mt-1" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                            <div class="form-group">
-                                <div class="kt-checkbox-inline">
-                                    <label class="kt-checkbox">
-                                        <input type="checkbox" name="isPriceNegotiate" value="{{true}}" id="isPriceNegotiate"> Prix négociable
-                                        <span></span>
-                                    </label>
-                                    @error('isPriceNegotiate')
-                                    <span class="alert alert-danger mt-1" role="alert">
-                                             <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                    <label class="kt-checkbox">
-                                        <input type="checkbox" name="isPossibleToChange" value="{{true}}" id="isPossibleToChange"> Possibilité d'échange
-                                        <span></span>
-                                    </label>
-                                    @error('isPossibleToChange')
-                                    <span class="alert alert-danger mt-1" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                         </span>
-                                    @enderror
-                                </div>
-                            </div>
                             <div class="form-group ">
                                 <label >Catégorie</label>
-                                <select class="form-control kt-select2" id="kt_select2_4" name="sub_category_id" value="{{old('sub_category_id')}}">
+                                <select class="form-control kt-select2" id="kt_select2_4" name="sub_category_id">
                                     <option disabled="" selected="" value=""> -- Sélectionnez une catégorie -- </option>                                    @foreach($categorys as $category)
                                         <optgroup label="{{$category->name}}">
                                             @foreach($category->subCategorys as $subCategory)
@@ -330,18 +307,43 @@
                             </div>
                             @error('sub_category_id')
                             <span class="alert alert-danger mt-1" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                 </span>
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                            <div class="form-group">
+                                <label>Address</label>
+                                <input type="text" class="form-control @error('address') is-invalid @enderror" value="{{ old('address') ??$shop->address}}" aria-describedby="emailHelp" placeholder="Entrer l'address  " name="address">
+                            </div>
+                            @error('address')
+                            <span class="alert alert-danger mt-1" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
                             @enderror
                             <div class="form-group">
                                 <label for="exampleTextarea">Description</label>
-                                <textarea class="form-control @error('description') is-invalid @enderror"  rows="3" name="description">{{ old('description') ?? $product->description }}</textarea>
+                                <textarea class="form-control @error('address') is-invalid @enderror"  rows="3" name="description">{{ old('description') ??$shop->description}}</textarea>
                             </div>
-                            @error('description')
+                            @error('address')
                             <span class="alert alert-danger mt-1" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                 </span>
+                                <strong>{{ $message }}</strong>
+                            </span>
                             @enderror
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label>Ma page facebook</label>
+                                        <input type="text" class="form-control" value="{{ old('urlPageFacebook') ??$shop->urlPageFacebook}}" aria-describedby="emailHelp" placeholder="https://web.facebook.com/maboutique" name="urlPageFacebook">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>Mon URL Instagram</label>
+                                        <input type="text" class="form-control" value="{{ old('urlPageInstagram') ??$shop->urlPageInstagram}}" aria-describedby="emailHelp" placeholder="https://instagram.com/votrenomdeprofilinstagram" name="urlPageInstagram">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>Site internet</label>
+                                        <input type="text" class="form-control" value="{{ old('urlSite') ??$shop->urlSite}}" aria-describedby="emailHelp" placeholder="htpps://www.mon-site-web.com" name="urlSite">
+                                    </div>
+                                </div>
+                            </div>
                             <div class="form-group row justify-content-center">
                                 <button type="submit"  class="btn btn-outline-primary w-auto text-uppercase text-bold btn-pill btn-elevate btn-elevate-air ">
 
@@ -358,93 +360,8 @@
 <!-- end:: Content -->
 
 @section('script')
-    {{--    <script src="{{asset('js/dropzonejs.js')}}"></script>--}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.0/dropzone.js"></script>
     <script>
-
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-
-        Dropzone.autoDiscover = false;
-        var acceptedFileTypes = "image/*"; //dropzone requires this param be a comma separated list
-        // imageDataArray variable to set value in crud form
-        var imageDataArray = new Array;
-        // fileList variable to store current files index and name
-        var fileList = new Array;
-        var i = 0;
-
-        $(function(){
-
-            uploader = new Dropzone(".dropzone",{
-                url: "{{url('/product/image/upload')}}",
-                paramName : "file",
-                uploadMultiple :false,
-                acceptedFiles : "image/*",
-                addRemoveLinks: true,
-                forceFallback: false,
-                dictDefaultMessage: "Choisisez vos images",
-                maxFilesize: 256, // Set the maximum file size to 256 MB
-                parallelUploads: 100,
-
-            });//end drop zone
-
-            uploader.on("success", function(file,response) {
-                imageDataArray.push(response)
-
-                fileList[i] = {
-                    "serverFileName": response,
-                    "fileName": file.name,
-                    "fileId": i
-                };
-
-                i += 1;
-                console.log(response)
-                $('#item_images').val(imageDataArray);
-
-            });
-
-            uploader.on("removedfile", function(file) {
-                var rmvFile = "";
-                for (var f = 0; f < fileList.length; f++) {
-
-                    if (fileList[f].fileName == file.name) {
-
-                        // remove file from original array by database image name
-                        imageDataArray.splice(imageDataArray.indexOf(fileList[f].serverFileName), 1);
-                        $('#item_images').val(imageDataArray);
-
-                        // get removed database file name
-                        rmvFile = fileList[f].serverFileName;
-
-                        // get request to remove the uploaded file from server
-                        $.get( "{{url('/product/image/delete')}}", { file: rmvFile } )
-                            .done(function( data ) {
-                                console.log(data)
-                            });
-
-                        // reset imageDataArray variable to set value in crud form
-
-                        // console.log(imageDataArray)
-                    }
-                }
-
-            });
-
-
-        });
-
-        $(document).ready(function(){
-            @if($product->isPossibleToChange)
-            document.getElementById('isPossibleToChange').checked=true
-            @endif
-            @if($product->isPriceNegotiate)
-            document.getElementById('isPriceNegotiate').checked=true
-            @endif
-        });
+        new KTAvatar("kt_user_add_avatar");
     </script>
-
 @endsection
 
