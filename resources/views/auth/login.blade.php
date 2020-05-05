@@ -53,7 +53,7 @@
                             <span class="kt-login__account-msg" style="color: #478fcd;width: 200px">
 									Vous êtes un nouvel utilisateur ?
 								</span>&nbsp;&nbsp;
-                            <a  href="{{ route('register') }}"style="color: #478fcd" id="kt_login_signup" class="kt-link kt-link--light kt-login__account-link"> Créez un compte</a>
+                            <a  href="{{ route('register') }}"style="color: #478fcd"  class="kt-link kt-link--light kt-login__account-link"> Créez un compte</a>
                         </div>
                     </div>
                 </div>
