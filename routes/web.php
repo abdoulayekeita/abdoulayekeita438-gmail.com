@@ -4,6 +4,13 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+Route::namespace('Auth')->group(function(){
+
+    Route::get('register', 'AuthController@showRegistrationForm')->name('register');
+    Route::post('register', 'AuthController@register');
+});
+
+
 Route::middleware('auth')->namespace('Dashboard')->prefix('dashboard')->group(function(){
 
     Route::get('/', 'DashboardController')->name('dashboard');
