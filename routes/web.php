@@ -28,7 +28,7 @@ Route::middleware('auth')->namespace('Dashboard')->prefix('dashboard')->group(fu
 
 Route::namespace('Home')->group(function(){
 
-    Route::get('/','HomeController@home');
+    Route::get('/','HomeController@home')->name('home');
 });
 
 

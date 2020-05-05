@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light   fixed-top "  >
    <div class="container">
-       <a class="navbar-brand" href="">
+       <a class="navbar-brand" href="{{route('home')}}">
            <img alt="Logo" src="images/dashboard/yankadi2.png"   style="height: 50px;width: 250px;background: transparent !important;"/>
        </a>
        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
