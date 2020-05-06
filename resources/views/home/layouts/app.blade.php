@@ -15,11 +15,11 @@
                 fill: #478fcd;
             }
             nav {
-                /*position: -webkit-sticky;*/
-                /*position: sticky;*/
+                position: -webkit-sticky;
+                position: sticky;
                 /* sticky or fixed are fine */
                 position: fixed;
-                /*top: 0;*/
+                top: 0;
                 height: 69px;
                 width: 100%;
                 background: transparent !important;

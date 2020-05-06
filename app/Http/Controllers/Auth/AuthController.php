@@ -48,6 +48,7 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         $validated = $this->validator($request->all())->validate();
+        dd("ok");
         $fileName = null;
         if ($request->hasFile('image')) {
             $fileName = $request->file('image')->store('user/profiles');
@@ -101,7 +102,7 @@ class AuthController extends Controller
             'first_name'=> ['required', 'string', 'max:255'],
             'last_name' => ['required', 'string', 'max:255'],
             'phone'     => ['required', 'string', 'max:255'],
-            'image'     => ['image','mimes:jpeg,jpg,png','max:2500'],
+            'image'     => ['image','mimes:jpeg,jpg,png','max:100'],
             'country'   => ['required', 'string', 'max:255'],
             'city'      => ['required', 'string', 'max:255'],
             'address'   => ['required', 'string', 'max:255'],
