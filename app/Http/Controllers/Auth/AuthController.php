@@ -48,7 +48,6 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         $validated = $this->validator($request->all())->validate();
-        dd("ok");
         $fileName = null;
         if ($request->hasFile('image')) {
             $fileName = $request->file('image')->store('user/profiles');
