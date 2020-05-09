@@ -5,16 +5,16 @@
                 <h4 class="title text-center text-center">A propos</h4>
                <ul class="Abaout text-center">
                    <li class="mb-1">
-                       <a href="">Qui sommes nous ?</a>
+                       <a href="{{route('Who_are_we')}}">Qui sommes nous ?</a>
                    </li>
                    <li>
-                       <a href="">Conditions et Charte d'utilisation</a>
+                       <a href="{{route('Terms_of_use')}}">Conditions et Charte d'utilisation</a>
                    </li>
                </ul>
                 <ul class="social-icon text-center">
-                    <a href="#" class="social"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-                    <a href="#" class="social"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                    <a href="#" class="social"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href="#" class="social"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                    <a href="#" class="social"><i class="fab fa-instagram" aria-hidden="true"></i></a>
                 </ul>
             </div>
             <div class="col-lg-4  ">

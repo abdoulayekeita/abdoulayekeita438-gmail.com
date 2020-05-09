@@ -2,7 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d91704f-1b08-4daf-9039-655bb2001cc5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/home/category_content.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/home/termes_of_use.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/home/who_are_we.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/ImageUploadController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/ImageUploadController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/PostStoreRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/PostStoreRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ProductStoreRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ProductStoreRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ShopStoreRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ShopStoreRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Shop.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Shop.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_29_114519_create_shops_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_29_114519_create_shops_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_29_114520_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_29_114520_create_products_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/contact.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/dashboard_compte_busness.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/dashboard_compte_busness.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/how_it_work.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/how_it_work.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/partials/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/post/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/post/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/post/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/post/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/post/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/post/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/product/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/product/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/product/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/product/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/product/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/product/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/shop/content_shop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/shop/content_shop.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/shop/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/shop/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/shop/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/shop/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/shop/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/shop/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/layouts/partials/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/layouts/partials/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/layouts/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/layouts/partials/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -149,19 +183,19 @@
     <property name="two.files.diff.last.used.folder" value="$PROJECT_DIR$/resources/views/layouts" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\dell\Documents\laravel\shop\app\Http\Controllers" />
-      <recent name="C:\Users\dell\Documents\laravel\shop\app\Http\Controllers\Dashboard" />
-      <recent name="C:\Users\dell\Documents\laravel\shop\resources\views\dashboard" />
-      <recent name="C:\Users\dell\Documents\laravel\shop\app\models" />
-      <recent name="C:\Users\dell\Documents\laravel\shop\resources\views\home" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\dell\Documents\laravel\shop\resources\lang" />
       <recent name="C:\Users\dell\Documents\laravel\shop\public\css" />
       <recent name="C:\Users\dell\Documents\laravel\shop\public\scss" />
       <recent name="C:\Users\dell\Documents\laravel\shop\public\js" />
       <recent name="C:\Users\dell\Documents\laravel\shop\database\migrations" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\dell\Documents\laravel\shop\resources\views\home" />
+      <recent name="C:\Users\dell\Documents\laravel\shop\app\Http\Controllers" />
+      <recent name="C:\Users\dell\Documents\laravel\shop\app\Http\Controllers\Dashboard" />
+      <recent name="C:\Users\dell\Documents\laravel\shop\resources\views\dashboard" />
+      <recent name="C:\Users\dell\Documents\laravel\shop\app\models" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -210,7 +244,8 @@
       <workItem from="1588073951663" duration="37883000" />
       <workItem from="1588195260334" duration="114721000" />
       <workItem from="1588675523826" duration="9621000" />
-      <workItem from="1588763810566" duration="3878000" />
+      <workItem from="1588763810566" duration="28376000" />
+      <workItem from="1588976851438" duration="602000" />
     </task>
     <servers />
   </component>
@@ -242,6 +277,11 @@
           <url>file://$PROJECT_DIR$/resources/views/dashboard/shop/content_shop.blade.php</url>
           <line>70</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/home/index.blade.php</url>
+          <line>74</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

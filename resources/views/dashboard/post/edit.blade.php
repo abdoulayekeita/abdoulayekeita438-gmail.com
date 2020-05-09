@@ -95,7 +95,7 @@
                     <h4 class="kt-menu__section-text">Aide</h4>
                     <i class="kt-menu__section-icon flaticon-more-v2"></i>
                 </li>
-                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
+                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('how_it_work')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                     <rect x="0" y="0" width="24" height="24"/>
@@ -105,7 +105,7 @@
                             </svg>
                             </span><span class="kt-menu__link-text">Comment ça marche</span></a>
                 </li>
-                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
+                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('contact')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                     <rect x="0" y="0" width="24" height="24"/>
@@ -118,7 +118,7 @@
                     <h4 class="kt-menu__section-text">Yankadi Shop</h4>
                     <i class="kt-menu__section-icon flaticon-more-v2"></i>
                 </li>
-                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
+                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('home')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                     <rect x="0" y="0" width="24" height="24"/>
@@ -283,9 +283,18 @@
                             @enderror
                             <div class="form-group">
                                 <label>Prix</label>
-                                <input type="number" class="form-control @error('price') is-invalid @enderror" name="price" value="{{ old('price') ?? $post->product->price}}"  placeholder="Entrer le prix du produit">
+                                <input type="number" class="form-control @error('price') is-invalid @enderror" name="price" value="{{ old('price') ?? $post->product->price}}" >
                             </div>
                             @error('price')
+                            <span class="alert alert-danger mt-1" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                            <div class="form-group">
+                                <label>Quantité</label>
+                                <input type="number" class="form-control @error('quantity') is-invalid @enderror" name="quantity" value="{{ old('quantity') ?? $post->product->quantity}}" >
+                            </div>
+                            @error('quantity')
                             <span class="alert alert-danger mt-1" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>

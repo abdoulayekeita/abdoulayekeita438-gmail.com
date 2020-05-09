@@ -22,12 +22,12 @@ class CreateShopsTable extends Migration
             $table->string('urlPageFacebook')->nullable();
             $table->string('urlPageInstagram')->nullable();
             $table->string('urlSite')->nullable();
-            $table->unsignedBigInteger('sub_category_id');
+            $table->unsignedBigInteger('category_id');
 
             $table
-                ->foreign('sub_category_id')
+                ->foreign('category_id')
                 ->references('id')
-                ->on('sub_categorys')
+                ->on('categorys')
                 ->onDelete('cascade');
 
             $table->unsignedBigInteger('user_id');

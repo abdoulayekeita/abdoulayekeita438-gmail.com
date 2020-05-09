@@ -19,7 +19,7 @@ class Shop extends Model
         'urlPageFacebook',
         'urlPageInstagram',
         'urlSite',
-        'sub_category_id',
+        'category_id',
         'user_id',
     ];
 
@@ -30,14 +30,14 @@ class Shop extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'CategoryShop_id' => 'integer',
+        'category_id' => 'integer',
         'user_id' => 'integer',
     ];
 
 
-    public function subCategory()
+    public function category()
     {
-        return $this->belongsTo(SubCategory::class);
+        return $this->belongsTo(Category::class);
     }
 
     public function user()

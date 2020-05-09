@@ -23,7 +23,6 @@ class ImageUploadController extends Controller
 
         if ($request->hasFile('file')) {
 
-//            $fileName = bin2hex(openssl_random_pseudo_bytes(10)).'.png';
             $fileName = $request->file('file')->store('product');
             echo json_encode($fileName);
         }

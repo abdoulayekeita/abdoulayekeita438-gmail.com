@@ -17,6 +17,7 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('name');
             $table->decimal('price');
+            $table->integer('quantity')->default(0);
             $table->boolean('isPriceNegotiate')->default(false);
             $table->boolean('isPossibleToChange')->default(false);
             $table->longText('description');

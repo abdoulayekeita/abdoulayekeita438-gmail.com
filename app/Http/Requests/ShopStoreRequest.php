@@ -27,7 +27,7 @@ class ShopStoreRequest extends FormRequest
             'name' => 'required|string',
             'description' => 'required|string',
             'address' => 'required|string',
-            'sub_category_id' => 'required|integer|exists:sub_categorys,id',
+            'category_id' => 'required|integer|exists:categorys,id',
             'user_id' => 'required|integer|exists:users,id',
         ];
     }
