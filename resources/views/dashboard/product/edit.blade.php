@@ -360,7 +360,7 @@
         $(function(){
 
             uploader = new Dropzone(".dropzone",{
-                url: "{{url('/dashboard/product/image/upload')}}",
+                url: "{{url('http://yankadi.herokuapp.com/dashboard/product/image/upload')}}",
                 paramName : "file",
                 uploadMultiple :false,
                 acceptedFiles : "image/*",
@@ -401,7 +401,7 @@
                         rmvFile = fileList[f].serverFileName;
 
                         // get request to remove the uploaded file from server
-                        $.get( "{{url('/dashboard/product/image/delete')}}", { file: rmvFile } )
+                        $.get( "{{url('http://yankadi.herokuapp.com/dashboard/product/image/delete')}}", { file: rmvFile } )
                             .done(function( data ) {
                                 console.log(data)
                             });

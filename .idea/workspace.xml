@@ -2,37 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d91704f-1b08-4daf-9039-655bb2001cc5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/helpers.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/home/détail_post.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/home/layouts/partials/header_mobile.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/home/search_post.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/SearchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/SearchController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/contact.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/dashboard_compte_busness.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/dashboard_compte_busness.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/how_it_work.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/how_it_work.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dashboard/post/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/post/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dashboard/post/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/post/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/post/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/post/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dashboard/product/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/product/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dashboard/product/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/product/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/product/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/product/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/shop/content_shop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/shop/content_shop.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/shop/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/shop/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/shop/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/shop/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/shop/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/shop/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/category_content.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/category_content.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/content_shop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/content_shop.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/detail_annonce.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/detail_annonce.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/layouts/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/layouts/partials/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/shop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/shop.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/termes_of_use.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/termes_of_use.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -241,7 +215,7 @@
       <workItem from="1588195260334" duration="114721000" />
       <workItem from="1588675523826" duration="9621000" />
       <workItem from="1588763810566" duration="28376000" />
-      <workItem from="1588976851438" duration="29552000" />
+      <workItem from="1588976851438" duration="31085000" />
     </task>
     <servers />
   </component>
