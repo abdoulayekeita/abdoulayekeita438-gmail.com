@@ -101,7 +101,7 @@ class AuthController extends Controller
             'first_name'=> ['required', 'string', 'max:255'],
             'last_name' => ['required', 'string', 'max:255'],
             'phone'     => ['required', 'string', 'max:255'],
-            'image'     => ['image','mimes:jpeg,jpg,png','max:1000'],
+            'image'     => ['image','mimes:jpeg,jpg,png','max:5000'],
             'country'   => ['required', 'string', 'max:255'],
             'city'      => ['required', 'string', 'max:255'],
             'address'   => ['required', 'string', 'max:255'],
