@@ -5,21 +5,27 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Yankadi-Shop</title>
+        <title>{{ page_title($title?? '')  }}</title>
 
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css" >
         <link href="{{asset('css/footer.css')}}" rel="stylesheet" type="text/css" >
         <style>
+
+            @media only screen and (max-width: 576px) {
+               #mobile{
+
+               }
+            }
             .kt-svg-icon g [fill] {
                 fill: #478fcd;
             }
             nav {
-                position: -webkit-sticky;
-                position: sticky;
+                /*position: -webkit-sticky;*/
+                /*position: sticky;*/
                 /* sticky or fixed are fine */
-                position: fixed;
-                top: 0;
+                /*position: fixed;*/
+                /*top: 0;*/
                 height: 69px;
                 width: 100%;
                 background: transparent !important;
@@ -30,11 +36,6 @@
                 background: white !important;
             }
 
-            /*@media (max-width: 1025px) {*/
-            /*    .test{*/
-            /*        display: none;*/
-            /*    }*/
-            /*}*/
         </style>
         @yield('style')
 
@@ -42,6 +43,7 @@
     <body>
 
         @include('home.layouts.partials.header')
+        @include('home.layouts.partials.header_mobile')
 
         @yield('content')
 
@@ -65,6 +67,11 @@
                     navbar.classList.remove('scrolled')
                 }
             }
+           if (screen.width>768){
+               $("#mobile").remove()
+           }else{
+               $("#header").remove()
+           }
         </script>
     </body>
 </html>

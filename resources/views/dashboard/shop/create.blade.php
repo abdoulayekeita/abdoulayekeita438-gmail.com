@@ -1,4 +1,4 @@
-@extends('dashboard.layouts.app')
+@extends('dashboard.layouts.app',['title'=>'Creation de boutique'])
 @section('style')
 
 @endsection

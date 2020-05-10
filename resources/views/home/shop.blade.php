@@ -1,4 +1,4 @@
-@extends('home.layouts.app')
+@extends('home.layouts.app',['title'=>'Boutique'])
 @section('style')
 
 @endsection
@@ -45,57 +45,57 @@
     <div class="kt-container--fluid pt-5 " style="background-color: #daf0f4" >
         <div class="kt-portlet container">
             <div class="kt-portlet__body ">
-                <h2 class="row justify-content-center">Nos Boutiques</h2>
-                <div class="row">
-                    <div class="kt-grid-nav kt-grid-nav--skin-light">
-                        <div class="kt-grid-nav__row">
-                            <a href="{{route('content_shop')}}" class="kt-grid-nav__item pt-0">
-													<span class="kt-grid-nav__icon">
-                                                        <img src="{{asset('images/dashboard/cafe.jpg')}}" class="img-fluid  h-10"/>
-                                                    </span>
-                                <span class="kt-grid-nav__title" style="color: #478fcd">Nom du boutique</span>
-                                <span class="kt-badge   kt-badge--inline kt-badge--pill mt-1" style="background-color: #478fcd;color: white;font-size: 15px">Catégorie</span>
-                            </a>
-                            <a href="{{route('content_shop')}}" class="kt-grid-nav__item pt-0">
-													<span class="kt-grid-nav__icon">
-                                                        <img src="{{asset('images/dashboard/cafe.jpg')}}" class="img-fluid  h-10"/>
-                                                    </span>
-                                <span class="kt-grid-nav__title" style="color: #478fcd">Nom du boutique</span>
-                                <span class="kt-badge   kt-badge--inline kt-badge--pill mt-1" style="background-color: #478fcd;color: white;font-size: 15px">Catégorie</span>
-                            </a>
-                            <a href="{{route('content_shop')}}" class="kt-grid-nav__item pt-0">
-													<span class="kt-grid-nav__icon">
-                                                        <img src="{{asset('images/dashboard/cafe.jpg')}}" class="img-fluid  h-10"/>
-                                                    </span>
-                                <span class="kt-grid-nav__title" style="color: #478fcd">Nom du boutique</span>
-                                <span class="kt-badge   kt-badge--inline kt-badge--pill mt-1" style="background-color: #478fcd;color: white;font-size: 15px">Catégorie</span>
-                            </a>
+                <div class="row justify-content-center">
+                    @if (count($shops) === 1)
+                        @foreach($shops as $shop)
+                            <div class="col-md-12">
+                                <div class="kt-grid-nav kt-grid-nav--skin-light">
+                                    <div class="kt-grid-nav__row">
+                                        <a href="{{route('shop_content',$shop)}}" class="kt-grid-nav__item pt-0">
+                                                        <span class="kt-grid-nav__icon">
+                                                            <img src="{{asset('storage/shop/'.$shop->image)}}" class="img-fluid  h-10"/>
+                                                        </span>
+                                            <span class="kt-grid-nav__title" style="color: #478fcd">{{$shop->name}}</span>
+                                            <span class="kt-badge   kt-badge--inline kt-badge--pill mt-1" style="background-color: #478fcd;color: white;font-size: 15px">{{$shop->category->name}}</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    @elseif (count($shops) > 1)
+                        @foreach($shops as $shop)
+                            <div class="col-md-4">
+                                <div class="kt-grid-nav kt-grid-nav--skin-light">
+                                    <div class="kt-grid-nav__row">
+                                        <a href="{{route('shop_content',$shop)}}" class="kt-grid-nav__item pt-0">
+                                            @if($shop->image)
+                                                <span class="kt-grid-nav__icon">
+                                                                <img src="{{asset('storage/shop/'.$shop->image)}}" class="img-fluid  h-10"/>
+                                                            </span>
+                                            @else
+                                                <span class="kt-grid-nav__icon">
+                                                                <img src="{{asset('assets/media/users/300_10.jpg')}}" class="img-fluid  h-10"/>
+                                                            </span>
+                                            @endif
+                                            <span class="kt-grid-nav__title" style="color: #478fcd">{{$shop->name}}</span>
+                                            <span class="kt-badge   kt-badge--inline kt-badge--pill mt-1" style="background-color: #478fcd;color: white;font-size: 15px">{{$shop->category->name}}</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    @else
+                        <div class="col-md-12" style="margin-top: 150px;">
+                            <div class="text-center"><i class="fa fa-calendar fa-5x text-primary"></i></div>
                         </div>
-                        <div class="kt-grid-nav__row">
-                            <a href="{{route('content_shop')}}" class="kt-grid-nav__item pt-0">
-													<span class="kt-grid-nav__icon">
-                                                        <img src="{{asset('images/dashboard/shop3.jpg')}}" class="img-fluid  h-10"/>
-                                                    </span>
-                                <span class="kt-grid-nav__title" style="color: #478fcd">Nom du boutique</span>
-                                <span class="kt-badge   kt-badge--inline kt-badge--pill mt-1" style="background-color: #478fcd;color: white;font-size: 15px">Catégorie</span>
-                            </a>
-                            <a href="{{route('content_shop')}}" class="kt-grid-nav__item pt-0">
-													<span class="kt-grid-nav__icon">
-                                                        <img src="{{asset('images/dashboard/open.jpg')}}" class="img-fluid  h-10"/>
-                                                    </span>
-                                <span class="kt-grid-nav__title" style="color: #478fcd">Nom du boutique</span>
-                                <span class="kt-badge   kt-badge--inline kt-badge--pill mt-1" style="background-color: #478fcd;color: white;font-size: 15px">Catégorie</span>
-                            </a>
-                            <a href="{{route('content_shop')}}" class="kt-grid-nav__item pt-0">
-													<span class="kt-grid-nav__icon">
-                                                        <img src="{{asset('images/dashboard/shop2.png')}}" class="img-fluid  h-10"/>
-                                                    </span>
-                                <span class="kt-grid-nav__title" style="color: #478fcd">Nom du boutique</span>
-                                <span class="kt-badge   kt-badge--inline kt-badge--pill mt-1" style="background-color: #478fcd;color: white;font-size: 15px">Catégorie</span>
-                            </a>
+                        <div class="col-md-12" style="margin-bottom: 150px">
+                            <h1 class="text-center text-success"><p><small class="text-center">Aucune boutique disponible pour le moment</small></p></h1>
                         </div>
-                    </div>
+                    @endif
                 </div>
+            </div>
+            <div class="row justify-content-center">
+                {{$shops->links()}}
             </div>
         </div>
     </div>

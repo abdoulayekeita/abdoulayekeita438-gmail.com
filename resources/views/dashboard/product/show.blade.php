@@ -1,4 +1,4 @@
-@extends('dashboard.layouts.app')
+@extends('dashboard.layouts.app',['title'=>'Produit '.$product->name])
 @section('style')
     <link href="css/purpose.css" rel="stylesheet" type="text/css" >
     <link href="css/jquery.fancybox.min.css" rel="stylesheet" type="text/css" >

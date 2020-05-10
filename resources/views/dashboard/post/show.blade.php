@@ -1,4 +1,4 @@
-@extends('dashboard.layouts.app')
+@extends('dashboard.layouts.app',['title'=>'Détail annonce'])
 @section('style')
     <link href="{{asset('css/purpose.css')}}" rel="stylesheet" type="text/css" >
     <link href="{{asset('css/jquery.fancybox.min.css')}}" rel="stylesheet" type="text/css" >

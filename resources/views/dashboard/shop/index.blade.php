@@ -1,4 +1,4 @@
-@extends('dashboard.layouts.app')
+@extends('dashboard.layouts.app',['title'=>'Mes boutiques'])
 @section('style')
 
 @endsection
@@ -236,7 +236,7 @@
                                                             </span>
                                                         @endif
                                             <span class="kt-grid-nav__title" style="color: #478fcd">{{$shop->name}}</span>
-                                            <span class="kt-badge   kt-badge--inline kt-badge--pill mt-1" style="background-color: #478fcd;color: white;font-size: 15px">{{$shop->subCategory->name}}</span>
+                                            <span class="kt-badge   kt-badge--inline kt-badge--pill mt-1" style="background-color: #478fcd;color: white;font-size: 15px">{{$shop->Category->name}}</span>
                                         </a>
                                     </div>
                                 </div>

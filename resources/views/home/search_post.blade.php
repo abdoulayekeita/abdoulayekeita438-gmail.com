@@ -1,4 +1,4 @@
-@extends('home.layouts.app',['title'=>'Catégorie '.$subCategory->name])
+@extends('home.layouts.app',['title'=>'Annonces'])
 @section('style')
     <link rel="stylesheet" href="{{asset('css/searchcard.css')}}">
 @endsection
@@ -17,11 +17,10 @@
         <div class="kt-container--fluid pt-5 " style="background-color: #daf0f4" >
             <div class="kt-portlet container ">
                 <div class="kt-portlet__body ">
-                    <h2 class="row justify-content-center">{{$subCategory->name}}</h2>
-                    @if (count($posts) === 1)
-                        @foreach($posts as  $post)
+                    @if(count($posts) >= 1)
+                        @foreach($posts as $post)
                             <div class="row">
-                                <a href="{{route('post_show',[$post])}}">
+                                <a href="">
                                     <div class="card-media">
                                         <!-- media container -->
                                         <div class="card-media-object-container">
@@ -31,7 +30,9 @@
                                                         <div class="card-media-object" style="background-image: url({{asset('storage/'.$image->url)}});"></div>
                                                     @endif
                                                 @endforeach
+
                                             @else
+                                                <div class="card-media-object" style="background-image: url({{asset('images/dashboard/ecommerce1.jpg')}});"></div>
                                             @endif
                                         </div>
                                         <!-- body container -->
@@ -44,7 +45,7 @@
                                             <span class="card-media-body-heading text-primary h-pay" style="font-size: 15px"><strong>{{$post->product->price}} FCFA</strong></span>
                                             <span class="card-media-body-heading text-success h-pay mt-4"><span class="text-dark">publier depuis 10/10/2020 </span></span>
                                             <div class="card-media-body-supporting-bottom">
-                                                <span class="card-media-body-supporting-bottom-text subtle">{{$subCategory->name}} Tel: {{$post->user->phone}}</span>
+                                                <span class="card-media-body-supporting-bottom-text subtle">{{$post->product->subCategory->name}}</span>
                                             </div>
                                             <div class="card-media-body-supporting-bottom card-media-body-supporting-bottom-reveal">
                                                 <br>
@@ -60,9 +61,12 @@
                             <div class="text-center"><i class="fa fa-calendar fa-5x text-primary"></i></div>
                         </div>
                         <div class="col-md-12" style="margin-bottom: 150px">
-                            <h1 class="text-center text-success"><p><small class="text-center">Aucune annonce de cette catégorie pour le moment</small></p></h1>
+                            <h1 class="text-center text-success"><p><small class="text-center">Aucun resultat trouvé</small></p></h1>
                         </div>
                     @endif
+                </div>
+                <div class="row justify-content-center">
+                    {{$posts->links()}}
                 </div>
             </div>
         </div>

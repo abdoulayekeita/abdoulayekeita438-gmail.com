@@ -38,6 +38,11 @@ Route::namespace('Home')->group(function(){
     Route::get('/Terms_of_use','HomeController@TermsOfUse')->name('Terms_of_use');
     Route::get('/Who_are_we','HomeController@WhoAreWe')->name('Who_are_we');
     Route::get('/category/{subCategory}','HomeController@category')->name('category');
+    Route::get('/shop','HomeController@shop')->name('shop');
+    Route::get('/shop_content/{shop}','HomeController@shopContent')->name('shop_content');
+    Route::get('/detail_product/{shop}/{product}','HomeController@shopShow')->name('shop_show');
+    Route::get('/detail_post/{post}','HomeController@postShow')->name('post_show');
+    Route::post('/search_annonce','HomeController@searchPost')->name('home_search.post');
 
 });
 

@@ -1,4 +1,4 @@
-@extends('dashboard.layouts.app')
+@extends('dashboard.layouts.app',['title'=>'Tableau de bord'])
 @section('style')
     {{--    <link href="{{ asset('styles/dashboard.css') }}" rel="stylesheet" type="text/css" >--}}
 

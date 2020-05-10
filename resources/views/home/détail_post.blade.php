@@ -1,4 +1,4 @@
-@extends('home.layouts.app',['title'=>'Détail du produit '.$product->name])
+@extends('home.layouts.app',['title'=>'Détail_annonce'])
 @section('style')
     <link rel="stylesheet" href="{{asset('css/jquery.fancybox.min.css')}}">
 @endsection
@@ -25,17 +25,17 @@
                                 <aside class="col-lg-6" >
                                     <div class="card card-product">
                                         <div class="card-image " >
-                                            @if($product->images)
-                                                @foreach($product->images as $image)
+                                            @if($post->product->images)
+                                                @foreach($post->product->images as $image)
                                                     @if ($loop->first)
                                                         <div class="col-12 mb-2 ">
-                                                            <a href="{{asset('storage/'.$image->url)}}" data-fancybox="1" data-caption="{{$product->name}}" >
+                                                            <a href="{{asset('storage/'.$image->url)}}" data-fancybox="1" data-caption="{{$post->product->name}}" >
                                                                 <img src="{{asset('storage/'.$image->url)}}" class="img-fluid rounded " style=" height: 450px; width: 100% !important;display: inline-block;"/>
                                                             </a>
                                                         </div>
                                                     @else
                                                         <div class="col-12 mb-2 ll">
-                                                            <a href="{{asset('storage/'.$image->url)}}" data-fancybox="1" data-caption="{{$product->name}}">
+                                                            <a href="{{asset('storage/'.$image->url)}}" data-fancybox="1" data-caption="{{$post->product->name}}">
                                                                 <img src="{{asset('storage/'.$image->url)}}" class="img-fluid rounded" />
                                                             </a>
                                                         </div>
@@ -44,7 +44,7 @@
 
                                             @else
                                                 <div class="col-12 mb-2 ll">
-                                                    <a href="{{asset('images/dashboard/keita2.jpg')}}" data-fancybox="1" data-caption="{{$product->name}}">
+                                                    <a href="{{asset('images/dashboard/keita2.jpg')}}" data-fancybox="1" data-caption="{{$post->product->name}}">
                                                         <img src="{{asset('images/dashboard/keita2.jpg')}}" class="img-fluid rounded" />
                                                     </a>
                                                 </div>
@@ -54,7 +54,7 @@
                                 </aside>
                                 <aside class="card col-lg-6 p-0">
                                     <div class="card-header  kt-bg-fill-primary">
-                                        <h3 class="text-center text-uppercase text-white">{{$product->name}}</h3>
+                                        <h3 class="text-center text-uppercase text-white">{{$post->product->name}}</h3>
                                     </div>
                                     <div class="card-body">
                                         <div class="mt-4">
@@ -69,7 +69,7 @@
                                             Description
                                         </span>
                                             <p class="lead">
-                                                {{$product->description}}
+                                                {{$post->product->description}}
                                             </p>
                                         </div>
                                         <div class="mt-4">
@@ -99,7 +99,7 @@
                                              </svg>
                                              Prix
                                          </span>
-                                            <p class=" font-weight-bold pl-2 pt-1 lead "> {{$product->price}} FCFA</p>
+                                            <p class=" font-weight-bold pl-2 pt-1 lead "> {{$post->product->price}} FCFA</p>
                                         </div>
                                         <div class="mt-4">
                                          <span class="font-weight-bold text-info " style="font-size: 15px;">
@@ -112,7 +112,7 @@
                                              </svg>
                                              Stock
                                          </span>
-                                            <p class=" font-weight-bold pl-2 pt-1 lead "> {{$product->quantity}}</p>
+                                            <p class=" font-weight-bold pl-2 pt-1 lead "> {{$post->product->quantity}}</p>
                                         </div>
                                     </div>
                                 </aside>

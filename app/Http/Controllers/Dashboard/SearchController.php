@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Post;
 use App\Models\Product;
 use App\Models\Shop;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class SearchController extends Controller
@@ -15,7 +16,6 @@ class SearchController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function searchPost(Request $request){
-
         $request->validate(['query' => 'required']);
 
         $posts = Post::join('products', 'posts.product_id', '=', 'products.id')

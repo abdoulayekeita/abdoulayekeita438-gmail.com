@@ -1,4 +1,4 @@
-@extends('dashboard.layouts.app')
+@extends('dashboard.layouts.app',['title'=>'Boutique '.$shop->name])
 @section('style')
     <link rel="stylesheet" href="{{ asset('css/searchcard.css') }}">
 @endsection

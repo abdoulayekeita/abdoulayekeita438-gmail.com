@@ -1,4 +1,4 @@
-@extends('home.layouts.app')
+@extends('home.layouts.app',['title'=>''])
 @section('style')
     <link href="css/carousel_card.css" rel="stylesheet" type="text/css" >
 
@@ -164,12 +164,13 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-8">
-                                        <form class="">
+                                        <form  action="{{route('home_search.post')}}" method="POST" >
+                                            {{ csrf_field() }}
                                             <div class="form-group ">
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control" placeholder="Que recherchez vous?">
+                                                    <input type="text" class="form-control" placeholder="Que recherche vous?" name="query">
                                                     <div class="input-group-append">
-                                                        <button class="btn btn-secondary" type="button"><i class="fa fa-search"></i></button>
+                                                        <button type="submit" class="btn btn-secondary"><i class="fa fa-search"></i></button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -295,67 +296,54 @@
                     </div>
                     <div class="container-fluid mt-3 pl-5">
                         <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner row w-100 ">
-                                <div class="carousel-item col-lg-4 active" >
-                                    <a href="">
-                                        <div class="card" >
-                                            <img src="{{asset('images/dashboard/keita1.jpg')}}" class="img-fluid rounded " style=" height: 250px; width: 100% !important;display: inline-block;"/>
-                                            <div class="card-body ">
-                                                <h4 class="card-title">Produit 1 2000FCFA</h4>
-                                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                                <p class="card-text"><small class="text-muted">Publier il y a 3 min</small></p>
+                            <div class="carousel-inner row w-100 justify-content-center">
+                                @if(count($posts)>1)
+                                    @foreach($posts as  $post)
+                                        @if($loop->first)
+                                            <div class="carousel-item col-lg-4 active" >
+                                                <a href="{{route('post_show',$post)}}">
+                                                    <div class="card" >
+                                                        @if($post->product->images)
+                                                            @foreach($post->product->images as $image)
+                                                                @if ($loop->first)
+                                                                    <img src="{{asset('storage/'.$image->url)}}" class="img-fluid rounded " style=" height: 250px; width: 100% !important;display: inline-block;"/>
+                                                                @endif
+                                                            @endforeach
+                                                        @else
+                                                            <img src="{{asset('images/dashboard/keita1.jpg')}}" class="img-fluid rounded " style=" height: 250px; width: 100% !important;display: inline-block;"/>
+                                                        @endif
+                                                        <div class="card-body " style="height: 150px">
+                                                            <h4 class="card-title">{{$post->product->name}} {{$post->product->price}} FCFA</h4>
+                                                            <p class="card-text">{{Str::limit($post->product->description,80,'....')}}</p>
+                                                            <p class="card-text"><small class="text-muted">Publier il y a 3 min</small></p>
+                                                        </div>
+                                                    </div>
+                                                </a>
                                             </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="carousel-item col-lg-4" >
-                                    <a href="">
-                                        <div class="card" >
-                                            <img src="{{asset('images/dashboard/keita1.jpg')}}" class="img-fluid rounded " style=" height: 250px; width: 100% !important;display: inline-block;"/>
-                                            <div class="card-body ">
-                                                <h4 class="card-title">Produit 1 2000FCFA</h4>
-                                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                                <p class="card-text"><small class="text-muted">Publier il y a 3 min</small></p>
+                                        @else
+                                            <div class="carousel-item col-lg-4 " >
+                                                <a href="{{route('post_show',$post)}}">
+                                                    <div class="card" >
+                                                        @if($post->product->images)
+                                                            @foreach($post->product->images as $image)
+                                                                @if ($loop->first)
+                                                                    <img src="{{asset('storage/'.$image->url)}}" class="img-fluid rounded " style=" height: 250px; width: 100% !important;display: inline-block;"/>
+                                                                @endif
+                                                            @endforeach
+                                                        @else
+                                                            <img src="{{asset('images/dashboard/keita1.jpg')}}" class="img-fluid rounded " style=" height: 250px; width: 100% !important;display: inline-block;"/>
+                                                        @endif
+                                                        <div class="card-body " style="height: 150px">
+                                                            <h4 class="card-title">{{$post->product->name}} {{$post->product->price}} FCFA</h4>
+                                                            <p class="card-text">{{Str::limit($post->product->description,80,'....')}}</p>
+                                                            <p class="card-text"><small class="text-muted">Publier il y a 3 min</small></p>
+                                                        </div>
+                                                    </div>
+                                                </a>
                                             </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="carousel-item col-lg-4">
-                                    <a href="">
-                                        <div class="card" >
-                                            <img src="{{asset('images/dashboard/keita1.jpg')}}" class="img-fluid rounded " style=" height: 250px; width: 100% !important;display: inline-block;"/>
-                                            <div class="card-body ">
-                                                <h4 class="card-title">Produit 1 2000FCFA</h4>
-                                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                                <p class="card-text"><small class="text-muted">Publier il y a 3 min</small></p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="carousel-item col-lg-4">
-                                    <a href="">
-                                        <div class="card" >
-                                            <img src="{{asset('images/dashboard/keita1.jpg')}}" class="img-fluid rounded " style=" height: 250px; width: 100% !important;display: inline-block;"/>
-                                            <div class="card-body ">
-                                                <h4 class="card-title">Produit 1 2000FCFA</h4>
-                                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                                <p class="card-text"><small class="text-muted">Publier il y a 3 min</small></p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="carousel-item col-lg-4">
-                                    <a href="">
-                                        <div class="card" >
-                                            <img src="{{asset('images/dashboard/keita1.jpg')}}" class="img-fluid rounded " style=" height: 250px; width: 100% !important;display: inline-block;"/>
-                                            <div class="card-body ">
-                                                <h4 class="card-title">Produit 1 2000FCFA</h4>
-                                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                                <p class="card-text"><small class="text-muted">Publier il y a 3 min</small></p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
+                                        @endif
+                                    @endforeach
+                                @endif
                             </div>
                             <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
