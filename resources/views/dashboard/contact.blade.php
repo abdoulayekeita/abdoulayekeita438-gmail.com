@@ -9,7 +9,6 @@
     height: 140px
     }
 @endsection
-
 <!-- begin:: Aside Menu -->
 @section('AsideMenu')
     <div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper">

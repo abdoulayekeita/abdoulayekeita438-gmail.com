@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 class CreateShopsTable extends Migration
 {
@@ -18,6 +18,8 @@ class CreateShopsTable extends Migration
             $table->string('name');
             $table->string('image')->nullable();
             $table->longText('description');
+            $table->boolean('is_valide')->default(false);
+            $table->boolean('denied')->default(false);
             $table->string('address');
             $table->string('urlPageFacebook')->nullable();
             $table->string('urlPageInstagram')->nullable();

@@ -20,7 +20,7 @@
                     @if(count($posts) >= 1)
                         @foreach($posts as $post)
                             <div class="row">
-                                <a href="">
+                                <a href="{{route('post_show',$post)}}">
                                     <div class="card-media">
                                         <!-- media container -->
                                         <div class="card-media-object-container">
@@ -49,7 +49,7 @@
                                             </div>
                                             <div class="card-media-body-supporting-bottom card-media-body-supporting-bottom-reveal">
                                                 <br>
-                                                <a href="" class="card-media-body-supporting-bottom-text card-media-link u-float-right">En savoir plus</a>
+                                                <a href="{{route('post_show',$post)}}" class="card-media-body-supporting-bottom-text card-media-link u-float-right">En savoir plus</a>
                                             </div>
                                         </div>{{--        <span class="card-media-body-supporting-bottom-text mt-2 text-primary">#Music #Party</span>--}}
                                     </div>

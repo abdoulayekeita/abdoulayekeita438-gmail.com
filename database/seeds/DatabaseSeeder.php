@@ -1,9 +1,10 @@
 <?php
 
-use App\Models\Category;
-use Illuminate\Database\Seeder;
+use \App\Models\User;
 use App\Models\Profile;
+use App\Models\Category;
 use App\Models\SubCategory;
+use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,10 +15,20 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-
         Profile::create(['role'=>"admin"]);
         Profile::create(['role'=>"Particulier"]);
         Profile::create(['role'=>"Busness"]);
+        User::create([
+            'first_name'=>"admin",
+            'last_name' =>'admin',
+            'phone'     =>'782147331',
+            'country'   =>'Mali',
+            'city'      =>'Bamako',
+            'address'   =>'Dakar',
+            'email'     =>'abdoulayekeita438@gmail.com',
+            'password'  => Hash::make("#223Mali"),
+            'profile_id'=> 1,
+        ]);
 
         $Category3  =  Category::create(['name'=>'Immobilier']);
 
@@ -79,79 +90,77 @@ class DatabaseSeeder extends Seeder
         SubCategory::create(['name'=> 'Contrôle qualité, hygiène, sécurité','category_id'=> $Category7->id]);
         SubCategory::create(['name'=> 'Vente et commercial','category_id'=> $Category7->id]);
 
-      $Category1  = Category::create(['name'=>'Services']);
+        $Category1  = Category::create(['name'=>'Services']);
 
-      SubCategory::create(['name'=> 'Cours particuliers','category_id'=> $Category1->id]);
-      SubCategory::create(['name'=> 'Prestations de service','category_id'=> $Category1->id]);
-      SubCategory::create(['name'=> 'Formations','category_id'=> $Category1->id]);
-      SubCategory::create(['name'=> 'Objets perdus / retrouvés','category_id'=> $Category1->id]);
+        SubCategory::create(['name'=> 'Cours particuliers','category_id'=> $Category1->id]);
+        SubCategory::create(['name'=> 'Prestations de service','category_id'=> $Category1->id]);
+        SubCategory::create(['name'=> 'Formations','category_id'=> $Category1->id]);
+        SubCategory::create(['name'=> 'Objets perdus / retrouvés','category_id'=> $Category1->id]);
 
-      $Category2  = Category::create(['name'=>'Vehicules']);
+        $Category2  = Category::create(['name'=>'Vehicules']);
 
-      SubCategory::create(['name'=> 'Motos & Scooters','category_id'=> $Category2->id]);
-      SubCategory::create(['name'=> 'Équipements & Pièces','category_id'=> $Category2->id]);
-      SubCategory::create(['name'=> 'Location de Véhicules','category_id'=> $Category2->id]);
-      SubCategory::create(['name'=> 'Bateaux','category_id'=> $Category2->id]);
-      SubCategory::create(['name'=> 'Cars & Camions','category_id'=> $Category2->id]);
-      SubCategory::create(['name'=> 'Taxis','category_id'=> $Category2->id]);
-      SubCategory::create(['name'=> 'Vélos','category_id'=> $Category2->id]);
-
-
+        SubCategory::create(['name'=> 'Motos & Scooters','category_id'=> $Category2->id]);
+        SubCategory::create(['name'=> 'Équipements & Pièces','category_id'=> $Category2->id]);
+        SubCategory::create(['name'=> 'Location de Véhicules','category_id'=> $Category2->id]);
+        SubCategory::create(['name'=> 'Bateaux','category_id'=> $Category2->id]);
+        SubCategory::create(['name'=> 'Cars & Camions','category_id'=> $Category2->id]);
+        SubCategory::create(['name'=> 'Taxis','category_id'=> $Category2->id]);
+        SubCategory::create(['name'=> 'Vélos','category_id'=> $Category2->id]);
 
 
 
-      $Category5  = Category::create(['name'=>'Maison']);
-
-      SubCategory::create(['name'=> 'Mobilier','category_id'=> $Category5->id]);
-      SubCategory::create(['name'=> 'Electromenager','category_id'=> $Category5->id]);
-      SubCategory::create(['name'=> 'Décoration, Linge de Maison','category_id'=> $Category5->id]);
-      SubCategory::create(['name'=> 'Vaisselles','category_id'=> $Category5->id]);
-      SubCategory::create(['name'=> 'Jardinage, bricolage','category_id'=> $Category5->id]);
-
-      $Category6  = Category::create(['name'=>'Événements & loisirs']);
-
-      SubCategory::create(['name'=> 'Matériel de Sport','category_id'=> $Category6->id]);
-      SubCategory::create(['name'=> 'CDs, DVDs & Livres','category_id'=> $Category6->id]);
-      SubCategory::create(['name'=> 'Instruments de musique','category_id'=> $Category6->id]);
-      SubCategory::create(['name'=> 'Événements','category_id'=> $Category6->id]);
-      SubCategory::create(['name'=> 'Art & Artisanat, bricolage','category_id'=> $Category6->id]);
-      SubCategory::create(['name'=> 'Tourisme & Activités, bricolage','category_id'=> $Category6->id]);
 
 
-      $Category8  = Category::create(['name'=>'Demandes d’emploi']);
+        $Category5  = Category::create(['name'=>'Maison']);
 
-      SubCategory::create(['name'=> 'Chauffeur, Conducteur','category_id'=> $Category8->id]);
-      SubCategory::create(['name'=> 'Restauration','category_id'=> $Category8->id]);
-      SubCategory::create(['name'=> 'Nettoyage, personnel','category_id'=> $Category8->id]);
-      SubCategory::create(['name'=> 'Nounous, garde d’enfants','category_id'=> $Category8->id]);
-      SubCategory::create(['name'=> 'Stages','category_id'=> $Category8->id]);
-      SubCategory::create(['name'=> 'Autres demandes d’emplois','category_id'=> $Category8->id]);
+        SubCategory::create(['name'=> 'Mobilier','category_id'=> $Category5->id]);
+        SubCategory::create(['name'=> 'Electromenager','category_id'=> $Category5->id]);
+        SubCategory::create(['name'=> 'Décoration, Linge de Maison','category_id'=> $Category5->id]);
+        SubCategory::create(['name'=> 'Vaisselles','category_id'=> $Category5->id]);
+        SubCategory::create(['name'=> 'Jardinage, bricolage','category_id'=> $Category5->id]);
 
+        $Category6  = Category::create(['name'=>'Événements & loisirs']);
 
-      $Category10 = Category::create(['name'=>'Matériaux & outils ']);
-
-      SubCategory::create(['name'=> 'Matériel Pro','category_id'=> $Category10->id]);
-      SubCategory::create(['name'=> 'Materiel de construction','category_id'=> $Category10->id]);
-      SubCategory::create(['name'=> 'Energie & Groupes Electrogènes','category_id'=> $Category10->id]);
-      SubCategory::create(['name'=> 'Caméras de Surveillance','category_id'=> $Category10->id]);
-      SubCategory::create(['name'=> 'Equipement Restauration','category_id'=> $Category10->id]);
-      SubCategory::create(['name'=> 'Equipement Medical','category_id'=> $Category10->id]);
-
-      $Category11 = Category::create(['name'=>'Animaux']);
-
-      SubCategory::create(['name'=> 'Chiens & Chiots','category_id'=> $Category11->id]);
-      SubCategory::create(['name'=> 'Moutons','category_id'=> $Category11->id]);
-      SubCategory::create(['name'=> 'Pigeons','category_id'=> $Category11->id]);
-      SubCategory::create(['name'=> 'Lapins','category_id'=> $Category11->id]);
-      SubCategory::create(['name'=> 'Chats & Chatons','category_id'=> $Category11->id]);
-      SubCategory::create(['name'=> 'Autres Animaux','category_id'=> $Category11->id]);
-      SubCategory::create(['name'=> 'Accessoires Animaux','category_id'=> $Category11->id]);
-
-      $Category12 = Category::create(['name'=>'Agroalimentaire']);
-
-      SubCategory::create(['name'=> 'Alimentation','category_id'=> $Category12->id]);
-      SubCategory::create(['name'=> 'Agriculture','category_id'=> $Category12->id]);
+        SubCategory::create(['name'=> 'Matériel de Sport','category_id'=> $Category6->id]);
+        SubCategory::create(['name'=> 'CDs, DVDs & Livres','category_id'=> $Category6->id]);
+        SubCategory::create(['name'=> 'Instruments de musique','category_id'=> $Category6->id]);
+        SubCategory::create(['name'=> 'Événements','category_id'=> $Category6->id]);
+        SubCategory::create(['name'=> 'Art & Artisanat, bricolage','category_id'=> $Category6->id]);
+        SubCategory::create(['name'=> 'Tourisme & Activités, bricolage','category_id'=> $Category6->id]);
 
 
+        $Category8  = Category::create(['name'=>'Demandes d’emploi']);
+
+        SubCategory::create(['name'=> 'Chauffeur, Conducteur','category_id'=> $Category8->id]);
+        SubCategory::create(['name'=> 'Restauration','category_id'=> $Category8->id]);
+        SubCategory::create(['name'=> 'Nettoyage, personnel','category_id'=> $Category8->id]);
+        SubCategory::create(['name'=> 'Nounous, garde d’enfants','category_id'=> $Category8->id]);
+        SubCategory::create(['name'=> 'Stages','category_id'=> $Category8->id]);
+        SubCategory::create(['name'=> 'Autres demandes d’emplois','category_id'=> $Category8->id]);
+
+
+        $Category10 = Category::create(['name'=>'Matériaux & outils ']);
+
+        SubCategory::create(['name'=> 'Matériel Pro','category_id'=> $Category10->id]);
+        SubCategory::create(['name'=> 'Materiel de construction','category_id'=> $Category10->id]);
+        SubCategory::create(['name'=> 'Energie & Groupes Electrogènes','category_id'=> $Category10->id]);
+        SubCategory::create(['name'=> 'Caméras de Surveillance','category_id'=> $Category10->id]);
+        SubCategory::create(['name'=> 'Equipement Restauration','category_id'=> $Category10->id]);
+        SubCategory::create(['name'=> 'Equipement Medical','category_id'=> $Category10->id]);
+
+        $Category11 = Category::create(['name'=>'Animaux']);
+
+        SubCategory::create(['name'=> 'Chiens & Chiots','category_id'=> $Category11->id]);
+        SubCategory::create(['name'=> 'Moutons','category_id'=> $Category11->id]);
+        SubCategory::create(['name'=> 'Pigeons','category_id'=> $Category11->id]);
+        SubCategory::create(['name'=> 'Lapins','category_id'=> $Category11->id]);
+        SubCategory::create(['name'=> 'Chats & Chatons','category_id'=> $Category11->id]);
+        SubCategory::create(['name'=> 'Autres Animaux','category_id'=> $Category11->id]);
+        SubCategory::create(['name'=> 'Accessoires Animaux','category_id'=> $Category11->id]);
+
+        $Category12 = Category::create(['name'=>'Agroalimentaire']);
+
+        SubCategory::create(['name'=> 'Alimentation','category_id'=> $Category12->id]);
+        SubCategory::create(['name'=> 'Agriculture','category_id'=> $Category12->id]);
     }
 }

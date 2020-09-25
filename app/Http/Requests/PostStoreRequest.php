@@ -29,7 +29,7 @@ class PostStoreRequest extends FormRequest
             'price' => 'required',
             'isPriceNegotiate' => 'boolean',
             'isPossibleToChange' => 'boolean',
-            'quantity' => 'required|integer',
+            'quantity' => 'required',
             'description' => 'required|string',
             'sub_category_id' => 'required|integer|exists:sub_categorys,id',
         ];

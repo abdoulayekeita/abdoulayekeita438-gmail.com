@@ -16,11 +16,13 @@
                                             </g>
                                         </svg></span>
                         <span class="kt-menu__link-text"> Tableau de bord</span></a></li>
-                <li class="kt-menu__section ">
-                    <h4 class="kt-menu__section-text">Produit</h4>
-                    <i class="kt-menu__section-icon flaticon-more-v2"></i>
-                </li>
-                <li class="kt-menu__item  kt-menu__item--submenu " aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
+
+                @if(auth()->user()->profile->role=="Busness" || auth()->user()->profile->role=="Particulier")
+                    <li class="kt-menu__section ">
+                        <h4 class="kt-menu__section-text">Produit</h4>
+                        <i class="kt-menu__section-icon flaticon-more-v2"></i>
+                    </li>
+                    <li class="kt-menu__item  kt-menu__item--submenu " aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                 <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/>
@@ -28,47 +30,86 @@
                             </g>
                         </svg>
                         </span><span class="kt-menu__link-text">Déposer une annonce</span></a>
-                </li>
+                    </li>
+                @endif
                 <li class="kt-menu__section ">
                     <h4 class="kt-menu__section-text">Boutique</h4>
                     <i class="kt-menu__section-icon flaticon-more-v2"></i>
                 </li>
-                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('shop.create')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/>
-                                <rect fill="#000000"  transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"/>
-                            </g>
-                        </svg>
-                        </span><span class="kt-menu__link-text">Créer une boutique</span></a>
-                </li>
-                <li class="kt-menu__item  kt-menu__item--submenu  " aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('shop.index')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
-                       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <rect x="0" y="0" width="24" height="24"/>
-                                <rect fill="#000000" opacity="0.3" x="4" y="4" width="4" height="4" rx="2"/>
-                                <rect fill="#000000" x="4" y="10" width="4" height="4" rx="2"/>
-                                <rect fill="#000000" x="10" y="4" width="4" height="4" rx="2"/>
-                                <rect fill="#000000" x="10" y="10" width="4" height="4" rx="2"/>
-                                <rect fill="#000000" x="16" y="4" width="4" height="4" rx="2"/>
-                                <rect fill="#000000" x="16" y="10" width="4" height="4" rx="2"/>
-                                <rect fill="#000000" x="4" y="16" width="4" height="4" rx="2"/>
-                                <rect fill="#000000" x="10" y="16" width="4" height="4" rx="2"/>
-                                <rect fill="#000000" x="16" y="16" width="4" height="4" rx="2"/>
-                            </g>
-                        </svg>
-                        </span><span class="kt-menu__link-text">Mes boutiques</span></a>
-                </li>
-                <li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--active" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/>
-                                <rect fill="#000000"  transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"/>
-                            </g>
-                        </svg>
-                        </span><span class="kt-menu__link-text">Boutique {{$shop->name}}</span></a>
-                </li>
-                <li class="kt-menu__item  kt-menu__item--submenu " aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('shop.edit',$shop)}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
+                @if(auth()->user()->profile->role=="Busness" || auth()->user()->profile->role=="Particulier")
+                    <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('shop.create')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/>
+                                    <rect fill="#000000"  transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"/>
+                                </g>
+                            </svg>
+                            </span><span class="kt-menu__link-text">Créer une boutique</span></a>
+                    </li>
+                    <li class="kt-menu__item  kt-menu__item--submenu  " aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('shop.index')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
+                           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <rect x="0" y="0" width="24" height="24"/>
+                                    <rect fill="#000000" opacity="0.3" x="4" y="4" width="4" height="4" rx="2"/>
+                                    <rect fill="#000000" x="4" y="10" width="4" height="4" rx="2"/>
+                                    <rect fill="#000000" x="10" y="4" width="4" height="4" rx="2"/>
+                                    <rect fill="#000000" x="10" y="10" width="4" height="4" rx="2"/>
+                                    <rect fill="#000000" x="16" y="4" width="4" height="4" rx="2"/>
+                                    <rect fill="#000000" x="16" y="10" width="4" height="4" rx="2"/>
+                                    <rect fill="#000000" x="4" y="16" width="4" height="4" rx="2"/>
+                                    <rect fill="#000000" x="10" y="16" width="4" height="4" rx="2"/>
+                                    <rect fill="#000000" x="16" y="16" width="4" height="4" rx="2"/>
+                                </g>
+                            </svg>
+                            </span><span class="kt-menu__link-text">Mes boutiques</span></a>
+                    </li>
+                @endif
+                @if(auth()->user()->profile->role=="admin")
+                    <li class="kt-menu__item  kt-menu__item--submenu " aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('list_shop')}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
+                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <rect x="0" y="0" width="24" height="24"/>
+                                    <rect fill="#000000" opacity="0.3" x="4" y="4" width="4" height="4" rx="2"/>
+                                    <rect fill="#000000" x="4" y="10" width="4" height="4" rx="2"/>
+                                    <rect fill="#000000" x="10" y="4" width="4" height="4" rx="2"/>
+                                    <rect fill="#000000" x="10" y="10" width="4" height="4" rx="2"/>
+                                    <rect fill="#000000" x="16" y="4" width="4" height="4" rx="2"/>
+                                    <rect fill="#000000" x="16" y="10" width="4" height="4" rx="2"/>
+                                    <rect fill="#000000" x="4" y="16" width="4" height="4" rx="2"/>
+                                    <rect fill="#000000" x="10" y="16" width="4" height="4" rx="2"/>
+                                    <rect fill="#000000" x="16" y="16" width="4" height="4" rx="2"/>
+                                </g>
+                            </svg>
+                        </span><span class="kt-menu__link-text">Liste des Boutique</span></a>
+                    <li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--active" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/>
+                                    <rect fill="#000000"  transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"/>
+                                </g>
+                            </svg>
+                            </span><span class="kt-menu__link-text">Boutique {{$shop->name}}</span></a>
+                    </li>
+                @endif
+                @if(auth()->user()->profile->role=="admin")
+                    @if(!$shop->denied)
+                        <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
+                            <a href="{{route('form_valide_shop',$shop)}}" class="kt-menu__link kt-menu__toggle" ><span class="kt-menu__link-icon">
+                        <span class="svg-icon svg-icon-primary svg-icon-2x"><!--begin::Svg Icon | path:/home/keenthemes/www/metronic/themes/metronic/theme/html/demo1/dist/../src/media/svg/icons/Code/Done-circle.svg-->
+                           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <rect x="0" y="0" width="24" height="24"/>
+                                    <circle fill="#000000" opacity="0.3" cx="12" cy="12" r="10"/>
+                                    <path d="M12.0355339,10.6213203 L14.863961,7.79289322 C15.2544853,7.40236893 15.8876503,7.40236893 16.2781746,7.79289322 C16.6686989,8.18341751 16.6686989,8.81658249 16.2781746,9.20710678 L13.4497475,12.0355339 L16.2781746,14.863961 C16.6686989,15.2544853 16.6686989,15.8876503 16.2781746,16.2781746 C15.8876503,16.6686989 15.2544853,16.6686989 14.863961,16.2781746 L12.0355339,13.4497475 L9.20710678,16.2781746 C8.81658249,16.6686989 8.18341751,16.6686989 7.79289322,16.2781746 C7.40236893,15.8876503 7.40236893,15.2544853 7.79289322,14.863961 L10.6213203,12.0355339 L7.79289322,9.20710678 C7.40236893,8.81658249 7.40236893,8.18341751 7.79289322,7.79289322 C8.18341751,7.40236893 8.81658249,7.40236893 9.20710678,7.79289322 L12.0355339,10.6213203 Z" fill="#000000"/>
+                                </g>
+                            </svg>
+                            <!--end::Svg Icon--></span>
+                        </span><span class="kt-menu__link-text">Refuser la validation</span></a>
+                        </li>
+                    @endif
+                @endif
+                @if(auth()->user()->profile->role=="Busness" || auth()->user()->profile->role=="Particulier")
+                    <li class="kt-menu__item  kt-menu__item--submenu " aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('shop.edit',$shop)}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                 <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/>
@@ -76,7 +117,8 @@
                             </g>
                         </svg>
                         </span><span class="kt-menu__link-text">Modifier boutique {{$shop->name}}</span></a>
-                </li>
+                    </li>
+                @endif
                 <li class="kt-menu__item  kt-menu__item--submenu " aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle" data-toggle="modal" data-target="#kt_modal_6"><span class="kt-menu__link-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -86,6 +128,31 @@
                         </svg>
                         </span><span class="kt-menu__link-text">Supprimer boutique {{$shop->name}}</span></a>
                 </li>
+                @if(auth()->user()->profile->role=="admin")
+                    @if($shop->is_valide)
+                        <li class="kt-menu__item  kt-menu__item--submenu " aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('annule_valide.shop',$shop)}}" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <rect x="0" y="0" width="24" height="24"/>
+                                <circle fill="#000000" opacity="0.3" cx="12" cy="12" r="10"/>
+                                <path d="M16.7689447,7.81768175 C17.1457787,7.41393107 17.7785676,7.39211077 18.1823183,7.76894473 C18.5860689,8.1457787 18.6078892,8.77856757 18.2310553,9.18231825 L11.2310553,16.6823183 C10.8654446,17.0740439 10.2560456,17.107974 9.84920863,16.7592566 L6.34920863,13.7592566 C5.92988278,13.3998345 5.88132125,12.7685345 6.2407434,12.3492086 C6.60016555,11.9298828 7.23146553,11.8813212 7.65079137,12.2407434 L10.4229928,14.616916 L16.7689447,7.81768175 Z" fill="#000000" fill-rule="nonzero"/>
+                            </g>
+                        </svg>
+                        </span><span class="kt-menu__link-text">Annuler la validation</span></a>
+                        </li>
+                    @else
+                        <li class="kt-menu__item  kt-menu__item--submenu " aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('valide.shop',$shop)}}" class="kt-menu__link kt-menu__toggle" ><span class="kt-menu__link-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <rect x="0" y="0" width="24" height="24"/>
+                                <circle fill="#000000" opacity="0.3" cx="12" cy="12" r="10"/>
+                                <path d="M16.7689447,7.81768175 C17.1457787,7.41393107 17.7785676,7.39211077 18.1823183,7.76894473 C18.5860689,8.1457787 18.6078892,8.77856757 18.2310553,9.18231825 L11.2310553,16.6823183 C10.8654446,17.0740439 10.2560456,17.107974 9.84920863,16.7592566 L6.34920863,13.7592566 C5.92988278,13.3998345 5.88132125,12.7685345 6.2407434,12.3492086 C6.60016555,11.9298828 7.23146553,11.8813212 7.65079137,12.2407434 L10.4229928,14.616916 L16.7689447,7.81768175 Z" fill="#000000" fill-rule="nonzero"/>
+                            </g>
+                        </svg>
+                        </span><span class="kt-menu__link-text">Valider la boutique</span></a>
+                        </li>
+                    @endif
+                @endif
                 <li class="kt-menu__section ">
                     <h4 class="kt-menu__section-text">Aide</h4>
                     <i class="kt-menu__section-icon flaticon-more-v2"></i>
@@ -240,23 +307,25 @@
             {{ csrf_field() }}
             <div class="form-group ">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Rechercher un produit" name="query">
+                    <input type="text" class="form-control" placeholder="Recherchers un produit" name="query">
                     <div class="input-group-append">
                         <button class="btn btn-secondary" type="submit"><i class="fa fa-search"></i></button>
                     </div>
                 </div>
             </div>
         </form>
-        <div class="mb-4 pl-3">
-            <a href="{{route('shop.product.create',$shop)}}"  class="btn btn-outline-primary text-primary btn-hover-light btn-pill btn-elevate btn-elevate-air ">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                        <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/>
-                        <rect fill="#000000"  transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"/>
-                    </g>
-                </svg>
-                Ajouter un produit</a>
-        </div>
+        @if(auth()->user()->profile->role=="Busness")
+            <div class="mb-4 pl-3">
+                <a href="{{route('shop.product.create',$shop)}}"  class="btn btn-outline-primary text-primary btn-hover-light btn-pill btn-elevate btn-elevate-air ">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/>
+                            <rect fill="#000000"  transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"/>
+                        </g>
+                    </svg>
+                    Ajouter un produit</a>
+            </div>
+        @endif
     </div>
 
 

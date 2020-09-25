@@ -4,10 +4,10 @@ namespace Tests\Feature\Http\Controllers;
 
 use App\Post;
 use App\Shop;
-use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use JMac\Testing\Traits\AdditionalAssertions;
-use Tests\TestCase;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 /**
  * @see \App\Http\Controllers\ShopController
@@ -30,7 +30,6 @@ class ShopControllerTest extends TestCase
         $response->assertViewHas('shops');
     }
 
-
     /**
      * @test
      */
@@ -41,7 +40,6 @@ class ShopControllerTest extends TestCase
         $response->assertOk();
         $response->assertViewIs('dashboard.shop.create');
     }
-
 
     /**
      * @test
@@ -84,7 +82,7 @@ class ShopControllerTest extends TestCase
 
         $shops = Post::query()
             ->where('name', $name)
-            ->where('image ', $image )
+            ->where('image ', $image)
             ->where('description', $description)
             ->where('address', $address)
             ->where('urlPageFacebook', $urlPageFacebook)

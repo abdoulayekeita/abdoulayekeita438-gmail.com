@@ -21,6 +21,8 @@ class Shop extends Model
         'urlSite',
         'category_id',
         'user_id',
+        'is_valide',
+        'denied',
     ];
 
     /**
@@ -32,8 +34,9 @@ class Shop extends Model
         'id' => 'integer',
         'category_id' => 'integer',
         'user_id' => 'integer',
+        'is_valide'=> 'boolean',
+        'denied'=> 'boolean',
     ];
-
 
     public function category()
     {

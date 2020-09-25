@@ -218,7 +218,7 @@
                             @csrf
                             <input type="hidden" autocomplete="OFF" name="item_images" id="item_images" placeholder="" class="form-control input-sm" required />
                             <div class="form-group">
-                                <label>Nom </label>
+                                <label>Nom</label>
                                 <input type="text" class="form-control  @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}"  placeholder="Entrer le nom du produit">
                             </div>
                             @error('name')
@@ -329,7 +329,7 @@
         $(function(){
 
             uploader = new Dropzone(".dropzone",{
-                url: "{{url('http://yankadi.herokuapp.com/dashboard/product/image/upload')}}",
+                url: "{{url('/dashboard/product/image/upload')}}",
                 paramName : "file",
                 uploadMultiple :false,
                 acceptedFiles : "image/*",
@@ -370,7 +370,7 @@
                         rmvFile = fileList[f].serverFileName;
 
                         // get request to remove the uploaded file from server
-                        $.get( "{{url('http://yankadi.herokuapp.com/dashboard/product/image/delete')}}", { file: rmvFile } )
+                        $.get( "{{url('/dashboard/product/image/delete')}}", { file: rmvFile } )
                             .done(function( data ) {
                                 console.log(data)
                             });
@@ -385,6 +385,9 @@
 
 
         });
+        window.onbeforeunload = function(){
+            // return 'Are you sure you want to leave?';
+        };
     </script>
 
 @endsection

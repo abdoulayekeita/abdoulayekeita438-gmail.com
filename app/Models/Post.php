@@ -15,6 +15,8 @@ class Post extends Model
         'product_id',
         'user_id',
         'published_at',
+        'is_publish',
+        'denied'
     ];
 
     /**
@@ -26,6 +28,9 @@ class Post extends Model
         'id' => 'integer',
         'product_id' => 'integer',
         'user_id' => 'integer',
+        'is_publish' => 'boolean',
+        'denied' => 'boolean',
+        'published_at' => 'datetime',
     ];
 
     /**
@@ -36,7 +41,6 @@ class Post extends Model
     protected $dates = [
         'published_at',
     ];
-
 
     public function product()
     {

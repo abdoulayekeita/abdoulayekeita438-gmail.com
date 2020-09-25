@@ -94,8 +94,11 @@
                     @endif
                 </div>
             </div>
-            <div class="row justify-content-center">
-                {{$shops->links()}}
+            <div class="row justify-content-center pl-5">
+                <div class="col-lg-3 ">
+                    {{$shops->links()}}
+
+                </div>
             </div>
         </div>
     </div>

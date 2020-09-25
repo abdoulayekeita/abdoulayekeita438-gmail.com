@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use \Carbon\Carbon;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 class CreatePostsTable extends Migration
 {
@@ -16,6 +17,8 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('product_id');
+            $table->boolean('is_publish')->default(false);
+            $table->boolean('denied')->default(false);
             $table
                 ->foreign('product_id')
                 ->references('id')
@@ -29,7 +32,7 @@ class CreatePostsTable extends Migration
                 ->on('users')
                 ->onDelete('cascade');
 
-            $table->timestamp('published_at')->nullable();
+            $table->timestamp('published_at')->default(Carbon::now());
             $table->timestamps();
         });
     }

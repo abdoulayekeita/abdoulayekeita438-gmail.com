@@ -2,20 +2,19 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use App\Models\Profile;
 use App\Models\User;
-use Illuminate\Auth\Events\Registered;
+use App\Models\Profile;
+use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Illuminate\Support\Arr;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
-
     /**
      * Create a new controller instance.
      *
@@ -26,7 +25,6 @@ class AuthController extends Controller
         $this->middleware('guest');
     }
 
-
     /**
      * Show the application registration form.
      *
@@ -36,7 +34,7 @@ class AuthController extends Controller
     {
         $profiles = Profile::all()->except(1);
 
-        return view('auth.register',compact('profiles'));
+        return view('auth.register', compact('profiles'));
     }
 
     /**
@@ -64,7 +62,7 @@ class AuthController extends Controller
 
         return $request->wantsJson()
             ? new Response('', 201)
-            : redirect($this->redirectPath());
+            : redirect($this->redirectPath())->with('message', 'Binvenue dans Yankadi');
     }
 
     /**
@@ -97,7 +95,7 @@ class AuthController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data,[
+        return Validator::make($data, [
             'first_name'=> ['required', 'string', 'max:255'],
             'last_name' => ['required', 'string', 'max:255'],
             'phone'     => ['required', 'string', 'max:255'],
@@ -131,7 +129,6 @@ class AuthController extends Controller
             'profile_id' => $data['profile_id'],
             'password'   => Hash::make($data['password']),
         ]);
-
     }
 
     /**

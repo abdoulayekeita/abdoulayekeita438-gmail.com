@@ -4,10 +4,10 @@ namespace Tests\Feature\Http\Controllers;
 
 use App\Post;
 use App\Product;
-use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use JMac\Testing\Traits\AdditionalAssertions;
-use Tests\TestCase;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 /**
  * @see \App\Http\Controllers\ProductController
@@ -30,7 +30,6 @@ class ProductControllerTest extends TestCase
         $response->assertViewHas('shops');
     }
 
-
     /**
      * @test
      */
@@ -41,7 +40,6 @@ class ProductControllerTest extends TestCase
         $response->assertOk();
         $response->assertViewIs('dashboard.product.create');
     }
-
 
     /**
      * @test
@@ -78,7 +76,7 @@ class ProductControllerTest extends TestCase
 
         $products = Post::query()
             ->where('name', $name)
-            ->where('price ', $price )
+            ->where('price ', $price)
             ->where('isPriceNegotiate', $isPriceNegotiate)
             ->where('isPossibleToChange', $isPossibleToChange)
             ->where('description', $description)

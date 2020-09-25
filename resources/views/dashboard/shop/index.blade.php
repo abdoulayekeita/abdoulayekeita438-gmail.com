@@ -194,7 +194,13 @@
 
         </div>
     </div>
-
+    <div class=" pr-5 pl-5 justify-content-center " >
+        @if (session('message'))
+            <div class="alert alert-success container row justify-content-center lead">
+                {{ session('message') }}
+            </div>
+        @endif
+    </div>
 @endsection
 <!-- end:: Content Head -->
 

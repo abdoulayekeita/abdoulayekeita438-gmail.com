@@ -14,7 +14,6 @@ class Product extends Model
      * @var array
      */
 
-
     /**
      * The attributes that should be cast to native types.
      *
@@ -28,7 +27,6 @@ class Product extends Model
         'image_id' => 'integer',
         'shop_id' => 'integer',
     ];
-
 
     public function subCategory()
     {

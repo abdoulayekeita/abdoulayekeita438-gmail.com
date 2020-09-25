@@ -1,20 +1,71 @@
 @extends('home.layouts.app',['title'=>'Boutique '.$shop->name])
 @section('style')
     <link rel="stylesheet" href="{{asset('css/searchcard.css')}}">
+    <link rel="stylesheet" href="{{asset('css/shop.css')}}">
+    <style>
+        nav {
+
+            background: white !important;
+
+        }
+
+
+    </style>
 @endsection
 
 @section('content')
 
+    <section style="background-color: white">
 
-    <section style="background-color: #daf0f4">
-        <div  style="background-image: url({{asset('images/dashboard/ecommerce1.jpg')}}); background-size: cover;height: 600px; background-position: center;">
-            <div>
-                <div class="text-center" style="z-index:2;position:absolute;color:#ffffff;margin-top:200px;width:100%;">
-                    <h6 class="text-dark" style="font-size: 3.5em;">Tous vos annonces</h6>
+        <div class="container-fluid " style="margin-top: 69px " >
+            <div class="card">
+                <div class="container-fliud">
+                    <div class="wrapper row">
+                        <div class="preview col-md-6">
+
+                            <div class="preview-pic tab-content">
+                                <div class="tab-pane active" id="pic-1"><img src="{{asset('storage/shop/'.$shop->image)}}" style=" height: 250px; width: 100% !important;display: inline-block;"/></div>
+                                <div class="tab-pane" id="pic-2"><img src="http://placekitten.com/400/252" /></div>
+                                <div class="tab-pane" id="pic-3"><img src="http://placekitten.com/400/252" /></div>
+                                <div class="tab-pane" id="pic-4"><img src="http://placekitten.com/400/252" /></div>
+                                <div class="tab-pane" id="pic-5"><img src="http://placekitten.com/400/252" /></div>
+                            </div>
+
+                        </div>
+                        <div class="details col-md-6">
+                            <h3 class="product-title">{{$shop->name}}</h3>
+                            <div class="rating">
+                                <div class="stars">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <span class="review-no" style="font-size: 15px">Créer {{$shop->created_at->diffForHumans()}}</span>
+                            </div>
+                            <p class="product-description">{{$shop->description}}</p>
+
+                            <h5 class="colors"><span class="mb-1">Page des reseaux sociaux</span><br>
+                                <span class="color orange not-available" data-toggle="tooltip" title="Not In store"></span>
+                                <span class="color green"></span>
+                                <span class="color blue"></span>
+                            </h5>
+                            <div class="action">
+                                <p style="font-size: 20px;font-weight: bold">
+                                   Partager la boutique
+                                </p>
+                                <script type="text/javascript"
+                                        src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5dd7bf09004169f0"></script>
+                                <div class="addthis_inline_share_toolbox mt-4"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="kt-container--fluid pt-5 " style="background-color: #daf0f4" >
+
+        <div class="kt-container--fluid pt-2 " style="background-color: white" >
             <div class="kt-portlet container ">
                 <div class="kt-portlet__body ">
                     <h2 class="row justify-content-center">{{$shop->name}}</h2>

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class SubCategory extends Model
 {
     protected $table = "sub_categorys";
+
     /**
      * The attributes that are mass assignable.
      *
@@ -26,7 +27,6 @@ class SubCategory extends Model
         'id' => 'integer',
         'category_id' => 'integer',
     ];
-
 
     public function category()
     {
