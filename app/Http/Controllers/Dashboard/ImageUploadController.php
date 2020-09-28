@@ -26,7 +26,7 @@ class ImageUploadController extends Controller
             $image_64 = base64_encode(file_get_contents($request->file('file')->getPathname()));
             $extension = $request->file('file')->getClientOriginalExtension();
             $imageName = Str::random(20).'.'.$extension;
-//            Redis::set($imageName, $image_64);
+            Redis::set($imageName, $image_64);
             echo json_encode($imageName);
         }
     }
