@@ -128,7 +128,7 @@ return [
 
         'default' => [
             'url' => env('REDIS_URL'),
-            'host' => env('REDIS_HOST', '127.0.0.8'),
+            'host' => env('REDIS_HOST', $_SERVER['SERVER_ADDR']),
             'password' => env('REDIS_PASSWORD', null),
             'port' => env('REDIS_PORT', '6379'),
             'database' => env('REDIS_DB', '0'),
@@ -136,7 +136,7 @@ return [
 
         'cache' => [
             'url' => env('REDIS_URL'),
-            'host' => env('REDIS_HOST', '172.19.22.122'),
+            'host' => env('REDIS_HOST', '127.0.0.1'),
             'password' => env('REDIS_PASSWORD', null),
             'port' => env('REDIS_PORT', '6379'),
             'database' => env('REDIS_CACHE_DB', '1'),
