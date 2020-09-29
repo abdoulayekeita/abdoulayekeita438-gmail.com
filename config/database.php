@@ -136,7 +136,7 @@ return [
 
         'cache' => [
             'url' => env('REDIS_URL'),
-            'host' => env('REDIS_HOST', $_SERVER['SERVER_ADDR']),
+            'host' => env('REDIS_HOST', '172.19.22.122'),
             'password' => env('REDIS_PASSWORD', null),
             'port' => env('REDIS_PORT', '6379'),
             'database' => env('REDIS_CACHE_DB', '1'),
