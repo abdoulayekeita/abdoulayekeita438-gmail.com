@@ -50,13 +50,15 @@ class PostController extends Controller
         foreach (explode(',', $request->validated()['item_images']) as $url) {
             $url = str_replace("\\", '', $url);
             $url = str_replace('"', '', $url);
-            $image_64 = Redis::get($url);
+//            $image_64 = Redis::get($url);
+            $image_64 = $request->session()->get($url);
             Storage::disk('public')->put('product/'.$url, base64_decode($image_64));
             Image::create(['url'=>'product/'.$url,'product_id'=>$product->id]);
         }
         $post = Post::create(['product_id'=>$product->id,'user_id'=>auth()->user()->id,'is_publish'=>false]);
         $user = User::findOrFail(1);
         $when = now()->addSecond(3);
+        $request->session()->flush();
 //        $user->notify((new PostCreation($post))->delay($when));
         return redirect()->route('post.show', $post)->with('message', "Votre annonce sera validée par l'equipe yankadi dans les heures qui suivent");
     }
