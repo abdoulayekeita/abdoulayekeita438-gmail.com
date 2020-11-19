@@ -93,7 +93,7 @@
                                                             <label class="col-xl-3 col-lg-3 col-form-label">Photo</label>
                                                             <div class="col-lg-9 col-xl-6">
                                                                 <div class="kt-avatar kt-avatar--outline" id="kt_user_add_avatar">
-                                                                    <div class="kt-avatar__holder" style="background-image: url({{asset('assets/media/users/300_10.jpg')}})" id="profile_holder"></div>
+                                                                    <div class="kt-avatar__holder" style="background-image: url({{asset('assets/media/users/user.jpg')}})" id="profile_holder"></div>
                                                                     <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="Change l'image">
                                                                         <i class="fa fa-edit"></i>
                                                                         <input type="file" name="image">

@@ -9,6 +9,7 @@ use App\Models\Category;
 use App\Models\SubCategory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Redis;
 
 class HomeController extends Controller
 {
@@ -17,6 +18,8 @@ class HomeController extends Controller
      */
     public function home()
     {
+        Redis::set("ok", "kkkkkkkkkkkkk");
+//        dd($_SERVER['SERVER_ADDR']);
         $categorys = Category::all();
         $posts = Post::where('is_publish', true)->get();
         return view('home.index', compact('categorys', 'posts'));
