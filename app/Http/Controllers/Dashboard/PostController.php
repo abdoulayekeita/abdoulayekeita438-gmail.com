@@ -51,6 +51,7 @@ class PostController extends Controller
             $url = str_replace("\\", '', $url);
             $url = str_replace('"', '', $url);
             $image_64 = Redis::get($url);
+            dd($image_64);
 //            $image_64 = $request->session()->get($url);
             Storage::disk('public')->put('product/'.$url, base64_decode($image_64));
             Image::create(['url'=>'product/'.$url,'product_id'=>$product->id]);
