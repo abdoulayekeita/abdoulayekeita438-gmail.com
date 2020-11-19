@@ -30,6 +30,18 @@ class DatabaseSeeder extends Seeder
             'profile_id'=> 1,
         ]);
 
+        User::create([
+            'first_name'=>"admin",
+            'last_name' =>'admin',
+            'phone'     =>'782147331',
+            'country'   =>'Mali',
+            'city'      =>'Bamako',
+            'address'   =>'Dakar',
+            'email'     =>'test@gmail.com',
+            'password'  => Hash::make("#223Mali"),
+            'profile_id'=> 3,
+        ]);
+
         $Category3  =  Category::create(['name'=>'Immobilier']);
 
         SubCategory::create(['name'=> 'Appartements à Louer','category_id'=> $Category3->id]);
