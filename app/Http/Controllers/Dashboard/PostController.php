@@ -57,7 +57,7 @@ class PostController extends Controller
         }
         $post = Post::create(['product_id'=>$product->id,'user_id'=>auth()->user()->id,'is_publish'=>false]);
         $user = User::findOrFail(1);
-        $when = now()->addSecond(3);
+//        $when = now()->addSecond(3);
 //        $request->session()->flush();
 //        $user->notify((new PostCreation($post))->delay($when));
         return redirect()->route('post.show', $post)->with('message', "Votre annonce sera validée par l'equipe yankadi dans les heures qui suivent");
