@@ -18,7 +18,7 @@ class HomeController extends Controller
      */
     public function home()
     {
-        Redis::set("ok", "kkkkkkkkkkkkk");
+//        Redis::set("ok", "kkkkkkkkkkkkk");
 //        dd($_SERVER['SERVER_ADDR']);
         $categorys = Category::all();
         $posts = Post::where('is_publish', true)->get();
