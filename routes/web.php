@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::namespace('Auth')->group(function () {
     Route::get('register', 'AuthController@showRegistrationForm')->name('register');

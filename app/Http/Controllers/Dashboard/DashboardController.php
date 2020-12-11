@@ -7,6 +7,10 @@ use App\Http\Controllers\Controller;
 
 class DashboardController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('verified');
+    }
     public function __invoke()
     {
         if (auth()->user()->profile->role=="admin") {

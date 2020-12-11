@@ -12,6 +12,10 @@ use App\Http\Controllers\Controller;
 
 class AdminController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('verified');
+    }
     /**
      * @param Post $post
      * @return \Illuminate\Http\RedirectResponse
