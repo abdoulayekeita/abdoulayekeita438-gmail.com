@@ -9,6 +9,8 @@ use App\Models\Category;
 use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Redis;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\ProductStoreRequest;
 
 class ProductController extends Controller
@@ -48,7 +50,9 @@ class ProductController extends Controller
         foreach (explode(',', $request->validated()['item_images']) as $url) {
             $url = str_replace("\\", '', $url);
             $url = str_replace('"', '', $url);
-            Image::create(['url'=>$url,'product_id'=>$product->id]);
+            $image_64 = Redis::get($url);
+            Storage::disk('s3')->put('product/'.$url, base64_decode($image_64));
+            Image::create(['url'=>'product/'.$url,'product_id'=>$product->id]);
         }
 
         return redirect()->route('shop.show', $shop);
@@ -90,7 +94,7 @@ class ProductController extends Controller
         if (!empty(explode(',', $request->validated()['item_images']))) {
             if (!empty($product->images)) {
                 foreach ($product->images as $image) {
-                    unlink(storage_path('app/public/'.$image->url));
+                    Storage::disk('s3')->delete($image->url);
                     Image::destroy($image->id);
                 }
             }
@@ -98,7 +102,9 @@ class ProductController extends Controller
             foreach (explode(',', $request->validated()['item_images']) as $url) {
                 $url = str_replace("\\", '', $url);
                 $url = str_replace('"', '', $url);
-                Image::create(['url'=>$url,'product_id'=>$product->id]);
+                $image_64 = Redis::get($url);
+                Storage::disk('s3')->put('product/'.$url, base64_decode($image_64));
+                Image::create(['url'=>'product/'.$url,'product_id'=>$product->id]);
             }
         }
 
@@ -113,6 +119,9 @@ class ProductController extends Controller
      */
     public function destroy(Shop $shop, Product $product)
     {
+        foreach ($product->images as $image){
+            Storage::disk('s3')->delete($image->url);
+        }
         $product->delete();
         return redirect()->route('shop.show', $shop);
     }

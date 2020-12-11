@@ -350,7 +350,7 @@
                                             @if($product->images)
                                                 @foreach($product->images as $image)
                                                     @if ($loop->first)
-                                                        <div class="card-media-object" style="background-image: url({{asset('storage/'.$image->url)}});"></div>
+                                                        <div class="card-media-object" style="background-image: url({{env('AWS_URL')."/".$image->url}});"></div>
                                                     @endif
                                                 @endforeach
 

@@ -295,17 +295,14 @@
                             @enderror
                             <div class="form-group ">
                                 <label >Catégorie</label>
-                                <select class="form-control kt-select2" id="kt_select2_4" name="sub_category_id">
-                                    <option disabled="" selected="" value=""> -- Sélectionnez une catégorie -- </option>                                    @foreach($categorys as $category)
-                                        <optgroup label="{{$category->name}}">
-                                            @foreach($category->subCategorys as $subCategory)
-                                                <option value="{{$subCategory->id}}">{{$subCategory->name}}</option>
-                                            @endforeach
-                                        </optgroup>
+                                <select class="form-control kt-select2" id="kt_select2_4" name="category_id">
+                                    <option disabled="" selected="" value=""> -- Sélectionnez une catégorie -- </option>
+                                    @foreach($categorys as $category)
+                                        <option value="{{$category->id}}">{{$category->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
-                            @error('sub_category_id')
+                            @error('category_id')
                             <span class="alert alert-danger mt-1" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>

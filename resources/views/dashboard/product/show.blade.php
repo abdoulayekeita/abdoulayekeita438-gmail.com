@@ -276,14 +276,14 @@
                                             @foreach($product->images as $image)
                                                 @if ($loop->first)
                                                     <div class="col-12 mb-2 ">
-                                                        <a href="{{asset('storage/'.$image->url)}}" data-fancybox="1" data-caption="{{$product->name}}" >
-                                                            <img src="{{asset('storage/'.$image->url)}}" class="img-fluid rounded " style=" height: 450px; width: 100% !important;display: inline-block;"/>
+                                                        <a href="{{env('AWS_URL')."/".$image->url}}" data-fancybox="1" data-caption="{{$product->name}}" >
+                                                            <img src="{{env('AWS_URL')."/".$image->url}}" class="img-fluid rounded " style=" height: 450px; width: 100% !important;display: inline-block;"/>
                                                         </a>
                                                     </div>
                                                 @else
                                                     <div class="col-12 mb-2 ll">
-                                                        <a href="{{asset('storage/'.$image->url)}}" data-fancybox="1" data-caption="{{$product->name}}">
-                                                            <img src="{{asset('storage/'.$image->url)}}" class="img-fluid rounded" />
+                                                        <a href="{{env('AWS_URL')."/".$image->url}}" data-fancybox="1" data-caption="{{$product->name}}">
+                                                            <img src="{{env('AWS_URL')."/".$image->url}}" class="img-fluid rounded" />
                                                         </a>
                                                     </div>
                                                 @endif
@@ -301,7 +301,7 @@
                             </aside>
                             <aside class="card col-lg-6 p-0">
                                 <div class="card-header  kt-bg-fill-primary">
-                                    <h3 class="text-center text-uppercase text-white">{{$product->name}}</h3>
+                                    <h3 class="text-center text-uppercase text-white">{{$product->name}} </h3>
                                 </div>
                                 <div class="card-body">
                                     <div class="mt-4">

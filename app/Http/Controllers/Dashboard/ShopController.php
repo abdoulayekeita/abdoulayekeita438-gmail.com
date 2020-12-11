@@ -45,10 +45,10 @@ class ShopController extends Controller
         $fileName = null;
         if ($request->hasFile('image')) {
             $fileName = bin2hex(openssl_random_pseudo_bytes(10)).'.png';
-            Image::make($request->file('image'))
-                ->resize(300, 300)->save(storage_path('app/public/shop/'.$fileName));
+            $image =Image::make($request->file('image'))->encode('png');;
+            $fileName = "shop/".$fileName;
+            Storage::disk('s3')->put($fileName, $image->getEncoded());
         }
-
         $validated = $request->validated();
         Arr::set($validated, 'image', $fileName);
         $shop = Shop::create($validated);
@@ -59,6 +59,10 @@ class ShopController extends Controller
         return redirect()->route('shop.index')->with('message', "Votre boutique sera validée par l'equipe yankadi ");
     }
 
+    /**
+     * @param Shop $shop
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function show(Shop $shop)
     {
         $products = $shop->products()->paginate(6);
@@ -73,32 +77,47 @@ class ShopController extends Controller
         return view('dashboard.shop.content_shop', compact('products', 'shop'));
     }
 
+    /**
+     * @param Shop $shop
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function edit(Shop $shop)
     {
         $categorys = Category::all();
         return view('dashboard.shop.edit', compact('shop', 'categorys'));
     }
 
+    /**
+     * @param ShopStoreRequest $request
+     * @param Shop $shop
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function update(ShopStoreRequest $request, Shop $shop)
     {
         $validated = $request->validated();
 
         if ($request->hasFile('image')) {
-            Storage::delete("shop/".$shop->image);
-
             $fileName = bin2hex(openssl_random_pseudo_bytes(10)).'.png';
-            Image::make($request->file('image'))
-                ->resize(300, 300)->save(storage_path('app/public/shop/'.$fileName));
+            $image =Image::make($request->file('image'))->resize(300,300)->encode('png');;
+            $fileName = "shop/".$fileName;
+            Storage::disk('s3')->put($fileName, $image->getEncoded());
             Arr::set($validated, 'image', $fileName);
         }
 
+        Storage::disk('s3')->delete($shop->image);
         $shop->update($validated);
 
         return redirect()->route('shop.show', $shop);
     }
 
+    /**
+     * @param Shop $shop
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Exception
+     */
     public function destroy(Shop $shop)
     {
+        Storage::disk('s3')->delete($shop->image);
         $shop->delete();
         return redirect()->route('shop.index');
     }
