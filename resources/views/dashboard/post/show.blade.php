@@ -210,32 +210,33 @@
 
 @endsection
 <!-- end:: Aside Menu -->
-<div class="modal fade" id="kt_modal_6" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="fa">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Suppression de l'annonce  </h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                </button>
-            </div>
-            <div class="modal-body">
-                <p>Voulez-vous vraiment supprimer ce annonce</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                <form action="{{route('post.destroy',$post)}}" method="POST">
-                    {{ csrf_field() }}
-                    {{method_field('DELETE')}}
-                    <button  class="btn btn-danger text-white">Supprimer</button>
-                </form>
 
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- begin:: Header -->
 @section('Header')
+    <div class="modal fade" id="kt_modal_6" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="fa">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Suppression de l'annonce  </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Voulez-vous vraiment supprimer ce annonce</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                    <form action="{{route('post.destroy',$post)}}" method="POST">
+                        {{ csrf_field() }}
+                        {{method_field('DELETE')}}
+                        <button  class="btn btn-danger text-white">Supprimer</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed  justify-content-end ">
 
         <div class="kt-header-menu-wrapper" id="kt_header_menu_wrapper">
