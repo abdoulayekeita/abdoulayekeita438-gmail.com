@@ -475,7 +475,7 @@ Use dot badge instead of animated pulse effect:
                                                 @if($post->product->images)
                                                     @foreach($post->product->images as $image)
                                                         @if ($loop->first)
-                                                            <img class="kt-widget__img kt-hidden-" src="{{asset('storage/'.$image->url)}}" alt="image">
+                                                            <img class="kt-widget__img kt-hidden-" src="{{env('AWS_URL')."/".$image->url}}" alt="image">
                                                         @endif
                                                     @endforeach
                                                 @endif
