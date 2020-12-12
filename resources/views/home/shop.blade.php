@@ -70,7 +70,7 @@
                                         <a href="{{route('shop_content',$shop)}}" class="kt-grid-nav__item pt-0">
                                             @if($shop->image)
                                                 <span class="kt-grid-nav__icon">
-                                                                <img src="{{asset('storage/shop/'.$shop->image)}}" class="img-fluid  h-10"/>
+                                                                <img src="{{env('AWS_URL')."/".$shop->url}}" class="img-fluid  h-10"/>
                                                             </span>
                                             @else
                                                 <span class="kt-grid-nav__icon">

@@ -29,14 +29,14 @@
                                                 @foreach($post->product->images as $image)
                                                     @if ($loop->first)
                                                         <div class="col-12 mb-2 ">
-                                                            <a href="{{asset('storage/'.$image->url)}}" data-fancybox="1" data-caption="{{$post->product->name}}" >
-                                                                <img src="{{asset('storage/'.$image->url)}}" class="img-fluid rounded " style=" height: 450px; width: 100% !important;display: inline-block;"/>
+                                                            <a href="{{env('AWS_URL')."/".$image->url}}" data-fancybox="1" data-caption="{{$post->product->name}}" >
+                                                                <img src="{{env('AWS_URL')."/".$image->url}}" class="img-fluid rounded " style=" height: 450px; width: 100% !important;display: inline-block;"/>
                                                             </a>
                                                         </div>
                                                     @else
                                                         <div class="col-12 mb-2 ll">
-                                                            <a href="{{asset('storage/'.$image->url)}}" data-fancybox="1" data-caption="{{$post->product->name}}">
-                                                                <img src="{{asset('storage/'.$image->url)}}" class="img-fluid rounded" />
+                                                            <a href="{{env('AWS_URL')."/".$image->url}}}}" data-fancybox="1" data-caption="{{$post->product->name}}">
+                                                                <img src="{{env('AWS_URL')."/".$image->url}}" class="img-fluid rounded" />
                                                             </a>
                                                         </div>
                                                     @endif

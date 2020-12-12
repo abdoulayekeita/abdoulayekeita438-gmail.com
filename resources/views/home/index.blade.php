@@ -307,7 +307,7 @@
                                                         @if($post->product->images)
                                                             @foreach($post->product->images as $image)
                                                                 @if ($loop->first)
-                                                                    <img src="{{asset('storage/'.$image->url)}}" class="img-fluid rounded " style=" height: 250px; width: 100% !important;display: inline-block;"/>
+                                                                    <img src="{{env('AWS_URL')."/".$image->url}}" class="img-fluid rounded " style=" height: 250px; width: 100% !important;display: inline-block;"/>
                                                                 @endif
                                                             @endforeach
                                                         @else
@@ -328,7 +328,7 @@
                                                         @if($post->product->images)
                                                             @foreach($post->product->images as $image)
                                                                 @if ($loop->first)
-                                                                    <img src="{{asset('storage/'.$image->url)}}" class="img-fluid rounded " style=" height: 250px; width: 100% !important;display: inline-block;"/>
+                                                                    <img src="{{env('AWS_URL')."/".$image->url}}" class="img-fluid rounded " style=" height: 250px; width: 100% !important;display: inline-block;"/>
                                                                 @endif
                                                             @endforeach
                                                         @else
