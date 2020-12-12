@@ -53,7 +53,7 @@
                                     <div class="kt-grid-nav__row">
                                         <a href="{{route('shop_content',$shop)}}" class="kt-grid-nav__item pt-0">
                                                         <span class="kt-grid-nav__icon">
-                                                            <img src="{{env('AWS_URL')."/".$shop->image)}}" class="img-fluid  h-10"/>
+                                                            <img src="{{env('AWS_URL')."/".$shop->image}}" class="img-fluid  h-10"/>
                                                         </span>
                                             <span class="kt-grid-nav__title" style="color: #478fcd">{{$shop->name}}</span>
                                             <span class="kt-badge   kt-badge--inline kt-badge--pill mt-1" style="background-color: #478fcd;color: white;font-size: 15px">{{$shop->category->name}}</span>
