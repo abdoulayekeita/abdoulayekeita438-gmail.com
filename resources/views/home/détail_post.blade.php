@@ -35,7 +35,7 @@
                                                         </div>
                                                     @else
                                                         <div class="col-12 mb-2 ll">
-                                                            <a href="{{env('AWS_URL')."/".$image->url}}}}" data-fancybox="1" data-caption="{{$post->product->name}}">
+                                                            <a href="{{env('AWS_URL')."/".$image->url}}" data-fancybox="1" data-caption="{{$post->product->name}}">
                                                                 <img src="{{env('AWS_URL')."/".$image->url}}" class="img-fluid rounded" />
                                                             </a>
                                                         </div>
