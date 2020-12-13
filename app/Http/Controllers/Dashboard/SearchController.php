@@ -23,7 +23,6 @@ class SearchController extends Controller
                 ->orderBy('id')
                 ->distinct()
                 ->paginate(8);
-;
         }else{
             $posts = Post::join('products', 'posts.product_id', '=', 'products.id')
                             ->where('products.name', 'ilike', "%{$request->input('query')}%")
