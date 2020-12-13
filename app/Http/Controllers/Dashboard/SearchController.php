@@ -17,13 +17,13 @@ class SearchController extends Controller
     {
         $request->validate(['query' => 'required']);
         if ($request->input('user_id')){
-            $posts = Post::join('users', 'posts.user_id', '=', 'users.id')
-                            ->join('products', 'posts.product_id', '=', 'products.id')
-                            ->where('products.name', 'ilike', "%{$request->input('query')}%")
-                            ->select('posts.*')
-                            ->orderBy('id')
-                            ->distinct()
-                            ->paginate(8);
+            $posts = auth()->user()->posts()->join('products', 'posts.product_id', '=', 'products.id')
+                ->where('products.name', 'ilike', "%{$request->input('query')}%")
+                ->select('posts.*')
+                ->orderBy('id')
+                ->distinct()
+                ->paginate(8);
+;
         }else{
             $posts = Post::join('products', 'posts.product_id', '=', 'products.id')
                             ->where('products.name', 'ilike', "%{$request->input('query')}%")
