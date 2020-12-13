@@ -371,6 +371,7 @@ Use dot badge instead of animated pulse effect:
                 {{ csrf_field() }}
                 <div class="form-group ">
                     <div class="input-group">
+                        <input type="hidden" name="user_id" value="{{auth()->user()->id}}">
                         <input type="text" class="form-control" placeholder="Rechercher une annonce" name="query">
                         <div class="input-group-append">
                             <button type="submit" class="btn btn-secondary"><i class="fa fa-search"></i></button>

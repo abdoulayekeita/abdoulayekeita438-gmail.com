@@ -16,13 +16,22 @@ class SearchController extends Controller
     public function searchPost(Request $request)
     {
         $request->validate(['query' => 'required']);
-
-        $posts = Post::join('products', 'posts.product_id', '=', 'products.id')
-            ->where('products.name', 'ilike', "%{$request->input('query')}%")
-            ->select('posts.*')
-            ->orderBy('id')
-            ->distinct()
-            ->paginate(8);
+        if ($request->input('user_id')){
+            $posts = Post::join('users', 'posts.user_id', '=', 'users.id')
+                            ->join('products', 'posts.product_id', '=', 'products.id')
+                            ->where('products.name', 'ilike', "%{$request->input('query')}%")
+                            ->select('posts.*')
+                            ->orderBy('id')
+                            ->distinct()
+                            ->paginate(8);
+        }else{
+            $posts = Post::join('products', 'posts.product_id', '=', 'products.id')
+                            ->where('products.name', 'ilike', "%{$request->input('query')}%")
+                            ->select('posts.*')
+                            ->orderBy('id')
+                            ->distinct()
+                            ->paginate(8);
+        }
 
         return view('dashboard.dashboard_compte_busness', compact('posts'));
     }

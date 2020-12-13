@@ -103,7 +103,7 @@
                                                 <br>
                                                 <a href="" class="card-media-body-supporting-bottom-text card-media-link u-float-right">En savoir plus</a>
                                             </div>
-                                        </div>{{--        <span class="card-media-body-supporting-bottom-text mt-2 text-primary">#Music #Party</span>--}}
+                                        </div>
                                     </div>
                                 </a>
                             </div>
@@ -124,7 +124,3 @@
         </div>
     </section>
 @endsection
-
-
-
-
