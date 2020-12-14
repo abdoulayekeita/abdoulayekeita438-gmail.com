@@ -41,9 +41,9 @@
                                     <div class="row kt-login__extra">
                                         <div class="col">
                                         </div>
-                                        <div class="col kt-align-right">
-                                            <a href="{{ route('password.request') }}" style="color: #478fcd;width: 200px" id="kt_login_forgot" class="kt-link kt-login__link">Mot de passe oublié ?</a>
-                                        </div>
+{{--                                        <div class="col kt-align-right">--}}
+{{--                                            <a href="{{ route('password.reset',@csrf_token()) }}" style="color: #478fcd;width: 200px" id="kt_login_forgot" class="kt-link kt-login__link">Mot de passe oublié ?</a>--}}
+{{--                                        </div>--}}
                                     </div>
                                     <div class="kt-login__actions mb-1">
                                         <button type="submit" style="background-color: #478fcd" class="btn btn-pill kt-login__btn-primary">Valider</button>
@@ -54,6 +54,8 @@
 									Vous êtes un nouvel utilisateur ?
 								</span>&nbsp;&nbsp;
                             <a  href="{{ route('register') }}"style="color: #478fcd"  class="kt-link kt-link--light kt-login__account-link"> Créez un compte</a>
+                            <a href="{{ route('password.request')}}" style="color: #478fcd;width: 200px" class="kt-link kt-login__link">Mot de passe oublié ?</a>
+
                         </div>
                     </div>
                 </div>

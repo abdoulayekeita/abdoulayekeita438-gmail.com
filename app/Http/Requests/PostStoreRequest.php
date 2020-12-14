@@ -26,7 +26,7 @@ class PostStoreRequest extends FormRequest
         return [
             'name' => 'required|string',
             'item_images' => 'required',
-            'price' => 'required',
+            'price' => 'required|max:13',
             'isPriceNegotiate' => 'boolean',
             'isPossibleToChange' => 'boolean',
             'quantity' => 'required',

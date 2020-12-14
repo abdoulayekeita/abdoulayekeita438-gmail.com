@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('home.layouts.app')
 
 @section('content')
 {{--<div class="container">--}}
@@ -62,9 +62,7 @@
 {{--        </div>--}}
 {{--    </div>--}}
 {{--</div>--}}
-<div>
-    test
-</div>
+
 <div class="container ">
     <div class="kt-grid kt-grid--hor kt-grid--root kt-login kt-login--v2 kt-login--signin" id="kt_login"  style="margin-top: 80px">
         <div class="kt-portlet container">
@@ -79,7 +77,7 @@
                             </div>
                             <div class="kt-login__signin">
                                 <div class="kt-login__head">
-                                    <h3 class="kt-login__title " style="color: #478fcd">Connectez vous</h3>
+                                    <h3 class="kt-login__title " style="color: #478fcd">Changez votre mot de passe</h3>
                                 </div>
                                 <form class="kt-form" method="POST" action="{{ route('password.update') }}">
                                     @csrf
@@ -104,7 +102,7 @@
                                         <input class="form-control @error('password_confirmation') is-invalid @enderror" style="background-color: #478fcd" type="password" placeholder="Mot de passe de confirmation" name="password_confirmation" required autocomplete="new-password">
                                     </div>
                                     <div class="kt-login__actions mb-1">
-                                        <button id="kt_login_signin_submit" style="background-color: #478fcd" class="btn btn-pill kt-login__btn-primary">Valider</button>
+                                        <button type="submit"  style="background-color: #478fcd" class="btn btn-pill kt-login__btn-primary">Valider</button>
                                     </div>
                                 </form>
                             </div>

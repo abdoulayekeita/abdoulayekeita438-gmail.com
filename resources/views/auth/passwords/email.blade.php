@@ -14,9 +14,9 @@
                                 </a>
                             </div>
                             <div class="kt-login__signin">
-                                <div class="kt-login__head">
-                                    <h3 class="kt-login__title " style="color: #478fcd">Changer votre mot de passe</h3>
-                                </div>
+{{--                                <div class="kt-login__head">--}}
+{{--                                    <h3 class="kt-login__title " style="color: #478fcd">Changer votre mot de passe</h3>--}}
+{{--                                </div>--}}
                                 @if (session('status'))
                                     <div class="alert alert-success" role="alert">
                                         {{ session('status') }}
@@ -33,7 +33,7 @@
                                         </span>
                                     @enderror
                                     <div class="kt-login__actions mb-1">
-                                        <button id="kt_login_signin_submit" style="background-color: #478fcd" class="btn btn-pill kt-login__btn-primary">Evoyer un lien de renitialisation</button>
+                                        <button  style="background-color: #478fcd" class="btn btn-pill kt-login__btn-primary">Evoyer un lien de renitialisation</button>
                                     </div>
                                 </form>
                             </div>
