@@ -46,11 +46,11 @@
                             </div>
                             <p class="product-description">{{$shop->description}}</p>
 
-                            <h5 class="colors"><span class="mb-1">Page des reseaux sociaux</span><br>
-                                <span class="color orange not-available" data-toggle="tooltip" title="Not In store"></span>
-                                <span class="color green"></span>
-                                <span class="color blue"></span>
-                            </h5>
+{{--                            <h5 class="colors"><span class="mb-1">Page des reseaux sociaux</span><br>--}}
+{{--                                <span class="color orange not-available" data-toggle="tooltip" title="Not In store"></span>--}}
+{{--                                <span class="color green"></span>--}}
+{{--                                <span class="color blue"></span>--}}
+{{--                            </h5>--}}
                             <div class="action">
                                 <p style="font-size: 20px;font-weight: bold">
                                    Partager la boutique
