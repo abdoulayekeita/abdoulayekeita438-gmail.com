@@ -337,7 +337,7 @@
                                                         <div class="card-body " style="height: 150px">
                                                             <h4 class="card-title">{{$post->product->name}} {{$post->product->price}} FCFA</h4>
                                                             <p class="card-text">{{Str::limit($post->product->description,80,'....')}}</p>
-                                                            <p class="card-text"><small class="text-muted">Publier il y a 3 min</small></p>
+                                                            <p class="card-text"><small class="text-muted">Publier {{$post->published_at->diffForHumans()}}</small></p>
                                                         </div>
                                                     </div>
                                                 </a>
