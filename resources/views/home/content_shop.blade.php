@@ -95,7 +95,7 @@
                                                 </div>
                                             </div>
                                             <span class="card-media-body-heading text-primary h-pay" style="font-size: 15px"><strong>{{$product->price}} FCFA</strong></span>
-                                            <span class="card-media-body-heading text-success h-pay mt-4"><span class="text-dark">publier {{$post->published_at->diffForHumans()}} </span></span>
+                                            <span class="card-media-body-heading text-success h-pay mt-4"><span class="text-dark">publier depuis 10/10/2020 </span></span>
                                             <div class="card-media-body-supporting-bottom">
                                                 <span class="card-media-body-supporting-bottom-text subtle">{{$product->subCategory->name}}</span>
                                             </div>
