@@ -29,9 +29,9 @@ Route::namespace('Dashboard')->prefix('dashboard')->group(function () {
         Route::resource('shop', 'ShopController');
         Route::resource('shop.product', 'ProductController');
         Route::resource('post', 'PostController');
-        Route::get('/how_it_work', 'PageController@howItWork')->name('how_it_work');
         Route::get('/contact', 'PageController@contact')->name('contact');
     });
+    Route::get('/how_it_work', 'PageController@howItWork')->name('how_it_work');
 });
 
 Route::namespace('Home')->group(function () {
