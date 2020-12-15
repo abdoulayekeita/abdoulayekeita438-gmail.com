@@ -112,7 +112,7 @@
                                              </svg>
                                              Tel
                                          </span>
-                                            <p class=" font-weight-bold pl-2 pt-1 lead "> {{$product->shop->user->phone}}</p>
+                                            <p class=" font-weight-bold pl-2 pt-1 lead "> {{$shop->user->phone}}</p>
                                         </div>
                                     </div>
                                 </aside>
