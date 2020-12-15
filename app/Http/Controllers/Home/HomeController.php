@@ -19,7 +19,7 @@ class HomeController extends Controller
     public function home()
     {
         $categorys = Category::all();
-        $posts = Post::where('is_publish', true)->orderByAsc('is_publish')->get();
+        $posts = Post::where('is_publish', true)->orderByDesc('is_publish')->get();
         return view('home.index', compact('categorys', 'posts'));
     }
 
