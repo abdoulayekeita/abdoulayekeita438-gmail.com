@@ -20,7 +20,7 @@ class HomeController extends Controller
     {
         $categorys = Category::all();
         $posts = Post::where('is_publish', true)
-                        ->orderBy('is_publish', 'desc')
+                        ->orderBy('created_at', 'desc')
                         ->get();
         return view('home.index', compact('categorys', 'posts'));
     }
