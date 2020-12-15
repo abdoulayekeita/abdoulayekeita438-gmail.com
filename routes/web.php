@@ -26,16 +26,12 @@ Route::namespace('Dashboard')->prefix('dashboard')->group(function () {
         Route::post('/validation_post', 'AdminController@cancelPost')->name('cancel_post');
         Route::get('/validation_shop/{shop}', 'AdminController@formValideShop')->name('form_valide_shop');
         Route::post('/validation_shop/', 'AdminController@cancelShop')->name('cancel_shop');
-
         Route::resource('shop', 'ShopController');
-
         Route::resource('shop.product', 'ProductController');
-
         Route::resource('post', 'PostController');
+        Route::get('/how_it_work', 'PageController@howItWork')->name('how_it_work');
+        Route::get('/contact', 'PageController@contact')->name('contact');
     });
-
-    Route::get('/how_it_work', 'PageController@howItWork')->name('how_it_work');
-    Route::get('/contact', 'PageController@contact')->name('contact');
 });
 
 Route::namespace('Home')->group(function () {
