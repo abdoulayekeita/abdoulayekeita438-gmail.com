@@ -30,4 +30,11 @@ class Image extends Model
     {
         return $this->belongsTo(Product::class);
     }
+    public function getImagencodeAttribute(){
+        $image = env('AWS_URL')."/".$this->url;
+        $type = pathinfo($image, PATHINFO_EXTENSION);
+        $data = file_get_contents($image);
+        return $dataUri = 'data:image/' . $type . ';base64,' . base64_encode($data);
+//       return $image_64 = base64_encode(file_get_contents(env('AWS_URL')."/".$this->url));
+    }
 }

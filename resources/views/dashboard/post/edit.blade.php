@@ -363,7 +363,7 @@
 <!-- end:: Content -->
 
 @section('script')
-    {{--    <script src="{{asset('js/dropzonejs.js')}}"></script>--}}
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.0/dropzone.js"></script>
     <script>
 
@@ -380,9 +380,7 @@
         // fileList variable to store current files index and name
         var fileList = new Array;
         var i = 0;
-
         $(function(){
-
             uploader = new Dropzone(".dropzone",{
                 url: "{{url('/dashboard/product/image/upload')}}",
                 paramName : "file",
@@ -395,7 +393,12 @@
                 parallelUploads: 100,
 
             });//end drop zone
-
+            @if($post->product->images)
+                @foreach($post->product->images as $image)
+                    uploader.displayExistingFile({ name: "{{$post->product->name}}", size: 12345 },"{{$image->imagencode}}");
+                @endforeach
+            @endif
+            uploader.
             uploader.on("success", function(file,response) {
                 imageDataArray.push(response)
 
