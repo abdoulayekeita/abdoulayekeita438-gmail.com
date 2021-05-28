@@ -2568,14 +2568,6 @@ datatables.net-colreorder@1.5.2:
     datatables.net "^1.10.15"
     jquery ">=1.7"
 
-datatables.net-dt@^1.10.20:
-  version "1.10.20"
-  resolved "https://registry.yarnpkg.com/datatables.net-dt/-/datatables.net-dt-1.10.20.tgz#998ab7d035e1ad52ad406451026ab968d1e63849"
-  integrity sha512-D+65buDke96a3WlJo2re+SbcAVfjPh2nsFZG198Vbkz3i1wKPdB+wkV2K07qYIiIpypcXWOnD2pz3MvnUqM9Tw==
-  dependencies:
-    datatables.net "1.10.20"
-    jquery ">=1.7"
-
 datatables.net-fixedcolumns-bs4@^3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/datatables.net-fixedcolumns-bs4/-/datatables.net-fixedcolumns-bs4-3.3.0.tgz#15fc5e6cc7ccf5c60bbebe47185476b699a43e40"
@@ -9006,10 +8998,10 @@ tiny-lr@^1.1.1:
     object-assign "^4.1.0"
     qs "^6.4.0"
 
-tinymce@^5.0.16:
-  version "5.1.5"
-  resolved "https://registry.yarnpkg.com/tinymce/-/tinymce-5.1.5.tgz#08a4815bcefd33fb5f654b0b82b066f788a8ddf4"
-  integrity sha512-xl7rMhjxtDLWGXJF2ZNGv6Dxqy64HAQKSCvfcbfFuF+oJYRA1JqfNLfgS3yqG4D/V30adFWOZUv9Eng6l5BWOA==
+tinymce@^5.7.1:
+  version "5.7.1"
+  resolved "https://registry.yarnpkg.com/tinymce/-/tinymce-5.7.1.tgz#658a6fb4c7d53a8496cc00f8da33f4b8290da06d"
+  integrity sha512-1gY8RClc734srSlkYwY0MQzmkS1j73PuPC+nYtNtrrQVPY9VNcZ4bOiRwzTbdjPPD8GOtv6BAk8Ww/H2RiqKpA==
 
 to-absolute-glob@^2.0.0:
   version "2.0.2"
