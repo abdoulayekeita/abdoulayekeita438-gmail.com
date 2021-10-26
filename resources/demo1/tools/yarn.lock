@@ -2568,14 +2568,6 @@ datatables.net-colreorder@1.5.2:
     datatables.net "^1.10.15"
     jquery ">=1.7"
 
-datatables.net-dt@^1.10.20:
-  version "1.10.20"
-  resolved "https://registry.yarnpkg.com/datatables.net-dt/-/datatables.net-dt-1.10.20.tgz#998ab7d035e1ad52ad406451026ab968d1e63849"
-  integrity sha512-D+65buDke96a3WlJo2re+SbcAVfjPh2nsFZG198Vbkz3i1wKPdB+wkV2K07qYIiIpypcXWOnD2pz3MvnUqM9Tw==
-  dependencies:
-    datatables.net "1.10.20"
-    jquery ">=1.7"
-
 datatables.net-fixedcolumns-bs4@^3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/datatables.net-fixedcolumns-bs4/-/datatables.net-fixedcolumns-bs4-3.3.0.tgz#15fc5e6cc7ccf5c60bbebe47185476b699a43e40"
@@ -5218,10 +5210,12 @@ jquery-form@^4.2.2:
   dependencies:
     jquery ">=1.7.2"
 
-jquery-ui@^1.12.1:
-  version "1.12.1"
-  resolved "https://registry.yarnpkg.com/jquery-ui/-/jquery-ui-1.12.1.tgz#bcb4045c8dd0539c134bc1488cdd3e768a7a9e51"
-  integrity sha1-vLQEXI3QU5wTS8FIjN0+dop6nlE=
+jquery-ui@^1.13.0:
+  version "1.13.0"
+  resolved "https://registry.yarnpkg.com/jquery-ui/-/jquery-ui-1.13.0.tgz#ab5ac65f37ca093c51b3478c4097f55bbc008f36"
+  integrity sha512-Osf7ECXNTYHtKBkn9xzbIf9kifNrBhfywFEKxOeB/OVctVmLlouV9mfc2qXCp6uyO4Pn72PXKOnj09qXetopCw==
+  dependencies:
+    jquery ">=1.8.0 <4.0.0"
 
 jquery-validation@1.19.0:
   version "1.19.0"
@@ -5235,10 +5229,10 @@ jquery.repeater@^1.2.1:
   resolved "https://registry.yarnpkg.com/jquery.repeater/-/jquery.repeater-1.2.1.tgz#ea284a69374bf4478dc2e60af5e705b169cb1514"
   integrity sha1-6ihKaTdL9EeNwuYK9ecFsWnLFRQ=
 
-jquery@>=1.10, jquery@>=1.11, jquery@>=1.12.0, jquery@>=1.5, jquery@>=1.7, "jquery@>=1.7.1 <4.0.0", jquery@>=1.7.2, jquery@>=1.7.x, jquery@>=1.8.3, jquery@>=1.9.1, "jquery@^1.7 || ^2.0 || ^3.1", jquery@^3.3.1:
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.4.1.tgz#714f1f8d9dde4bdfa55764ba37ef214630d80ef2"
-  integrity sha512-36+AdBzCL+y6qjw5Tx7HgzeGCzC81MDDgaUP8ld2zhx58HdqXGoBd+tHdrBMiyjGQs0Hxs/MLZTu/eHNJJuWPw==
+jquery@>=1.10, jquery@>=1.11, jquery@>=1.12.0, jquery@>=1.5, jquery@>=1.7, "jquery@>=1.7.1 <4.0.0", jquery@>=1.7.2, jquery@>=1.7.x, "jquery@>=1.8.0 <4.0.0", jquery@>=1.8.3, jquery@>=1.9.1, "jquery@^1.7 || ^2.0 || ^3.1", jquery@^3.3.1:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.6.0.tgz#c72a09f15c1bdce142f49dbf1170bdf8adac2470"
+  integrity sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw==
 
 jquery@~1.11.3:
   version "1.11.3"
